@@ -9,4 +9,130 @@
      - Aturan tampilan halaman lain ada di file tersendiri
    ========================================== */
 
-   
+   :root {
+    --primary-color: #4F46E5;
+    --primary-hover: #4338CA;
+    --secondary-color: #6B7280;
+    --success-color: #10B981;
+    --danger-color: #EF4444;
+    --bg-color: #F3F4F6;
+    --sidebar-bg: #1F2937;
+    --sidebar-text: #F9FAFB;
+    --card-bg: #FFFFFF;
+    --text-main: #111827;
+    --border-color: #E5E7EB;
+    --sidebar-width: 250px;
+    --sidebar-collapsed-width: 70px;
+}
+
+/* Warna Khusus Dark Mode */
+[data-theme="dark"] {
+    /* Latar belakang dibuat gelap */
+    --bg-color: #0F172A;
+    --card-bg: #1E293B;
+    
+    /* Teks dan border dibuat terang */
+    --text-main: #F8FAFC;
+    --border-color: #334155;
+    --secondary-color: #94A3B8;
+
+    /* Opsional: Sidebar diubah sedikit agar kontras dengan latar belakang baru */
+    --sidebar-bg: #020617;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* =========================================
+   Layout Utama (Sidebar & Konten)
+========================================= */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    transition: width 0.3s ease, background-color 0.3s ease;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #374151;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+}
+
+.sidebar.collapsed .sidebar-header {
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.sidebar.collapsed .sidebar-header h2 {
+    display: none; 
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #374151;
+    color: white;
+}
+
+.sidebar.collapsed .sidebar-nav li a {
+    color: transparent;
+}

@@ -8,3 +8,77 @@
     - Kode dalam file ini akan muncul di semua halaman
 -->
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MyFinance{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Blok untuk CSS tambahan khusus per halaman -->
+    {% block extra_css %}{% endblock %}
+
+    <!-- 1. SKRIP PENCEGAH BERKEDIP (Wajib di head agar tema langsung aktif sebelum HTML muncul) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>MyFinance</h2>
+                <!-- 2. TOMBOL TOGGLE DARK MODE (Diletakkan di sebelah tombol ☰) -->
+                <div class="header-buttons" style="display: flex; gap: 10px; align-items: center;">
+                    <button id="theme-toggle" class="toggle-btn" title="Ubah Tema">🌙</button>
+                    <button id="toggle-btn" class="toggle-btn">☰</button>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="{{ url_for('main.beranda') }}">Beranda</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    <!-- 3. LOGIKA JAVASCRIPT UNTUK KLIK TOMBOL -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Sesuaikan ikon tombol saat pertama kali dimuat
+        const updateToggleIcon = (theme) => {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        };
+        updateToggleIcon(document.documentElement.getAttribute('data-theme'));
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon(newTheme);
+        });
+    </script>
+    
+    <!-- Blok untuk JS tambahan khusus per halaman -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
