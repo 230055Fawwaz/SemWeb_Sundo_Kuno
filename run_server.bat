@@ -10,27 +10,43 @@ REM ==========================================
 @echo off
 cd /d %~dp0
 
-:: 1. Validasi cek apakah virtual environment ada
-if not exist semwebenv\Scripts\activate (
-    echo [ERROR] Virtual Environment semwebenv tidak ditemukan!
-    goto error
+:: 1. Cek apakah sudah ada instance Flask yang berjalan (hindari duplikasi)
+tasklist /FI "IMAGENAME eq python.exe" 2>nul | find /I "python.exe" >nul
+if not errorlevel 1 (
+    echo [PERINGATAN] Python sudah berjalan. Pastikan tidak ada Flask yang aktif sebelumnya.
+    echo Lanjutkan tetap buka browser saja? [Y/N]
+    set /p konfirmasi=Pilihan: 
+    if /i "%konfirmasi%"=="Y" goto buka_browser
+    goto akhir
 )
 
-:: 2. Aktifkan venv
-call semwebenv\Scripts\activate
+:: 2. Validasi virtual environment
+if not exist .semwebenv\Scripts\activate (
+    echo [ERROR] Virtual Environment .semwebenv tidak ditemukan!
+    pause
+    exit /b 1
+)
 
-:: 3. Jalankan server Flask di latar belakang (background) menggunakan 'start'
-:: Ini membuat Flask menyala, dan CMD utama bisa lanjut mengeksekusi perintah berikutnya
+:: 3. Aktifkan .semwebenv
+call .semwebenv\Scripts\activate
+
+:: 4. Jalankan Flask di window terpisah yang BISA DITUTUP MANUAL
+::    /MIN  = minimized agar tidak mengganggu
+::    Menutup jendela CMD itu = mematikan Flask sepenuhnya
 echo Menyalakan server Flask...
-start "" python run.py
+start "Flask Server - Tutup jendela ini untuk mematikan server" /MIN cmd /k "python run.py"
 
-:: 4. Beri jeda 3 detik agar Flask benar-benar siap
-timeout /t 3 /nobreak >nul
+:: 5. Tunggu Flask siap dengan polling (lebih andal dari timeout tetap)
+echo Menunggu Flask siap...
+:tunggu
+timeout /t 1 /nobreak >nul
+curl -s http://127.0.0.1:5000 >nul 2>&1
+if errorlevel 1 goto tunggu
 
-:: 5. Buka browser setelah server dipastikan naik
+:: 6. Buka browser
+:buka_browser
 echo Membuka browser...
 start http://127.0.0.1:5000
-exit
 
-:error
-pause
+:akhir
+exit
