@@ -9,22 +9,32 @@
 #   - Cache busting agar web browser menampilkan kode terbaru
 # ==========================================
 
+import os
 from flask import Flask
+from rdflib import Graph
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+def create_app():
+    app = Flask(__name__)
+    
+    # Konfigurasi secret key standar
+    app.config['SECRET_KEY'] = 'semweb-sunda-kuno-secret'
+    
+    # Load dataset TTL ke dalam rdflib Graph saat aplikasi startup
+    # Ini mengeliminasi kebutuhan Apache Jena Fuseki
+    rdf_graph = Graph()
+    ttl_path = os.path.join(app.root_path, 'dataset.ttl')
+    
+    if os.path.exists(ttl_path):
+        rdf_graph.parse(ttl_path, format="turtle")
+        print(f"--- [SUCCESS] Dataset RDF berhasil dimuat dari {ttl_path} ---")
+    else:
+        print(f"--- [WARNING] File {ttl_path} tidak ditemukan! ---")
+        
+    # Simpan graph ke dalam config agar bisa dipanggil di routes
+    app.config['RDF_GRAPH'] = rdf_graph
 
-@app.after_request
-def add_header(response):
-    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    return response
+    # Registrasi Blueprint Utama
+    from app.routes.main import main_bp
+    app.register_blueprint(main_bp)
 
-# ====================================================
-# PROSES REGISTRASI BLUEPRINT BARU DI SINI
-# ====================================================
-# Jalankan import di paling bawah untuk menghindari circular import
-
-# noqa: E402 # pylint: disable=wrong-import-position
-from app.routes.main import main_bp
-
-# Daftarkan ke aplikasi utama Anda
-app.register_blueprint(main_bp, url_prefix="/")
+    return app

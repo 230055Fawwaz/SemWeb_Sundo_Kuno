@@ -1,0 +1,102 @@
+<!--
+  Nama File: index.html
+  Deskripsi: Halaman index
+  Penulis:   Stan Fredheric, Miftah Rijallul Aziz, Fawwaz Areefa Yaqzhan
+  NPM:        140810230046 ,     140810230053    ,     140810230055     
+  Tanggal:   05-06-2026
+  Catatan:
+-->
+
+{% extends 'base.html' %}
+
+{% block title %}Pencarian Semantik Sunda Kuno{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* CSS tambahan khusus halaman ini jika diperlukan */
+    .table-aksara {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .badge-id {
+        font-size: 0.85rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="display-6 fw-bold text-dark">📜 Korpus Semantik Naskah Sunda Kuno</h2>
+            <p class="text-muted">Studi Kasus: Fragmen Naskah Lempir B.1r Siksa Kandang Karesian</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 bg-white p-4">
+                <form method="POST" action="{{ url_for('main.index') }}">
+                    <label for="keyword" class="form-label fw-semibold">Pencarian Relasi Semantik (SPARQL Filter)</label>
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="keyword" name="keyword" class="form-control" 
+                               placeholder="Masukkan kata kunci Latin atau Terjemahan Indonesia..." value="{{ query }}">
+                        <button class="btn btn-primary px-4" type="submit">
+                            <i class="bi bi-search"></i> Cari Semantik
+                        </button>
+                    </div>
+                    <div class="form-text text-muted mt-2">
+                        *Sistem akan melakukan query graf RDF secara langsung menggunakan pencarian literal parsial.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            {% if results %}
+            <div class="card shadow-sm border-0 p-3">
+                <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+                    <h5 class="m-0 fw-bold text-secondary">Hasil Pencarian Graf:</h5>
+                    <span class="badge bg-success">{{ results|length }} Baris Ditemukan</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle table-aksara">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 12%">ID Baris</th>
+                                <th style="width: 10%">Lempir</th>
+                                <th style="width: 25%">Aksara Sunda Kuno</th>
+                                <th style="width: 25%">Transliterasi (Latin)</th>
+                                <th style="width: 28%">Terjemahan Indonesia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for r in results %}
+                            <tr>
+                                <td><span class="badge bg-dark badge-id"><code>{{ r.id }}</code></span></td>
+                                <td><span class="text-muted fw-semibold">{{ r.lempir }}</span></td>
+                                <td class="text-primary fs-5" style="letter-spacing: 1px;">{{ r.aksara }}</td>
+                                <td><strong class="text-dark">{{ r.translit }}</strong></td>
+                                <td class="text-secondary small">{{ r.terjemahan }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% elif query %}
+            <div class="alert alert-warning text-center border-0 shadow-sm col-md-8 mx-auto" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> Tidak ada data naskah yang cocok dengan relasi semantik tersebut.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    console.log("Halaman Semantik Sunda Kuno Berhasil Dimuat.");
+</script>
+{% endblock %}

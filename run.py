@@ -7,8 +7,11 @@
 # Catatan:
 # ==========================================
 
-from app import app
+from app import create_app
 
-if __name__ == "__main__":
-    app.run(debug=True)
+app = create_app()
+
+if __name__ == '__main__':
+    # Jalankan server lokal di mode debug
+    app.run(debug=True, port=5000)
     
