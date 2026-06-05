@@ -1,0 +1,135 @@
+@prefix : <http://contoh.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# ==========================================
+# METADATA MANUSKRIP & SISTEM TULISAN
+# ==========================================
+
+:siksaKandangKaresian a :Manuskrip ;
+    dcterms:title "Siksa Kandang Karesian" ;
+    dcterms:creator "Anonim" ;
+    dcterms:language "su" .
+
+:AksaraSunda a :SistemTulisan ;
+    rdfs:label "Aksara Sunda Kuno"@id ;
+    :berasalDariWilayah "Jawa Barat"@id .
+
+# ==========================================
+# DATA BARIS NASKAH LEMPIR <B.1r>
+# ==========================================
+
+# --- Baris 1 ---
+:skk_b1r_01 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "B.1r" ;
+    :mengandungAksara :aksara_01 ;
+    :hasTransliteration :translit_01 ;
+    :hasTranslation :terjemah_01 ;
+    dcterms:identifier "SKK-B1R-01" .
+
+:aksara_01 a :TeksAksara ;
+    rdf:value "ᮔ᮪ᮓᮂ ᮔᮤᮠᮔ᮪ ᮝᮛᮠᮊ᮪ᮔ ᮞᮀ ᮞᮓᮥ ᮓ传统ᮔ᮪ ᮞᮀ ᮙᮙᮨᮒ᮪ ᮠᮚᮥ"^^xsd:string .
+
+:translit_01 a :Transliterasi ;
+    rdf:value "ndah nihan warahakna sang sadu daén sang mamet hayu"^^xsd:string .
+
+:terjemah_01 a :Terjemahan ;
+    rdf:value "Ya inilah bagi mereka yang mencari kebahagiaan Ada ajaran kebaikan ujar sang budiman memaparkan Sang Hyang Siksa Kandang Karesian"^^xsd:string .
+
+
+# --- Baris 2 ---
+:skk_b1r_02 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "B.1r" ;
+    :mengandungAksara :aksara_02 ;
+    :hasTransliteration :translit_02 ;
+    :hasTranslation :terjemah_02 ;
+    dcterms:identifier "SKK-B1R-02" .
+
+:aksara_02 a :TeksAksara ;
+    rdf:value "ᮚ ᮥᮏᮛ᮪ ᮞᮀ ᮞᮓᮥ"^^xsd:string .
+
+:translit_02 a :Transliterasi ;
+    rdf:value "ya ujar sang sadu"^^xsd:string .
+
+:terjemah_02 a :Terjemahan ;
+    rdf:value "Inilah sanghiyang dasa sebagai pegangan orang banyak di dunia"^^xsd:string .
+
+
+# --- Baris 3 ---
+:skk_b1r_03 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "B.1r" ;
+    :mengandungAksara :aksara_03 ;
+    :hasTransliteration :translit_03 ;
+    :hasTranslation :terjemah_03 ;
+    dcterms:identifier "SKK-B1R-03" .
+
+:aksara_03 a :TeksAksara ;
+    rdf:value "ᮍᮍᮨᮜᮛ᮪ᮊᮨᮔ᮪ ᮞᮀ ᮠᮡᮀ ᮞᮤᮊ᮪ᮞ ᮊᮔ᮪ᮓᮀ ᮊᮛᮨᮞᮤᮠᮔ᮪"^^xsd:string .
+
+:translit_03 a :Transliterasi ;
+    rdf:value "ngagelarkeun sang hyang siksa kandang karesian"^^xsd:string .
+
+:terjemah_03 a :Terjemahan ;
+    rdf:value "Agar senantiasa sejahtera lama bagi orang banyak"^^xsd:string .
+
+
+# --- Baris 4 ---
+:skk_b1r_04 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "B.1r" ;
+    :mengandungAksara :aksara_04 ;
+    :hasTransliteration :translit_04 ;
+    :hasTranslation :terjemah_04 ;
+    dcterms:identifier "SKK-B1R-04" .
+
+:aksara_04 a :TeksAksara ;
+    rdf:value "ᮄᮔᮤ ᮞᮀ ᮠᮡᮀ ᮓᮞ ᮊᮥᮔ᮪ᮓᮍᮨᮔ᮪ ᮔ ᮥᮛᮀ ᮛᮦᮚ ᮓᮤ ᮔ ᮘ᮪ᮝᮔ ᮕᮥᮔ᮪"^^xsd:string .
+
+:translit_04 a :Transliterasi ;
+    rdf:value "ini sang hyang dasa kundangeun na urang réya di na bwana pun"^^xsd:string .
+
+:terjemah_04 a :Terjemahan ;
+    rdf:value "Inilah buktinya"^^xsd:string .
+
+
+# --- Baris 5 ---
+:skk_b1r_05 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "B.1r" ;
+    :mengandungAksara :aksara_05 ;
+    :hasTransliteration :translit_05 ;
+    :hasTranslation :terjemah_05 ;
+    dcterms:identifier "SKK-B1R-05" .
+
+:aksara_05 a :TeksAksara ;
+    rdf:value "ᮕᮊᮨᮔ᮪ ᮠᮨᮥᮘᮨᮥᮜ᮪ ᮠᮥᮛᮤᮕ᮪"^^xsd:string .
+
+:translit_05 a :Transliterasi ;
+    rdf:value "pakeun heubeul hurip"^^xsd:string .
+
+:terjemah_05 a :Terjemahan ;
+    rdf:value "sang hyang dasa kreta namanya"^^xsd:string .
+
+
+# --- Baris 6 ---
+:skk_b1r_06 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "B.1r" ;
+    :mengandungAksara :aksara_06 ;
+    :hasTransliteration :translit_06 ;
+    :hasTranslation :terjemah_06 ;
+    dcterms:identifier "SKK-B1R-06" .
+
+:aksara_06 a :TeksAksara ;
+    rdf:value "ᮠᮨᮥᮘᮨᮥᮜ᮪ ᮔ ᮥᮛᮀ ᮛᮦᮚ"^^xsd:string .
+
+:translit_06 a :Transliterasi ;
+    rdf:value "heubeul na urang réya"^^xsd:string .
+
+:terjemah_06 a :Terjemahan ;
+    rdf:value "Bayang-bayang dasa"^^xsd:string .
