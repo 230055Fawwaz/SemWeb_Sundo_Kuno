@@ -24,7 +24,7 @@ def index():
         # Ambil graph RDF dari konfigurasi aplikasi
         g = current_app.config['RDF_GRAPH']
         
-        # Query SPARQL untuk mencari kecocokan pada transliterasi atau terjemahan
+        # Query SPARQL yang lebih aman untuk pencarian teks parsial bebas error casing
         sparql_query = f"""
         PREFIX : <http://contoh.org/ontology#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -40,7 +40,12 @@ def index():
             ?aksaraNode rdf:value ?aksara .
             ?translitNode rdf:value ?translit .
             ?terjemahanNode rdf:value ?terjemahan .
-            FILTER(CONTAINS(LCASE(?translit), "{search_query}") || CONTAINS(LCASE(?terjemahan), "{search_query}"))
+            
+            # Membungkus dengan STR() dan LCASE() agar pencarian kebal huruf besar/kecil
+            FILTER(
+                CONTAINS(LCASE(STR(?translit)), "{search_query}") || 
+                CONTAINS(LCASE(STR(?terjemahan)), "{search_query}")
+            )
         }}
         ORDER BY ?id
         """
