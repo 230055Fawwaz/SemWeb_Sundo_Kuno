@@ -10,30 +10,36 @@
 # ==========================================
 
 import os
+import traceback  # 1. Tambahkan import ini
 from flask import Flask
 from rdflib import Graph
 
 def create_app():
     app = Flask(__name__)
     
-    # Konfigurasi secret key standar
     app.config['SECRET_KEY'] = 'semweb-sunda-kuno-secret'
     
-    # Load dataset TTL ke dalam rdflib Graph saat aplikasi startup
-    # Ini mengeliminasi kebutuhan Apache Jena Fuseki
     rdf_graph = Graph()
     ttl_path = os.path.join(app.root_path, 'dataset.ttl')
     
     if os.path.exists(ttl_path):
-        rdf_graph.parse(ttl_path, format="turtle")
-        print(f"--- [SUCCESS] Dataset RDF berhasil dimuat dari {ttl_path} ---")
+        try:
+            # 2. Bungkus proses parse dengan try-except untuk melacak error
+            rdf_graph.parse(ttl_path, format="turtle")
+            print(f"--- [SUCCESS] Dataset RDF berhasil dimuat dari {ttl_path} ---")
+        except Exception as e:
+            # 3. Jika gagal, cetak detail error yang selama ini disembunyikan
+            print("\n" + "!"*50)
+            print("--- [ERROR] GAGAL MEMUAT DATASET TTL ---")
+            traceback.print_exc() 
+            print("!"*50 + "\n")
+            # Kamu bisa memilih untuk membiarkan aplikasi tetap jalan atau berhenti
+            # raise e  # Uncomment baris ini jika ingin aplikasi berhenti total saat error
     else:
         print(f"--- [WARNING] File {ttl_path} tidak ditemukan! ---")
         
-    # Simpan graph ke dalam config agar bisa dipanggil di routes
     app.config['RDF_GRAPH'] = rdf_graph
 
-    # Registrasi Blueprint Utama
     from app.routes.main import main_bp
     app.register_blueprint(main_bp)
 

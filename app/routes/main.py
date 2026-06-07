@@ -24,7 +24,7 @@ def index():
         # Ambil graph RDF dari konfigurasi aplikasi
         g = current_app.config['RDF_GRAPH']
         
-        # Query SPARQL yang lebih aman untuk pencarian teks parsial bebas error casing
+        # Query SPARQL yang sudah disesuaikan dengan Pendekatan B (Simplifikasi)
         sparql_query = f"""
         PREFIX : <http://contoh.org/ontology#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -34,12 +34,9 @@ def index():
             ?baris a :BarisNaskah ;
                    dcterms:identifier ?id ;
                    :lempirNaskah ?lempir ;
-                   :mengandungAksara ?aksaraNode ;
-                   :hasTransliteration ?translitNode ;
-                   :hasTranslation ?terjemahanNode .
-            ?aksaraNode rdf:value ?aksara .
-            ?translitNode rdf:value ?translit .
-            ?terjemahanNode rdf:value ?terjemahan .
+                   :hasAksara ?aksara ;
+                   :hasTransliteration ?translit ;
+                   :hasTranslation ?terjemahan .
             
             # Membungkus dengan STR() dan LCASE() agar pencarian kebal huruf besar/kecil
             FILTER(
