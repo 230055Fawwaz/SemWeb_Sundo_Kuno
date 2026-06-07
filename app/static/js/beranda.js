@@ -9,3 +9,8 @@
 //   - Halaman lain diatur oleh file js lain
 // ==========================================
 
+document.addEventListener('DOMContentLoaded', function () {
+    
+    console.log("Halaman Semantik Sunda Kuno Berhasil Dimuat.");
+
+});

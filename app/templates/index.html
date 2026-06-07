@@ -11,17 +11,7 @@
 
 {% block title %}Pencarian Semantik Sunda Kuno{% endblock %}
 
-{% block extra_css %}
-<style>
-    /* CSS tambahan khusus halaman ini jika diperlukan */
-    .table-aksara {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .badge-id {
-        font-size: 0.85rem;
-    }
-</style>
-{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/beranda.css') }}">{% endblock %}
 
 {% block content %}
 <div class="container-fluid py-4">
@@ -95,8 +85,4 @@
 </div>
 {% endblock %}
 
-{% block extra_js %}
-<script>
-    console.log("Halaman Semantik Sunda Kuno Berhasil Dimuat.");
-</script>
-{% endblock %}
+{% block extra_js %}<script src="{{ url_for('static', filename='js/dropdown.js') }}"></script>{% endblock %}

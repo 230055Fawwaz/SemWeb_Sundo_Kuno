@@ -9,3 +9,10 @@
      - Halaman lain diatur oleh file css lain
    ========================================== */
 
+/* CSS tambahan khusus halaman ini jika diperlukan */
+.table-aksara {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.badge-id {
+    font-size: 0.85rem;
+}
