@@ -9,10 +9,252 @@
      - Halaman lain diatur oleh file css lain
    ========================================== */
 
-/* CSS tambahan khusus halaman ini jika diperlukan */
-.table-aksara {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.badge-id {
-    font-size: 0.85rem;
-}
+   /* --- Base Container & Layout --- */
+   .korpus-container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 2rem 1rem;
+       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+       box-sizing: border-box;
+   }
+   
+   /* --- Header Section --- */
+   .korpus-header {
+       text-align: center;
+       margin-bottom: 2.5rem;
+   }
+   
+   .korpus-title {
+       font-size: 1.8rem;
+       font-weight: 700;
+       color: #2d3748;
+       margin-bottom: 0.5rem;
+   }
+   
+   .korpus-subtitle {
+       color: #718096;
+       font-size: 1rem;
+       margin: 0;
+   }
+   
+   /* --- Search Card & Form --- */
+   .search-section {
+       display: flex;
+       justify-content: center;
+       margin-bottom: 2.5rem;
+   }
+   
+   .search-card {
+       background-color: #ffffff;
+       border-radius: 8px;
+       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+       padding: 1.5rem;
+       width: 100%;
+       max-width: 800px;
+   }
+   
+   .search-label {
+       display: block;
+       font-weight: 600;
+       color: #4a5568;
+       margin-bottom: 0.5rem;
+       font-size: 0.95rem;
+   }
+   
+   .search-bar-group {
+       display: flex;
+       gap: 0; /* Gabung input dan button ala Bootstrap */
+       border: 1px solid #cbd5e0;
+       border-radius: 6px;
+       overflow: hidden;
+       transition: border-color 0.2s ease;
+   }
+   
+   .search-bar-group:focus-within {
+       border-color: #4299e1;
+       box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+   }
+   
+   .search-input {
+       flex: 1;
+       border: none;
+       padding: 0.75rem 1rem;
+       font-size: 1rem;
+       outline: none;
+       color: #2d3748;
+       width: 100%;
+   }
+   
+   .search-button {
+       background-color: #3182ce;
+       color: white;
+       border: none;
+       padding: 0.75rem 1.5rem;
+       font-size: 1rem;
+       font-weight: 500;
+       cursor: pointer;
+       white-space: nowrap;
+       transition: background-color 0.2s ease;
+   }
+   
+   .search-button:hover {
+       background-color: #2b6cb0;
+   }
+   
+   .search-info {
+       font-size: 0.85rem;
+       color: #718096;
+       margin-top: 0.5rem;
+       margin-bottom: 0;
+   }
+   
+   /* --- Results Table Section --- */
+   .results-section {
+       display: flex;
+       justify-content: center;
+   }
+   
+   .results-card {
+       background-color: #ffffff;
+       border-radius: 8px;
+       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+       padding: 1.5rem;
+       width: 100%;
+       max-width: 1000px;
+   }
+   
+   .results-header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 1.25rem;
+   }
+   
+   .results-count-title {
+       margin: 0;
+       font-size: 1.1rem;
+       font-weight: 600;
+       color: #4a5568;
+   }
+   
+   /* Responsive Table Wrapper */
+   .table-container {
+       width: 100%;
+       overflow-x: auto;
+       -webkit-overflow-scrolling: touch;
+   }
+   
+   /* Custom Table */
+   .table-aksara {
+       width: 100%;
+       border-collapse: collapse;
+       text-align: left;
+       font-size: 0.95rem;
+   }
+   
+   .table-aksara th {
+       background-color: #f7fafc;
+       color: #4a5568;
+       font-weight: 600;
+       padding: 0.75rem 1rem;
+       border-bottom: 2px solid #e2e8f0;
+   }
+   
+   .table-aksara td {
+       padding: 1rem;
+       border-bottom: 1px solid #edf2f7;
+       vertical-align: middle;
+   }
+   
+   /* Hover effect di baris tabel */
+   .table-aksara tbody tr:hover {
+       background-color: #f8fafc;
+   }
+   
+   /* --- Typography & Specific Elements inside Table --- */
+   .text-lempir {
+       color: #718096;
+       font-weight: 600;
+   }
+   
+   .text-aksara-sunda {
+       color: #2b6cb0;
+       font-size: 1.2rem;
+       letter-spacing: 1px;
+   }
+   
+   .text-latin {
+       color: #1a202c;
+   }
+   
+   .text-translation {
+       color: #4a5568;
+       font-size: 0.9rem;
+       line-height: 1.4;
+   }
+   
+   /* --- Badges & Alerts --- */
+   .custom-badge {
+       display: inline-block;
+       padding: 0.25rem 0.5rem;
+       font-size: 0.75rem;
+       font-weight: 600;
+       border-radius: 4px;
+       line-height: 1;
+   }
+   
+   .badge-success {
+       background-color: #c6f6d5;
+       color: #22543d;
+   }
+   
+   .badge-dark {
+       background-color: #2d3748;
+       color: #ffffff;
+   }
+   
+   .custom-alert {
+       padding: 1rem;
+       border-radius: 6px;
+       width: 100%;
+       max-width: 800px;
+       text-align: center;
+       font-size: 0.95rem;
+   }
+   
+   .alert-warning {
+       background-color: #feebc8;
+       color: #744210;
+       border: 1px solid #fbd38d;
+   }
+   
+   /* --- Media Queries (Responsivitas HP) --- */
+   @media (max-width: 768px) {
+       .korpus-title {
+           font-size: 1.5rem;
+       }
+       
+       .search-bar-group {
+           flex-direction: column;
+           border: none;
+       }
+       
+       .search-input {
+           border: 1px solid #cbd5e0;
+           border-radius: 6px;
+           margin-bottom: 0.5rem;
+       }
+       
+       .search-button {
+           border-radius: 6px;
+           width: 100%;
+           padding: 0.75rem;
+       }
+   
+       .results-header {
+           flex-direction: column;
+           align-items: flex-start;
+           gap: 0.5rem;
+       }
+   }
+   
