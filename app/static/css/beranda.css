@@ -27,12 +27,12 @@
    .korpus-title {
        font-size: 1.8rem;
        font-weight: 700;
-       color: #2d3748;
+       color: var(--text-main);
        margin-bottom: 0.5rem;
    }
    
    .korpus-subtitle {
-       color: #718096;
+       color: var(--secondary-color);
        font-size: 1rem;
        margin: 0;
    }
@@ -45,7 +45,8 @@
    }
    
    .search-card {
-       background-color: #ffffff;
+       background-color: var(--card-bg);
+       border: 1px solid var(--border-color);
        border-radius: 8px;
        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
        padding: 1.5rem;
@@ -56,7 +57,7 @@
    .search-label {
        display: block;
        font-weight: 600;
-       color: #4a5568;
+       color: var(--text-main);
        margin-bottom: 0.5rem;
        font-size: 0.95rem;
    }
@@ -64,7 +65,7 @@
    .search-bar-group {
        display: flex;
        gap: 0; /* Gabung input dan button ala Bootstrap */
-       border: 1px solid #cbd5e0;
+       border: 1px solid var(--border-color);
        border-radius: 6px;
        overflow: hidden;
        transition: border-color 0.2s ease;
@@ -78,10 +79,11 @@
    .search-input {
        flex: 1;
        border: none;
+       background-color: transparent;
        padding: 0.75rem 1rem;
        font-size: 1rem;
        outline: none;
-       color: #2d3748;
+       color: var(--text-main);
        width: 100%;
    }
    
@@ -103,7 +105,7 @@
    
    .search-info {
        font-size: 0.85rem;
-       color: #718096;
+       color: var(--secondary-color);
        margin-top: 0.5rem;
        margin-bottom: 0;
    }
@@ -115,7 +117,8 @@
    }
    
    .results-card {
-       background-color: #ffffff;
+       background-color: var(--card-bg);
+       border: 1px solid var(--border-color);
        border-radius: 8px;
        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
        padding: 1.5rem;
@@ -134,7 +137,7 @@
        margin: 0;
        font-size: 1.1rem;
        font-weight: 600;
-       color: #4a5568;
+       color: var(--text-main);
    }
    
    /* Responsive Table Wrapper */
@@ -153,42 +156,42 @@
    }
    
    .table-aksara th {
-       background-color: #f7fafc;
-       color: #4a5568;
+       background-color: var(--bg-color);
+       color: var(--text-main);
        font-weight: 600;
        padding: 0.75rem 1rem;
-       border-bottom: 2px solid #e2e8f0;
+       border-bottom: 2px solid var(--border-color);
    }
    
    .table-aksara td {
        padding: 1rem;
-       border-bottom: 1px solid #edf2f7;
+       border-bottom: 1px solid var(--border-color);
        vertical-align: middle;
    }
    
    /* Hover effect di baris tabel */
    .table-aksara tbody tr:hover {
-       background-color: #f8fafc;
+       background-color: rgba(79, 70, 229, 0.05);
    }
    
    /* --- Typography & Specific Elements inside Table --- */
    .text-lempir {
-       color: #718096;
+       color: var(--secondary-color);
        font-weight: 600;
    }
    
    .text-aksara-sunda {
-       color: #2b6cb0;
+       color: var(--primary-color);
        font-size: 1.2rem;
        letter-spacing: 1px;
    }
    
    .text-latin {
-       color: #1a202c;
+       color: var(--text-main);
    }
    
    .text-translation {
-       color: #4a5568;
+       color: var(--text-main);
        font-size: 0.9rem;
        line-height: 1.4;
    }
@@ -240,7 +243,7 @@
        }
        
        .search-input {
-           border: 1px solid #cbd5e0;
+           border: 1px solid var(--border-color);
            border-radius: 6px;
            margin-bottom: 0.5rem;
        }

@@ -19,7 +19,7 @@
 
 # --- OWL: Aturan Logika Relasi ---
 # Menentukan bahwa urutan baris naskah bersifat transitif
-:lanjutKeBaris a rdf:type owl:TransitiveProperty ;
+:lanjutKeBaris a owl:TransitiveProperty ;
     rdfs:domain :BarisNaskah ;
     rdfs:range :BarisNaskah .
 
@@ -176,8 +176,7 @@
     :lempirNaskah "<A.2v>" ;
     :hasAksara "ᮓᮜᮨᮙ᮪, ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮜᮛᮔ᮪ᮌ᮪, ᮘᮜ᮪é ᮜᮛᮔ᮪ᮌᮔ᮪. ᮙᮊ ᮔ᮪ᮌᮥᮔᮤ ᮔ᮪ᮌᮜᮔ᮪ᮌ᮪ᮞᮤᮔᮔ᮪ᮌ᮪, ᮙᮕᮌ᮪ ᮔ᮪ᮌᮜᮤwᮃᮒ᮪ ᮛᮒᮥ, ᮙcᮃᮔ᮪ᮌ᮪ᮊᮢᮙ, ᮊ᮪éᮔ ᮔ ᮄᮒᮥ ᮕᮛᮔ᮪ᮒᮤ ᮃᮞᮥᮕ᮪ ᮓᮜᮨᮙ᮪, ᮙᮔ᮪ᮌ᮪ᮊ ᮛ᮪éᮃ ᮜᮤᮈᮅᮊ᮪, ᮞᮥᮌᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮛᮥᮙ᮪ᮕᮊ᮪, ᮔᮨᮘᮥᮊ᮪, ᮙᮨᮌᮒ᮪ ᮏᮏᮛᮔ᮪. ᮏᮌ ᮅᮛᮔ᮪ᮌ᮪ ᮓᮤᮅᮊ᮪, ᮅᮜᮠ᮪ ᮞᮜᮠ᮪ ᮠᮛᮨᮅᮕ᮪, ᮙᮊ ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮔ ᮓᮤᮞᮤᮜ, ᮓᮨᮅᮔ᮪ᮌ᮪ ᮞᮥᮌᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮓᮤᮘᮔ᮪ ᮜ᮪éᮙ᮪éᮊ᮪ ᮊᮥ ᮒᮧᮠᮔ᮪, ᮒᮤᮔᮨᮅᮔ᮪ᮌ᮪ᮊᮨᮅᮔ᮪ ᮔ ᮕᮤcᮃᮁéᮊᮨᮅᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪. ᮃᮞᮤᮔ᮪ᮌ᮪ ᮞᮤᮈᮅᮕ᮪ ᮙ ᮞᮙᮕᮥᮔ᮪, ᮒᮤᮠᮕ᮪ ᮞᮥᮊᮔ ᮒᮧᮠᮔ᮪."^^xsd:string ;
     :hasTransliteration "dalem, kandang larang, balé larangan. maka nguni ngalangsinang, mapag ngaliwat ratu, macangkrama, kéna na itu paranti asup dalem, mangka réa lieuk, sugan urang ngarumpak, nebuk, megat jajaran. jaga urang diuk, ulah salah hareup, maka rampés na disila, deung sugan urang dibaan lémék ku tohaan, tineungkeun na picarékeun urang. asing sieup ma samapun, tihap sukana tohaan."^^xsd:string ;
-    :hasTranslation "di dalam keraton, kandang larangan, rumah larangan, Demikian pula memintas jalan, menghampiri atau melewati rombongan raja yang sedang macangkrama, karena semua itu masuk ke dalem keraton, maka seringlah menengok, kita melanggar, mendorong
-memutus jajaran (orang-orang yang sedang duduk), Jangan salah menghadap (ketika duduk), baik-baiklah duduk bersila, dan sekiranya kita diajak bicara oleh raja, pikirkanlah betul-betul bicara kita, Harus layak dan baik supaya menyenangkan raja"^^xsd:string ;
+    :hasTranslation "di dalam keraton, kandang larangan, rumah larangan, Demikian pula memintas jalan, menghampiri atau melewati rombongan raja yang sedang macangkrama, karena semua itu masuk ke dalem keraton, maka seringlah menengok, kita melanggar, mendorong memutus jajaran (orang-orang yang sedang duduk), Jangan salah menghadap (ketika duduk), baik-baiklah duduk bersila, dan sekiranya kita diajak bicara oleh raja, pikirkanlah betul-betul bicara kita, Harus layak dan baik supaya menyenangkan raja"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-13" .
 
 # --- Baris 14 (<A.2v>) ---

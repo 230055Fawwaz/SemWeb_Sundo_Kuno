@@ -34,16 +34,18 @@ def index():
             SELECT DISTINCT ?id ?lempir ?aksara ?translit ?terjemahan ?kategoriTeks ?lanjutKe 
             WHERE {
                 
-                # 1. LOGIKA SEMANTIK (Menggunakan OPTIONAL agar tidak mogok jika kata tidak ada di kamus)
-                # Kita cari tahu apakah kata input memiliki sinonim
-                OPTIONAL {
+                # 1. LOGIKA SEMANTIK (Mencari kata kunci asli dan sinonimnya secara bidirectional)
+                {
+                    BIND(?search_query AS ?teksCari)
+                } UNION {
                     ?kataKonsep rdfs:label ?search_query .
-                    ?kataKonsep :hasSynonym ?sinonim .
-                    ?sinonim rdfs:label ?teksSinonim .
+                    {
+                        ?kataKonsep :hasSynonym ?sinonim .
+                    } UNION {
+                        ?sinonim :hasSynonym ?kataKonsep .
+                    }
+                    ?sinonim rdfs:label ?teksCari .
                 }
-                
-                # Jika ketemu sinonimnya, pakai ?teksSinonim. Jika tidak, gunakan ?search_query asal dari user.
-                BIND(COALESCE(?teksSinonim, ?search_query) AS ?teksCari)
                 
                 # 2. LOGIKA PENCARIAN NASKAH
                 ?baris :hasTransliteration ?translit ;
