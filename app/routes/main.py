@@ -22,35 +22,57 @@ def index():
     if request.method == 'POST':
         search_query = request.form.get('keyword', '').strip().lower()
         
-        # Hanya jalankan kueri jika input pencarian tidak kosong untuk menghindari pengembalian semua baris
         if search_query:
-            # Ambil graph RDF dari konfigurasi aplikasi
             g = current_app.config['RDF_GRAPH']
             
-            # Query SPARQL yang aman menggunakan parameter binding ?search_query
             sparql_query = """
             PREFIX : <http://contoh.org/ontology#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX dcterms: <http://purl.org/dc/terms/>
-            
-            SELECT ?id ?lempir ?aksara ?translit ?terjemahan WHERE {
-                ?baris a :BarisNaskah ;
-                       dcterms:identifier ?id ;
-                       :lempirNaskah ?lempir ;
-                       :hasAksara ?aksara ;
-                       :hasTransliteration ?translit ;
-                       :hasTranslation ?terjemahan .
+
+            SELECT DISTINCT ?id ?lempir ?aksara ?translit ?terjemahan ?kategoriTeks ?lanjutKe 
+            WHERE {
                 
-                # Tambahkan STR() pada ?search_query agar pencarian teks bekerja sempurna
+                # 1. LOGIKA SEMANTIK (Menggunakan OPTIONAL agar tidak mogok jika kata tidak ada di kamus)
+                # Kita cari tahu apakah kata input memiliki sinonim
+                OPTIONAL {
+                    ?kataKonsep rdfs:label ?search_query .
+                    ?kataKonsep :hasSynonym ?sinonim .
+                    ?sinonim rdfs:label ?teksSinonim .
+                }
+                
+                # Jika ketemu sinonimnya, pakai ?teksSinonim. Jika tidak, gunakan ?search_query asal dari user.
+                BIND(COALESCE(?teksSinonim, ?search_query) AS ?teksCari)
+                
+                # 2. LOGIKA PENCARIAN NASKAH
+                ?baris :hasTransliteration ?translit ;
+                    :hasTranslation ?terjemahan ;
+                    dcterms:identifier ?id ;
+                    :lempirNaskah ?lempir ;
+                    :hasAksara ?aksara ;
+                    rdf:type ?tipeKategori .
+                
+                # Mengambil kategori baris teks dari RDFS
+                ?tipeKategori rdfs:subClassOf* :BarisNaskah .
+                
+                # Mengambil kelanjutan baris dari OWL
+                OPTIONAL {
+                    ?baris :lanjutKeBaris ?nextBaris .
+                    ?nextBaris dcterms:identifier ?lanjutKe .
+                }
+                
+                # Pencarian parsial (LCASE memastikan pencarian aman dari huruf kapital)
                 FILTER(
-                    CONTAINS(LCASE(STR(?translit)), STR(?search_query)) || 
-                    CONTAINS(LCASE(STR(?terjemahan)), STR(?search_query))
+                    CONTAINS(LCASE(STR(?translit)), LCASE(STR(?teksCari))) || 
+                    CONTAINS(LCASE(STR(?terjemahan)), LCASE(STR(?teksCari)))
                 )
+                
+                BIND(REPLACE(STR(?tipeKategori), "^.*#", "") AS ?kategoriTeks)
             }
             ORDER BY ?id
             """
             
-            # Eksekusi query ke rdflib dengan parameter binding initBindings untuk mencegah SPARQL Injection
             try:
                 qres = g.query(sparql_query, initBindings={'search_query': Literal(search_query)})
                 for row in qres:
@@ -59,7 +81,9 @@ def index():
                         "lempir": str(row.lempir),
                         "aksara": str(row.aksara),
                         "translit": str(row.translit),
-                        "terjemahan": str(row.terjemahan)
+                        "terjemahan": str(row.terjemahan),
+                        "kategori": str(row.kategoriTeks) if row.kategoriTeks else "BarisNaskah", # Data RDFS
+                        "lanjut_ke": str(row.lanjutKe) if row.lanjutKe else "-" # Data OWL
                     })
             except Exception as e:
                 print(f"SPARQL Error: {e}")

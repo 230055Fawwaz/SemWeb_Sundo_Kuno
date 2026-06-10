@@ -1,36 +1,81 @@
 @prefix : <http://contoh.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-# ==========================================
-# METADATA MANUSKRIP & SISTEM TULISAN
-# ==========================================
+# =================================================================
+# [TAMBAHAN] SKEMA ONTOLOGI (RDFS & OWL)
+# =================================================================
+
+# --- RDFS: Hierarki Kelas ---
+:Manuskrip a rdfs:Class .
+:BarisNaskah a rdfs:Class .
+
+# Membuat sub-kelas untuk kategorisasi baris naskah berdasarkan isinya
+:BagianPembuka a rdfs:Class ; rdfs:subClassOf :BarisNaskah .
+:BagianAjaranMoral a rdfs:Class ; rdfs:subClassOf :BarisNaskah .
+
+# --- OWL: Aturan Logika Relasi ---
+# Menentukan bahwa urutan baris naskah bersifat transitif
+:lanjutKeBaris a rdf:type owl:TransitiveProperty ;
+    rdfs:domain :BarisNaskah ;
+    rdfs:range :BarisNaskah .
+
+
+# =================================================================
+# METADATA MANUSKRIP & SISTEM TULISAN (DATA ASLI KAMU)
+# =================================================================
 
 :siksaKandangKaresian a :Manuskrip ;
     dcterms:title "Siksa Kandang Karesian" ;
     dcterms:creator "Anonim" ;
     dcterms:language "su" .
 
-# ==========================================
-# DATA BARIS NASKAH HASIL KURASI
-# ==========================================
+
+# =================================================================
+# [TAMBAHAN WAJIB] KAMUS SEMANTIK / TAKSONOMI KATA
+# (Agar logika :hasSynonym di Python kamu bisa berfungsi)
+# =================================================================
+
+# Konsep 1: Kebahagiaan & Sejahtera (Contoh untuk Baris 1 & 2)
+:konsep_bahagia rdfs:label "kebahagiaan" ;
+    :hasSynonym :konsep_sejahtera .
+
+:konsep_sejahtera rdfs:label "sejahtera" .
+
+# Konsep 2: Kebaikan & Kebajikan (Contoh pengembangan)
+:konsep_kebaikan rdfs:label "kebaikan" ;
+    :hasSynonym :konsep_kebajikan .
+
+:konsep_kebajikan rdfs:label "kebajikan" .
+
+# Konsep 3: Manuskrip & Naskah
+:konsep_manuskrip rdfs:label "manuskrip" ;
+    :hasSynonym :konsep_naskah .
+
+:konsep_naskah rdfs:label "naskah" .
+
+
+# =================================================================
+# DATA BARIS NASKAH (DATA ASLI KAMU + SEDIKIT SENTUHAN RELASI)
+# =================================================================
 
 # --- Baris 1 (<B.1r>) ---
-:skk_baris_01 a :BarisNaskah ;
+:skk_baris_01 a :BagianPembuka ; # Ubah dari :BarisNaskah ke sub-kelasnya (:BagianPembuka)
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.1r>" ;
-    :hasAksara "ᮔ᮪ᮓᮠ᮪ ᮔᮤᮠᮔ᮪ wᮃᮛᮠᮊ᮪ᮔ ᮞᮔ᮪ᮌ᮪ ᮞᮓᮥ ᮓ᮪éᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮙᮙᮨᮒ᮪ ᮠᮚᮥ, ᮚ ᮅᮏᮁ ᮞᮔ᮪ᮌ᮪ ᮞᮓᮥ, ᮔ᮪ᮌᮌᮨᮜᮁᮊᮨᮅᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮞᮤᮊ᮪ᮞ ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮊᮛᮨᮞᮤᮃᮔ᮪."^^xsd:string ;
+    :hasAksara "ᮔ᮪ᮓᮠ᮪ ᮔᮤᮠᮔ᮪ wᮃᮛᮠᮊ᮪ᮔ ᮞᮔ᮪ᮌ᮪ ᮞᮓᮥ ᮓ᮪éᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮙᮙᨨ᮪ ᮠᮚᮥ, ᮚ ᮅᮏᮁ ᮞᮔ᮪ᮌ᮪ ᮞᮓᮥ, ᮔ᮪ᮌᮌᮨᮜᮁᮊᮨᮅᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮞᮤᮊ᮪ᮞ ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮊᮛᮨᮞᮤᮃᮔ᮪."^^xsd:string ;
     :hasTransliteration "ndah nihan warahakna sang sadu dén sang mamet hayu, ya ujar sang sadu, ngagelarkeun sang hyang siksa kandang karesian."^^xsd:string ;
     :hasTranslation "Ya inilah bagi mereka yang mencari kebahagiaan Ada ajaran kebaikan ujar sang budiman memaparkan Sang Hyang Siksa Kandang Karesian"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-01" .
 
 # --- Baris 2 (<B.1r>) ---
-:skk_baris_02 a :BarisNaskah ;
+:skk_baris_02 a :BagianAjaranMoral ; # Ubah ke sub-kelas (:BagianAjaranMoral)
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.1r>" ;
-    :hasAksara "ᮄᮔᮤ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮥᮔ᮪ᮓᮔ᮪ᮌᮨᮅᮔ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮚ ᮓᮤ ᮔ ᮘ᮪wᮃᮔ ᮕᮥᮔ᮪. ᮕᮊᮨᮅᮔ᮪ ᮠᮨᮅᮘᮨᮅᮜ᮪ ᮠᮥᮛᮤᮕ᮪, ᮠᮨᮅᮘᮨᮅᮜ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮚ.  ᮄᮔᮤ ᮘᮤᮚᮊ᮪ᮒᮔ, ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮢᮨᮒ ᮔ᮪ᮌᮛᮔᮤᮚ, ᮊᮜᮔ᮪ᮌ᮪ᮊᮔ᮪ᮌ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ"^^xsd:string ;
+    :hasAksara "ᮄᮔᮤ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮥᮔ᮪ᮓᮔ᮪ᮌᮨᮅᮔ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮚ ᮓᮤ ᮔ ᮘ᮪wᮃᮔ ᮕᮥᮔ᮪. ᮕᮊᨨ᮪ ᮠᨨᮥᮘᨨ᮪ ᮠᮥᮛᮤᮕ᮪, ᮠᨨᮥᮘᨨ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮚ.  ᮄᮔᮤ ᮘᮤᮚᮊ᮪ᮒᮔ, ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮢᮨᮒ ᮔ᮪ᮌᮛᮔᮤᮚ, ᮊᮜᮔ᮪ᮊᮔ᮪ᮌ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ"^^xsd:string ;
     :hasTransliteration "ini sang hyang dasa kundangeun na urang réya di na bwana pun. pakeun heubeul hurip, heubeul na urang réya.  ini biyaktana, sang hyang dasa kreta ngaraniya, kalangkang sang hyang dasa"^^xsd:string ;
     :hasTranslation "Inilah sanghiyang dasa sebagai pegangan orang banyak di dunia. Agar senantiasa sejahtera lama bagi orang banyak. Inilah buktinya, sang hyang dasa kreta namanya, Bayang-bayang dasa"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-02" .
