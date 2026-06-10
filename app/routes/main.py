@@ -11,6 +11,7 @@
 
 from flask import Blueprint, render_template, request, current_app
 from rdflib import Literal
+import re
 
 main_bp = Blueprint('main', __name__)
 
@@ -18,6 +19,7 @@ main_bp = Blueprint('main', __name__)
 def index():
     results = []
     search_query = ""
+    synonyms_found = []
     
     if request.method == 'POST':
         search_query = request.form.get('keyword', '').strip().lower()
@@ -25,6 +27,41 @@ def index():
         if search_query:
             g = current_app.config['RDF_GRAPH']
             
+            # 1. LOGIKA SEMANTIK (Mencari konsep dan sinonimnya di graf RDF)
+            find_synonyms_query = """
+            PREFIX : <http://contoh.org/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            
+            SELECT DISTINCT ?synLabel
+            WHERE {
+                ?concept rdfs:label ?inputLabel .
+                FILTER(LCASE(STR(?inputLabel)) = ?keyword)
+                
+                {
+                    ?concept :hasSynonym ?synConcept .
+                } UNION {
+                    ?synConcept :hasSynonym ?concept .
+                }
+                
+                ?synConcept rdfs:label ?synLabel .
+            }
+            """
+            
+            try:
+                q_syn = g.query(find_synonyms_query, initBindings={'keyword': Literal(search_query)})
+                for row in q_syn:
+                    syn_label = str(row.synLabel).strip()
+                    if syn_label.lower() != search_query:
+                        synonyms_found.append(syn_label)
+            except Exception as e:
+                print(f"Error finding synonyms: {e}")
+                
+            # Gabungkan keyword asli dengan semua sinonim untuk pencarian utama
+            all_search_terms = [search_query] + [s.lower() for s in synonyms_found]
+            # Melakukan escaping regex untuk keamanan dan menggabungkannya dengan operator OR |
+            pattern = "|".join(re.escape(term) for term in all_search_terms)
+            
+            # 2. LOGIKA PENCARIAN NASKAH UTAMA
             sparql_query = """
             PREFIX : <http://contoh.org/ontology#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -33,21 +70,6 @@ def index():
 
             SELECT DISTINCT ?id ?lempir ?aksara ?translit ?terjemahan ?kategoriTeks ?lanjutKe 
             WHERE {
-                
-                # 1. LOGIKA SEMANTIK (Mencari kata kunci asli dan sinonimnya secara bidirectional)
-                {
-                    BIND(?search_query AS ?teksCari)
-                } UNION {
-                    ?kataKonsep rdfs:label ?search_query .
-                    {
-                        ?kataKonsep :hasSynonym ?sinonim .
-                    } UNION {
-                        ?sinonim :hasSynonym ?kataKonsep .
-                    }
-                    ?sinonim rdfs:label ?teksCari .
-                }
-                
-                # 2. LOGIKA PENCARIAN NASKAH
                 ?baris :hasTransliteration ?translit ;
                     :hasTranslation ?terjemahan ;
                     dcterms:identifier ?id ;
@@ -64,10 +86,10 @@ def index():
                     ?nextBaris dcterms:identifier ?lanjutKe .
                 }
                 
-                # Pencarian parsial (LCASE memastikan pencarian aman dari huruf kapital)
+                # Pencarian parsial case-insensitive menggunakan regex OR
                 FILTER(
-                    CONTAINS(LCASE(STR(?translit)), LCASE(STR(?teksCari))) || 
-                    CONTAINS(LCASE(STR(?terjemahan)), LCASE(STR(?teksCari)))
+                    REGEX(STR(?translit), ?pattern, "i") || 
+                    REGEX(STR(?terjemahan), ?pattern, "i")
                 )
                 
                 BIND(REPLACE(STR(?tipeKategori), "^.*#", "") AS ?kategoriTeks)
@@ -76,7 +98,7 @@ def index():
             """
             
             try:
-                qres = g.query(sparql_query, initBindings={'search_query': Literal(search_query)})
+                qres = g.query(sparql_query, initBindings={'pattern': Literal(pattern)})
                 for row in qres:
                     results.append({
                         "id": str(row.id),
@@ -85,9 +107,9 @@ def index():
                         "translit": str(row.translit),
                         "terjemahan": str(row.terjemahan),
                         "kategori": str(row.kategoriTeks) if row.kategoriTeks else "BarisNaskah", # Data RDFS
-                        "lanjut_ke": str(row.lanjutKe) if row.lanjutKe else "-" # Data OWL
+                        "lanjut_ke": str(row.lanjut_ke) if (hasattr(row, 'lanjut_ke') and row.lanjut_ke) or (hasattr(row, 'lanjutKe') and row.lanjutKe) else "-" # Data OWL
                     })
             except Exception as e:
                 print(f"SPARQL Error: {e}")
  
-    return render_template('index.html', results=results, query=search_query)
+    return render_template('index.html', results=results, query=search_query, synonyms=synonyms_found)
