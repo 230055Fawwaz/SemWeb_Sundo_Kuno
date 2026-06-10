@@ -26,16 +26,43 @@
     <section class="search-section">
         <div class="search-card">
             <form method="POST" action="{{ url_for('main.index') }}">
-                <label for="keyword" class="search-label">Pencarian Relasi Semantik (SPARQL Filter)</label>
-                <div class="search-bar-group">
-                    <input type="text" id="keyword" name="keyword" class="search-input" 
-                           placeholder="Masukkan kata kunci Latin atau Terjemahan Indonesia..." value="{{ query }}">
-                    <button class="search-button" type="submit">
-                        <i class="bi bi-search"></i> Cari Semantik
+                <div class="search-form-grid">
+                    <div class="input-field-group">
+                        <label for="keyword" class="search-label">
+                            <i class="bi bi-fonts"></i> Kata Kunci (Literal & Sinonim)
+                        </label>
+                        <input type="text" id="keyword" name="keyword" class="search-input-field" 
+                               placeholder="Masukkan kata kunci Latin atau Terjemahan Indonesia..." value="{{ query }}">
+                    </div>
+                    
+                    <div class="select-field-group">
+                        <label for="category" class="search-label">
+                            <i class="bi bi-diagram-3-fill"></i> Kategori Naskah (RDFS Class)
+                        </label>
+                        <select id="category" name="category" class="search-select-field">
+                            <option value="">-- Semua Kategori --</option>
+                            {% for cat in categories %}
+                                <option value="{{ cat.name }}" {% if cat.name == selected_category %}selected{% endif %}>
+                                    {{ cat.label }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="category-info-box" id="category-info-box" style="display: none;">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span id="category-desc">Deskripsi Kategori</span>
+                </div>
+                
+                <div class="search-button-group">
+                    <button class="search-button-premium" type="submit">
+                        <i class="bi bi-search"></i> Cari Semantik & Filter
                     </button>
                 </div>
+                
                 <p class="search-info">
-                    *Sistem akan melakukan query graf RDF secara langsung menggunakan pencarian literal parsial.
+                    *Sistem secara dinamis memetakan kelas-kelas RDFS dan merelasikan sinonim kata secara otomatis dengan SPARQL Property Paths.
                 </p>
             </form>
         </div>
@@ -93,13 +120,27 @@
                         </div>
                     </div>
                     
-                    {% if r.lanjut_ke != '-' %}
-                    <div class="card-footer">
-                        <span class="custom-badge badge-next">
-                            <i class="bi bi-arrow-right-short"></i> Lanjut Ke: <code>{{ r.lanjut_ke }}</code>
+                    <div class="card-footer-premium">
+                        {% if r.sebelum_ke != '-' %}
+                        <span class="custom-badge badge-prev" title="Inferred: Relasi inverseOf (:sebelumBaris) dari :lanjutKeBaris">
+                            <i class="bi bi-arrow-left"></i> Sebelum: <code>{{ r.sebelum_ke }}</code>
                         </span>
+                        {% else %}
+                        <span class="custom-badge badge-disabled">
+                            <i class="bi bi-dash-circle"></i> Awal Naskah
+                        </span>
+                        {% endif %}
+                        
+                        {% if r.lanjut_ke != '-' %}
+                        <span class="custom-badge badge-next" title="Inferred: Relasi owl:TransitiveProperty (:lanjutKeBaris)">
+                            Lanjut: <code>{{ r.lanjut_ke }}</code> <i class="bi bi-arrow-right"></i>
+                        </span>
+                        {% else %}
+                        <span class="custom-badge badge-disabled">
+                            Akhir Naskah <i class="bi bi-dash-circle"></i>
+                        </span>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
@@ -114,5 +155,14 @@
 {% endblock %}
 
 {% block extra_js %}
+<script>
+    // Mapping komentar/deskripsi kelas RDFS ke JavaScript
+    window.categoryComments = {
+        "": ""
+        {% for cat in categories %}
+        , "{{ cat.name }}": "{{ cat.comment | replace('"', '\\"') | replace('\n', ' ') }}"
+        {% endfor %}
+    };
+</script>
 <script src="{{ url_for('static', filename='js/beranda.js') }}"></script>
 {% endblock %}

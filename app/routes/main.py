@@ -10,7 +10,7 @@
 # ==========================================
 
 from flask import Blueprint, render_template, request, current_app
-from rdflib import Literal
+from rdflib import Literal, URIRef
 import re
 
 main_bp = Blueprint('main', __name__)
@@ -19,57 +19,102 @@ main_bp = Blueprint('main', __name__)
 def index():
     results = []
     search_query = ""
+    selected_category = ""
     synonyms_found = []
     
+    g = current_app.config['RDF_GRAPH']
+    
+    # 1. LOAD DYNAMIC CATEGORIES FROM RDF SCHEMA (RDFS)
+    categories_query = """
+    PREFIX : <http://contoh.org/ontology#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    
+    SELECT DISTINCT ?class ?label ?comment
+    WHERE {
+        ?class rdfs:subClassOf :BarisNaskah .
+        OPTIONAL { ?class rdfs:label ?label . }
+        OPTIONAL { ?class rdfs:comment ?comment . }
+    }
+    ORDER BY ?label
+    """
+    
+    categories = []
+    try:
+        q_cats = g.query(categories_query)
+        for row in q_cats:
+            class_uri = str(row.get('class'))
+            class_name = class_uri.split('#')[-1]
+            categories.append({
+                "uri": class_uri,
+                "name": class_name,
+                "label": str(row.get('label')) if row.get('label') else class_name,
+                "comment": str(row.get('comment')) if row.get('comment') else ""
+            })
+    except Exception as e:
+        print(f"Error fetching categories: {e}")
+        
     if request.method == 'POST':
         search_query = request.form.get('keyword', '').strip().lower()
+        selected_category = request.form.get('category', '').strip()
         
-        if search_query:
-            g = current_app.config['RDF_GRAPH']
-            
-            # 1. LOGIKA SEMANTIK (Mencari konsep dan sinonimnya di graf RDF)
-            find_synonyms_query = """
-            PREFIX : <http://contoh.org/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            
-            SELECT DISTINCT ?synLabel
-            WHERE {
-                ?concept rdfs:label ?inputLabel .
-                FILTER(LCASE(STR(?inputLabel)) = ?keyword)
+        if search_query or selected_category:
+            # 2. SEMANTIC LOGIC: Find synonyms using property path (Symmetric & Transitive)
+            if search_query:
+                find_synonyms_query = """
+                PREFIX : <http://contoh.org/ontology#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                 
-                {
-                    ?concept :hasSynonym ?synConcept .
-                } UNION {
-                    ?synConcept :hasSynonym ?concept .
+                SELECT DISTINCT ?synLabel
+                WHERE {
+                    ?concept rdfs:label ?inputLabel .
+                    FILTER(LCASE(STR(?inputLabel)) = ?keyword)
+                    ?concept (:hasSynonym|^:hasSynonym)+ ?synConcept .
+                    ?synConcept rdfs:label ?synLabel .
                 }
-                
-                ?synConcept rdfs:label ?synLabel .
-            }
-            """
+                """
+                try:
+                    q_syn = g.query(find_synonyms_query, initBindings={'keyword': Literal(search_query)})
+                    for row in q_syn:
+                        syn_label = str(row.get('synLabel')).strip()
+                        if syn_label.lower() != search_query:
+                            synonyms_found.append(syn_label)
+                except Exception as e:
+                    print(f"Error finding synonyms: {e}")
             
-            try:
-                q_syn = g.query(find_synonyms_query, initBindings={'keyword': Literal(search_query)})
-                for row in q_syn:
-                    syn_label = str(row.synLabel).strip()
-                    if syn_label.lower() != search_query:
-                        synonyms_found.append(syn_label)
-            except Exception as e:
-                print(f"Error finding synonyms: {e}")
-                
-            # Gabungkan keyword asli dengan semua sinonim untuk pencarian utama
+            # Combine keyword and its synonyms
             all_search_terms = [search_query] + [s.lower() for s in synonyms_found]
-            # Melakukan escaping regex untuk keamanan dan menggabungkannya dengan operator OR |
-            pattern = "|".join(re.escape(term) for term in all_search_terms)
             
-            # 2. LOGIKA PENCARIAN NASKAH UTAMA
-            sparql_query = """
+            # Prepare search category URI filter
+            if selected_category:
+                category_uri = f"http://contoh.org/ontology#{selected_category}"
+            else:
+                category_uri = "http://contoh.org/ontology#BarisNaskah"
+                
+            init_bindings = {'categoryFilter': URIRef(category_uri)}
+            filter_clauses = []
+            
+            if search_query:
+                # Regex pattern matching keyword OR synonyms
+                pattern = "|".join(re.escape(term) for term in all_search_terms)
+                init_bindings['pattern'] = Literal(pattern)
+                filter_clauses.append("""
+                FILTER(
+                    REGEX(STR(?translit), ?pattern, "i") || 
+                    REGEX(STR(?terjemahan), ?pattern, "i")
+                )
+                """)
+                
+            filter_str = "\n".join(filter_clauses)
+            
+            # 3. MAIN SPARQL SEARCH: Filters by class hierarchies and fetches OWL sequences
+            sparql_query = f"""
             PREFIX : <http://contoh.org/ontology#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX dcterms: <http://purl.org/dc/terms/>
 
-            SELECT DISTINCT ?id ?lempir ?aksara ?translit ?terjemahan ?kategoriTeks ?lanjutKe 
-            WHERE {
+            SELECT DISTINCT ?id ?lempir ?aksara ?translit ?terjemahan ?kategoriTeks ?lanjutKe ?sebelumKe
+            WHERE {{
                 ?baris :hasTransliteration ?translit ;
                     :hasTranslation ?terjemahan ;
                     dcterms:identifier ?id ;
@@ -77,39 +122,49 @@ def index():
                     :hasAksara ?aksara ;
                     rdf:type ?tipeKategori .
                 
-                # Mengambil kategori baris teks dari RDFS
-                ?tipeKategori rdfs:subClassOf* :BarisNaskah .
+                # RDFS subClassOf reasoning (dynamic classification)
+                ?tipeKategori rdfs:subClassOf* ?categoryFilter .
                 
-                # Mengambil kelanjutan baris dari OWL
-                OPTIONAL {
+                # OWL transitive relation navigation
+                OPTIONAL {{
                     ?baris :lanjutKeBaris ?nextBaris .
                     ?nextBaris dcterms:identifier ?lanjutKe .
-                }
+                }}
                 
-                # Pencarian parsial case-insensitive menggunakan regex OR
-                FILTER(
-                    REGEX(STR(?translit), ?pattern, "i") || 
-                    REGEX(STR(?terjemahan), ?pattern, "i")
-                )
+                # OWL inverse relation navigation (inverse of lanjutKeBaris)
+                OPTIONAL {{
+                    ?prevBaris :lanjutKeBaris ?baris .
+                    ?prevBaris dcterms:identifier ?sebelumKe .
+                }}
+                
+                {filter_str}
                 
                 BIND(REPLACE(STR(?tipeKategori), "^.*#", "") AS ?kategoriTeks)
-            }
+            }}
             ORDER BY ?id
             """
             
             try:
-                qres = g.query(sparql_query, initBindings={'pattern': Literal(pattern)})
+                qres = g.query(sparql_query, initBindings=init_bindings)
                 for row in qres:
                     results.append({
-                        "id": str(row.id),
-                        "lempir": str(row.lempir),
-                        "aksara": str(row.aksara),
-                        "translit": str(row.translit),
-                        "terjemahan": str(row.terjemahan),
-                        "kategori": str(row.kategoriTeks) if row.kategoriTeks else "BarisNaskah", # Data RDFS
-                        "lanjut_ke": str(row.lanjut_ke) if (hasattr(row, 'lanjut_ke') and row.lanjut_ke) or (hasattr(row, 'lanjutKe') and row.lanjutKe) else "-" # Data OWL
+                        "id": str(row.get('id')),
+                        "lempir": str(row.get('lempir')),
+                        "aksara": str(row.get('aksara')),
+                        "translit": str(row.get('translit')),
+                        "terjemahan": str(row.get('terjemahan')),
+                        "kategori": str(row.get('kategoriTeks')) if row.get('kategoriTeks') else "BarisNaskah",
+                        "lanjut_ke": str(row.get('lanjutKe')) if row.get('lanjutKe') else "-",
+                        "sebelum_ke": str(row.get('sebelumKe')) if row.get('sebelumKe') else "-"
                     })
             except Exception as e:
                 print(f"SPARQL Error: {e}")
- 
-    return render_template('index.html', results=results, query=search_query, synonyms=synonyms_found)
+                
+    return render_template(
+        'index.html', 
+        results=results, 
+        query=search_query, 
+        synonyms=synonyms_found,
+        categories=categories,
+        selected_category=selected_category
+    )

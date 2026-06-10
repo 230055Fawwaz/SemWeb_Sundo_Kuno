@@ -414,4 +414,168 @@
            gap: 0.5rem;
        }
    }
-   
+
+/* =================================================================
+   PENGEMBANGAN FITUR SEMANTIK (FORM BARU, TOOLTIP, NAVIGASI OWL)
+   ================================================================= */
+
+/* Form Grid untuk keyword & category dropdown */
+.search-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .search-form-grid {
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+.input-field-group, .select-field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-input-field, .search-select-field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-input-field:focus, .search-select-field:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Info Box untuk deskripsi kategori (RDFS comment) */
+.category-info-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    border-radius: 8px;
+    background-color: rgba(79, 70, 229, 0.05);
+    border-left: 4px solid var(--primary-color);
+    color: var(--text-main);
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease;
+}
+
+[data-theme="dark"] .category-info-box {
+    background-color: rgba(129, 140, 248, 0.08);
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button Premium Group */
+.search-button-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-button-premium {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.search-button-premium:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    transform: translateY(-1px);
+}
+
+.search-button-premium:active {
+    transform: translateY(0);
+}
+
+/* Premium Card Footer for OWL Navigations */
+.card-footer-premium {
+    padding: 0.9rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.015);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+[data-theme="dark"] .card-footer-premium {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.badge-prev {
+    background-color: rgba(16, 185, 129, 0.08);
+    color: var(--success-color);
+    border: 1px dashed var(--success-color);
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: help;
+}
+
+[data-theme="dark"] .badge-prev {
+    background-color: rgba(52, 211, 153, 0.1);
+    color: #34d399;
+    border-color: #34d399;
+}
+
+.badge-next {
+    background-color: rgba(79, 70, 229, 0.08);
+    color: var(--primary-color);
+    border: 1px dashed var(--primary-color);
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: help;
+}
+
+[data-theme="dark"] .badge-next {
+    background-color: rgba(129, 140, 248, 0.1);
+    color: #a5b4fc;
+    border-color: #6366f1;
+}
+
+.badge-disabled {
+    background-color: rgba(107, 114, 128, 0.05);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
