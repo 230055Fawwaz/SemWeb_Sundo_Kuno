@@ -41,10 +41,10 @@ def index():
                        :hasTransliteration ?translit ;
                        :hasTranslation ?terjemahan .
                 
-                # Membungkus dengan STR() dan LCASE() agar pencarian kebal huruf besar/kecil
+                # Tambahkan STR() pada ?search_query agar pencarian teks bekerja sempurna
                 FILTER(
-                    CONTAINS(LCASE(STR(?translit)), ?search_query) || 
-                    CONTAINS(LCASE(STR(?terjemahan)), ?search_query)
+                    CONTAINS(LCASE(STR(?translit)), STR(?search_query)) || 
+                    CONTAINS(LCASE(STR(?terjemahan)), STR(?search_query))
                 )
             }
             ORDER BY ?id
