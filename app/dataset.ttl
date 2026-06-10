@@ -21,8 +21,8 @@
 :skk_baris_01 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.1r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "ndah nihan _ _ _ _ _ _ warahakna sang sadu dén sang mamet hayu, ya  _ _ _ _ _ _ _ _ _ _ _ _ ujar sang sadu, ngagelarkeun sang hyang siksa kandang karesian."^^xsd:string ;
+    :hasAksara "ᮔ᮪ᮓᮠ᮪ ᮔᮤᮠᮔ᮪ wᮃᮛᮠᮊ᮪ᮔ ᮞᮔ᮪ᮌ᮪ ᮞᮓᮥ ᮓ᮪éᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮙᮙᮨᮒ᮪ ᮠᮚᮥ, ᮚ ᮅᮏᮁ ᮞᮔ᮪ᮌ᮪ ᮞᮓᮥ, ᮔ᮪ᮌᮌᮨᮜᮁᮊᮨᮅᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮞᮤᮊ᮪ᮞ ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮊᮛᮨᮞᮤᮃᮔ᮪."^^xsd:string ;
+    :hasTransliteration "ndah nihan warahakna sang sadu dén sang mamet hayu, ya ujar sang sadu, ngagelarkeun sang hyang siksa kandang karesian."^^xsd:string ;
     :hasTranslation "Ya inilah bagi mereka yang mencari kebahagiaan Ada ajaran kebaikan ujar sang budiman memaparkan Sang Hyang Siksa Kandang Karesian"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-01" .
 
@@ -30,8 +30,8 @@
 :skk_baris_02 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.1r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "ini sang hyang dasa  _ _ _ kundangeun na urang réya di na bwana pun. pakeun heubeul hurip, heubeul _ _ na urang réya.  ini biyaktana, sang hyang dasa kreta ngaraniya, kalangkang sang hyang dasa _ _ _ _ _ _ _ _ _ _ _ _ _ _"^^xsd:string ;
+    :hasAksara "ᮄᮔᮤ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮥᮔ᮪ᮓᮔ᮪ᮌᮨᮅᮔ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮚ ᮓᮤ ᮔ ᮘ᮪wᮃᮔ ᮕᮥᮔ᮪. ᮕᮊᮨᮅᮔ᮪ ᮠᮨᮅᮘᮨᮅᮜ᮪ ᮠᮥᮛᮤᮕ᮪, ᮠᮨᮅᮘᮨᮅᮜ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮚ.  ᮄᮔᮤ ᮘᮤᮚᮊ᮪ᮒᮔ, ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮢᮨᮒ ᮔ᮪ᮌᮛᮔᮤᮚ, ᮊᮜᮔ᮪ᮌ᮪ᮊᮔ᮪ᮌ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ"^^xsd:string ;
+    :hasTransliteration "ini sang hyang dasa kundangeun na urang réya di na bwana pun. pakeun heubeul hurip, heubeul na urang réya.  ini biyaktana, sang hyang dasa kreta ngaraniya, kalangkang sang hyang dasa"^^xsd:string ;
     :hasTranslation "Inilah sanghiyang dasa sebagai pegangan orang banyak di dunia. Agar senantiasa sejahtera lama bagi orang banyak. Inilah buktinya, sang hyang dasa kreta namanya, Bayang-bayang dasa"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-02" .
 
@@ -39,331 +39,377 @@
 :skk_baris_03 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.3r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ _ _ _ _ _ _ _ [nang] pakeun urang ngretakeun di bumi lamba, caang jalan, panjang tajur, paka predana, linyih pipir, caang buruan [a] _ _ _ _ _ _ _ _ _ _ _ huma kaoméan, sadapan karaksa, palana ta hurip hirup sowéra waras, nyowana sang mawara _ _ _ _ _ _ _ _ _ _ _ _ héjo lémbok, tumuwuh sarba pala woh-wohan, dadi na hudan ladah tahun, daék maka hurip _ _ _ _ _ _ _ _ _ _ _ _ _ _di lamba ngaranna."^^xsd:string ;
-    :hasTranslation "untuk kita menyejahterakan di dunia yang luas, bersih jalan, subur tanaman, cukup sandang, bersih halaman belakang, bersih halaman rumah, ladang terurus, sadapan terpelihara, buahnya yaitu lama hidup, selalu sehat, sumbernya terletak pada manusia sedunia, hijau subur, tumbuh segala macam buah-buahan, ?????"^^xsd:string ;
+    :hasAksara "[ᮔᮔ᮪ᮌ᮪] ᮕᮊᮨᮅᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮢᮨᮒᮊᮨᮅᮔ᮪ ᮓᮤ ᮘᮥᮙᮤ ᮜᮙ᮪ᮘ, cᮃᮔ᮪ᮌ᮪ ᮏᮜᮔ᮪, ᮕᮔ᮪ᮏᮔ᮪ᮌ᮪ ᮒᮏᮥᮁ, ᮕᮊ ᮕᮢᮨᮓᮔ, ᮜᮤᮔᮡᮤᮠ᮪ ᮕᮤᮕᮤᮁ, cᮃᮔ᮪ᮌ᮪ ᮘᮥᮛᮥᮃᮔ᮪ [ᮃ] ᮠᮥᮙ ᮊᮇᮙ᮪éᮃᮔ᮪, ᮞᮓᮕᮔ᮪ ᮊᮛᮊ᮪ᮞ, ᮕᮜᮔ ᮒ ᮠᮥᮛᮤᮕ᮪ ᮠᮤᮛᮥᮕ᮪ ᮞᮧwéᮛ wᮃᮛᮞ᮪, ᮔᮡᮧwᮃᮔ ᮞᮔ᮪ᮌ᮪ ᮙwᮃᮛ ᮠ᮪éᮏᮧ ᮜ᮪éᮙ᮪ᮘᮧᮊ᮪, ᮒᮥᮙᮥwᮅᮠ᮪ ᮞᮁᮘ ᮕᮜ wᮇᮠ᮪-wᮇᮠᮔ᮪, ᮓᮓᮤ ᮔ ᮠᮥᮓᮔ᮪ ᮜᮓᮠ᮪ ᮒᮠᮥᮔ᮪, ᮓéᮊ᮪ ᮙᮊ ᮠᮥᮛᮤᮕ᮪ ᮓᮤ ᮜᮙ᮪ᮘ ᮔ᮪ᮌᮛᮔ᮪ᮔ."^^xsd:string ;
+    :hasTransliteration "[nang] pakeun urang ngretakeun di bumi lamba, caang jalan, panjang tajur, paka predana, linyih pipir, caang buruan [a] huma kaoméan, sadapan karaksa, palana ta hurip hirup sowéra waras, nyowana sang mawara héjo lémbok, tumuwuh sarba pala woh-wohan, dadi na hudan ladah tahun, daék maka hurip di lamba ngaranna."^^xsd:string ;
+    :hasTranslation "untuk kita menyejahterakan di dunia yang luas, bersih jalan, subur tanaman, cukup sandang, bersih halaman belakang, bersih halaman rumah, ladang terurus, sadapan terpelihara, buahnya yaitu lama hidup, selalu sehat, sumbernya terletak pada manusia sedunia, hijau subur, tumbuh segala macam buah-buahan,"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-03" .
 
 # --- Baris 4 (<B.3r>) ---
 :skk_baris_04 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.3r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "ini sang hyang dasa kreta nu dipajarkeun sang hyang dasa _ _ _ _ _ _ _ _ _ _ _ sang hyang dasa mrega"^^xsd:string ;
-    :hasTranslation "Inilah buktinya, sang hyang dasa kreta namanya. Bayang-bayang dasa, _ _ _ _ _ _ _ _ _ _"^^xsd:string ;
+    :hasAksara "ᮄᮔᮤ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮊᮢᮨᮒ ᮔᮥ ᮓᮤᮕᮏᮁᮊᮨᮅᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮓᮞ ᮙᮢᮨᮌ"^^xsd:string ;
+    :hasTransliteration "ini sang hyang dasa kreta nu dipajarkeun sang hyang dasa sang hyang dasa mrega"^^xsd:string ;
+    :hasTranslation "Inilah buktinya, sang hyang dasa kreta namanya. Bayang-bayang dasa,"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-04" .
 
 # --- Baris 5 (<B.3v>) ---
 :skk_baris_05 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.3v>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ _ _ _ _ _ _ _ _ _ _ ceuli mulah salah déngé mo ma nu sieup didéngé, kena na _ _ _ _ _ _ _ _ _ _ _ kana, sangkan urang nemu mala _ _ _ _ _ _ _ _ _ _ _ _ _ lamunna kapahayu ma sinengguh utama bijil ti pangreungeu, mata mulah salah deuleu mo ma nu sieup_ _ _ _ _ _ _ _ _ _ _ urang nemu mala, na lunas papa kalésa, héngan lamunna kapahayu ma, sinangguh utama bijil ti _ _ _ _ _ _ nana dora bancana, sangkan urang nemu mala, na lunas papa naraka, héngan lamun kapahayu ma, sinengguh utama"^^xsd:string ;
+    :hasAksara "cᮈᮅᮜᮤ ᮙᮥᮜᮠ᮪ ᮞᮜᮠ᮪ ᮓ᮪éᮔ᮪ᮌ᮪é ᮙᮧ ᮙ ᮔᮥ ᮞᮤᮈᮅᮕ᮪ ᮓᮤᮓ᮪éᮔ᮪ᮌ᮪é, ᮊᮨᮔ ᮔ ᮊᮔ, ᮞᮔ᮪ᮌ᮪ᮊᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔᮨᮙᮥ ᮙᮜ ᮜᮙᮥᮔ᮪ᮔ ᮊᮕᮠᮚᮥ ᮙ ᮞᮤᮔᮨᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮅᮒᮙ ᮘᮤᮏᮤᮜ᮪ ᮒᮤ ᮕᮔ᮪ᮌᮢᮨᮅᮔ᮪ᮌᮨᮅ, ᮙᮒ ᮙᮥᮜᮠ᮪ ᮞᮜᮠ᮪ ᮓᮨᮅᮜᮨᮅ ᮙᮧ ᮙ ᮔᮥ ᮞᮤᮈᮅᮕ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔᮨᮙᮥ ᮙᮜ, ᮔ ᮜᮥᮔᮞ᮪ ᮕᮕ ᮊᮜ᮪éᮞ, ᮠ᮪éᮔ᮪ᮌᮔ᮪ ᮜᮙᮥᮔ᮪ᮔ ᮊᮕᮠᮚᮥ ᮙ, ᮞᮤᮔᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮅᮒᮙ ᮘᮤᮏᮤᮜ᮪ ᮒᮤ ᮔᮔ ᮓᮧᮛ ᮘᮔ᮪cᮃᮔ, ᮞᮔ᮪ᮌ᮪ᮊᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔᮨᮙᮥ ᮙᮜ, ᮔ ᮜᮥᮔᮞ᮪ ᮕᮕ ᮔᮛᮊ, ᮠ᮪éᮔ᮪ᮌᮔ᮪ ᮜᮙᮥᮔ᮪ ᮊᮕᮠᮚᮥ ᮙ, ᮞᮤᮔᮨᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮅᮒᮙ"^^xsd:string ;
+    :hasTransliteration "ceuli mulah salah déngé mo ma nu sieup didéngé, kena na kana, sangkan urang nemu mala lamunna kapahayu ma sinengguh utama bijil ti pangreungeu, mata mulah salah deuleu mo ma nu sieup urang nemu mala, na lunas papa kalésa, héngan lamunna kapahayu ma, sinangguh utama bijil ti nana dora bancana, sangkan urang nemu mala, na lunas papa naraka, héngan lamun kapahayu ma, sinengguh utama"^^xsd:string ;
     :hasTranslation "telinga jangan mendengarkan yang tidak layak didengar, karena penyebab kita mendapat celaka tapi jika telinga terpeliharamaka disebut sebagai keutamaan dari pendengaran, Mata jangan sembarang melihat yang tidak layak dipandang kita mendapat celaka, di dasar kenistaan, tapi bila mata terpelihara, maka disebut keutamaan dari menjadi pintu bencana, penyebab kita mendapat celaka di dasar kenistaan neraka, tetapi jika terpelihara, maka disebut keutamaan"^^xsd:string ;
     dcterms:identifier "SKK-BARIS-05" .
 
-# --- Baris 13 (<B.2v>) ---
-:skk_baris_13 a :BarisNaskah ;
+# --- Baris 6 (<B.2v>) ---
+:skk_baris_06 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.2v>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ _ _ _ _ _ _ _ _ _ _ _ gedé béét, bangat cangcut pangadwa, sugan urang pajeueung deung gusti _ _ _ _ _ _ _ _ _ _ _ _ _ _ brahmana, wikuhaji mangkubumi, anak ratu beunghar kokoro, maka _ _ _ _ _ _ _ _ _ _ _ _ _ _, kena itu guru sang prebu"^^xsd:string ;
+    :hasAksara "ᮌᮨᮓ᮪é ᮘ᮪ééᮒ᮪, ᮘᮔ᮪ᮌᮒ᮪ cᮃᮔ᮪ᮌ᮪cᮅᮒ᮪ ᮕᮔ᮪ᮌᮓ᮪wᮃ, ᮞᮥᮌᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮕᮏᮨᮅᮈᮅᮔ᮪ᮌ᮪ ᮓᮨᮅᮔ᮪ᮌ᮪ ᮌᮥᮞ᮪ᮒᮤ ᮘᮢᮠ᮪ᮙᮔ, wᮄᮊᮥᮠᮏᮤ ᮙᮔ᮪ᮌ᮪ᮊᮥᮘᮥᮙᮤ, ᮃᮔᮊ᮪ ᮛᮒᮥ ᮘᮨᮅᮔ᮪ᮌᮁ ᮊᮧᮊᮧᮛᮧ, ᮙᮊ, ᮊᮨᮔ ᮄᮒᮥ ᮌᮥᮛᮥ ᮞᮔ᮪ᮌ᮪ ᮕᮢᮨᮘᮥ"^^xsd:string ;
+    :hasTransliteration "gedé béét, bangat cangcut pangadwa, sugan urang pajeueung deung gusti brahmana, wikuhaji mangkubumi, anak ratu beunghar kokoro, maka, kena itu guru sang prebu"^^xsd:string ;
     :hasTranslation "besar atau kecil, segeralah ber- cangcut dan berpakaian, sebab mungkin kita bertemu dengan gusti brahmana, sebab mungkin kita bertemu dengan gusti brahmana, mangkubumi, putra ratu beungkar kokoro kaya atau miskin, karena itu adalah guru sang prabu"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-13" .
+    dcterms:identifier "SKK-BARIS-06" .
 
-# --- Baris 14 (<B.2v>) ---
-:skk_baris_14 a :BarisNaskah ;
+# --- Baris 7 (<B.2v>) ---
+:skk_baris_07 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.2v>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "ingetkeun na siksa kandang karesyan, deung iseuskeun_ _ _ _ _ _ _ _ _ _ _ _ _ _ bisi keuna ku haloan si panghawanan, maka nguni ngarowang tangan"^^xsd:string ;
-    :hasTranslation "Ingat-ingatlah Siksa Kandang Karesian dan perhatikan dalam agar tidak tergoda di perjalanan, ?????"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-14" .
+    :hasAksara "ᮄᮔ᮪ᮌᮨᮒ᮪ᮊᮨᮅᮔ᮪ ᮔ ᮞᮤᮊ᮪ᮞ ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮊᮛᮨᮞᮡᮔ᮪, ᮓᮨᮅᮔ᮪ᮌ᮪ ᮄᮞᮨᮅᮞ᮪ᮊᮨᮅᮔ᮪ ᮘᮤᮞᮤ ᮊᮨᮅᮔ ᮊᮥ ᮠᮜᮧᮃᮔ᮪ ᮞᮤ ᮕᮔ᮪ᮌwᮃᮔᮔ᮪, ᮙᮊ ᮔ᮪ᮌᮥᮔᮤ ᮔ᮪ᮌᮛᮧwᮃᮔ᮪ᮌ᮪ ᮒᮔ᮪ᮌᮔ᮪"^^xsd:string ;
+    :hasTransliteration "ingetkeun na siksa kandang karesyan, deung iseuskeun bisi keuna ku haloan si panghawanan, maka nguni ngarowang tangan"^^xsd:string ;
+    :hasTranslation "Ingat-ingatlah Siksa Kandang Karesian dan perhatikan dalam agar tidak tergoda di perjalanan,"^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-07" .
 
-# --- Baris 15 (<B.2r>) ---
-:skk_baris_15 a :BarisNaskah ;
+# --- Baris 8 (<B.2r>) ---
+:skk_baris_08 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.2r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ _ _ _ _ _ _ _ _ _ _ _ _ panglungguhan ngaranna. patanjeur tanjeur, di pipir di buruan, patutunggalan _ _ _ _ _ _ _ _ _ _ _ _ _ _, maka nguni nebu hayu i kalih ngawih ya lembu anggalang ngaranna, nyanda di urut _ _ _ _ _ _ _ _ _ _ _ _ _ _ anggasin, itu kehna ingetkeuneunna, lamun dék luput _ _ _ _ _ _ _ _ _ _ _ _ _ _ éstri larangan sakalih, ngaranna kebo"^^xsd:string ;
+    :hasAksara "ᮕᮔ᮪ᮌᮣᮥᮔ᮪ᮌ᮪ᮌᮥᮠᮔ᮪ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮕᮒᮔ᮪ᮏᮨᮅᮁ ᮒᮔ᮪ᮏᮨᮅᮁ, ᮓᮤ ᮕᮤᮕᮤᮁ ᮓᮤ ᮘᮥᮛᮥᮃᮔ᮪, ᮕᮒᮥᮒᮥᮔ᮪ᮌ᮪ᮌᮜᮔ᮪, ᮙᮊ ᮔ᮪ᮌᮥᮔᮤ ᮔᮨᮘᮥ ᮠᮚᮥ ᮄ ᮊᮜᮤᮠ᮪ ᮔ᮪ᮌwᮄᮠ᮪ ᮚ ᮜᮨᮙ᮪ᮘᮥ ᮃᮔ᮪ᮌ᮪ᮌᮜᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮛᮔ᮪ᮔ, ᮔᮡᮔ᮪ᮓ ᮓᮤ ᮅᮛᮥᮒ᮪ ᮃᮔ᮪ᮌ᮪ᮌᮞᮤᮔ᮪, ᮄᮒᮥ ᮊᮨᮠ᮪ᮔ ᮄᮔ᮪ᮌᮨᮒ᮪ᮊᮨᮅᮔᮨᮅᮔ᮪ᮔ, ᮜᮙᮥᮔ᮪ ᮓ᮪éᮊ᮪ ᮜᮥᮕᮥᮒ᮪ éᮞ᮪ᮒᮢᮤ ᮜᮛᮔ᮪ᮌᮔ᮪ ᮞᮊᮜᮤᮠ᮪, ᮔ᮪ᮌᮛᮔ᮪ᮔ ᮊᮨᮘᮧ"^^xsd:string ;
+    :hasTransliteration "panglungguhan ngaranna. patanjeur tanjeur, di pipir di buruan, patutunggalan, maka nguni nebu hayu i kalih ngawih ya lembu anggalang ngaranna, nyanda di urut anggasin, itu kehna ingetkeuneunna, lamun dék luput éstri larangan sakalih, ngaranna kebo"^^xsd:string ;
     :hasTranslation "di tempat duduk namanya, Berdiri di pinggir rumah atau di halaman hanya berduaan demi- kian pula menyahut ibu-ibu yang melantunkan kawih itu lembu anggalang namanya Bersandar pada bekas anggasin Itu semua untuk diingat jika ingin terhindar wanita larangan dinamakan kebo sapitunahan"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-15" .
+    dcterms:identifier "SKK-BARIS-08" .
 
-# --- Baris 16 (<B.2r>) ---
-:skk_baris_16 a :BarisNaskah ;
+# --- Baris 9 (<B.2r>) ---
+:skk_baris_09 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<B.2r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "sapitunahan, inya _ _ _ _ _ _ _ _ _ _ _ _ _ _"^^xsd:string ;
-    :hasTranslation "Itulah ?????"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-16" .
+    :hasAksara "ᮞᮕᮤᮒᮥᮔᮠᮔ᮪, ᮄᮔᮡ"^^xsd:string ;
+    :hasTransliteration "sapitunahan, inya"^^xsd:string ;
+    :hasTranslation "Itulah"^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-09" .
 
-# --- Baris 17 (<A.1r>) ---
-:skk_baris_17 a :BarisNaskah ;
+# --- Baris 10 (<A.1r>) ---
+:skk_baris_10 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.1r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ ingetkeuneun, sinangguh ulah pamali ngaranna. kitu kéh lamun urang dék paparan ulah dék katurut ku hulun sakalih. lamun urang dék maan inya ma, mangka majar ka panghulu tandangna. lamunna kapicaya ma samayakeun, ku geringna, ku paéhna, ku leungitna, poron mati saréana, éta ma baan. hamo tu aya na pidosaeun, kéna kolotna samaya mananna agama. hamo ma dipicaya, ulah, lamun keudeu ma dék maan inya, paéh leungit ngagantian sakadedegna, samangkanna kan yatnakeun yatna nihan mawah jaga kadatangan ku ménak sagung"^^xsd:string ;
+    :hasAksara "ᮄᮔ᮪ᮌᮨᮒ᮪ᮊᮨᮅᮔᮨᮅᮔ᮪, ᮞᮤᮔᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮅᮜᮠ᮪ ᮕᮙᮜᮤ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮊᮤᮒᮥ ᮊ᮪éᮠ᮪ ᮜᮙᮥᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮓ᮪éᮊ᮪ ᮕᮕᮛᮔ᮪ ᮅᮜᮠ᮪ ᮓ᮪éᮊ᮪ ᮊᮒᮥᮛᮥᮒ᮪ ᮊᮥ ᮠᮥᮜᮥᮔ᮪ ᮞᮊᮜᮤᮠ᮪. ᮜᮙᮥᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮓ᮪éᮊ᮪ ᮙᮔ᮪ ᮄᮔᮡ ᮙ, ᮙᮔ᮪ᮌ᮪ᮊ ᮙᮏᮁ ᮊ ᮕᮔ᮪ᮌᮥᮜᮥ ᮒᮔ᮪ᮓᮔ᮪ᮌ᮪ᮔ. ᮜᮙᮥᮔ᮪ᮔ ᮊᮕᮤcᮃᮚ ᮙ ᮞᮙᮚᮊᮨᮅᮔ᮪, ᮊᮥ ᮌᮨᮛᮤᮔ᮪ᮌ᮪ᮔ, ᮊᮥ ᮕéᮠ᮪ᮔ, ᮊᮥ ᮜᮨᮅᮔ᮪ᮌᮤᮒ᮪ᮔ, ᮕᮧᮛᮧᮔ᮪ ᮙᮒᮤ ᮞᮁéᮃᮔ, éᮒ ᮙ ᮘᮔ᮪. ᮠᮙᮧ ᮒᮥ ᮃᮚ ᮔ ᮕᮤᮓᮧᮞᮈᮅᮔ᮪, ᮊ᮪éᮔ ᮊᮧᮜᮧᮒ᮪ᮔ ᮞᮙᮚ ᮙᮔᮔ᮪ᮔ ᮃᮌᮙ. ᮠᮙᮧ ᮙ ᮓᮤᮕᮤcᮃᮚ, ᮅᮜᮠ᮪, ᮜᮙᮥᮔ᮪ ᮊᮨᮅᮓᮨᮅ ᮙ ᮓ᮪éᮊ᮪ ᮙᮔ᮪ ᮄᮔᮡ, ᮕéᮠ᮪ ᮜᮨᮅᮔ᮪ᮌᮤᮒ᮪ ᮔ᮪ᮌᮌᮔ᮪ᮒᮤᮃᮔ᮪ ᮞᮊᮓᮨᮓᮨᮌ᮪ᮔ, ᮞᮙᮔ᮪ᮌ᮪ᮊᮔ᮪ᮔ ᮊᮔ᮪ ᮚᮒ᮪ᮔᮊᮨᮅᮔ᮪ ᮚᮒ᮪ᮔ ᮔᮤᮠᮔ᮪ ᮙwᮃᮠ᮪ ᮏᮌ ᮊᮓᮒᮔ᮪ᮌᮔ᮪ ᮊᮥ ᮙ᮪éᮔᮊ᮪ ᮞᮌᮥᮔ᮪ᮌ᮪"^^xsd:string ;
+    :hasTransliteration "ingetkeuneun, sinangguh ulah pamali ngaranna. kitu kéh lamun urang dék paparan ulah dék katurut ku hulun sakalih. lamun urang dék maan inya ma, mangka majar ka panghulu tandangna. lamunna kapicaya ma samayakeun, ku geringna, ku paéhna, ku leungitna, poron mati saréana, éta ma baan. hamo tu aya na pidosaeun, kéna kolotna samaya mananna agama. hamo ma dipicaya, ulah, lamun keudeu ma dék maan inya, paéh leungit ngagantian sakadedegna, samangkanna kan yatnakeun yatna nihan mawah jaga kadatangan ku ménak sagung"^^xsd:string ;
     :hasTranslation "untuk diingat disebut perbuatan pemali namanya. Itu karena jika kita berkehendak janganlah sekali-kali ditiru oleh hulun semuanya. Jika kita hendak membawanya maka berbicaralah kepada penguasanya. Jika disetujui maka rundingkanlah perihal sakitnya, matinya, hilangnya, kuburannya semua, maka bawalah dia. Tidak akan menjadi sebuah dosa, karena orang tuanya taat kepada aturan agama. Jika tidak disetujui, jangan jalau bersikeras hendak membawa dia, bila mati atau hilang maka harus mengganti sendiri menurut kemampuan. karena itu berhati-hatilah, Ini lagi, jika suatu saat kita didatangi oleh semua petugas negara"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-17" .
+    dcterms:identifier "SKK-BARIS-10" .
 
-# --- Baris 18 (<A.1r>) ---
-:skk_baris_18 a :BarisNaskah ;
+# --- Baris 11 (<A.1r>) ---
+:skk_baris_11 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.1r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "ku rama ku pangurang, dasa calagara, upeti, panggeres reuma, mangka suka geuing urang, maka asa kadatangan ku kulukadang baraya, ku adi ku lanceuk, ku anak mitra suan kaponakan. sakitu éta kangkenna, ngan lamun aya panghaat urang, kicap inum, simbut cawet, suka drebya. mangka rasa puja nyanggraha, ka hyang ka déwata. anggeus ma jaga urang digunakeun, ka gaga ka sawah ka sérang ageung, ngikis, marigi, ngandang, nga _ _ _, marak, munday, ngadogér, mangpayang, nyair bincang, sing sawatek guna tohaan, ulah sungsut, ulah surah, ulah purik, deung garingsing, pahi suka"^^xsd:string ;
-    :hasTranslation "oleh rama, pangurang, dasa calagara, upeti, panggeres reuma, maka berbahagialah dalam tindakan kita, anggaplah seperti didatangi oleh kerabat keluarga, adik, kakak, anak, sahabat, suan atau keponakan. Demikianlah ibaratnya. Namun bila ada pengertian kita kepada mereka, maka sediakanlah makanan, minuman, selimut, kain cawat dengan suka hati. Resapkanlah puja dan berlindung kepada hyang dan dewata. Jika kita diperintah bekerja ke ladang, ke sawah, ke sérang besar, mengukuhkan tepian sungai, menggali saluran, mengandangkan ternak. _ _ _ _ membendung sebagian jalur sungai untuk menangkap ikan, menjala, menarik jaring, memasang jaring, menangguk ikan, merentang jaring, segala pekerjaan untuk kepentingan raja, jangan marah-marah, jangan munafik, jangan resah dan uring-uringan, kerjakanlah dengan senang hati"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-18" .
+    :hasAksara "ᮊᮥ ᮛᮙ ᮊᮥ ᮕᮔ᮪ᮌᮥᮛᮔ᮪ᮌ᮪, ᮓᮞ cᮃᮜᮌᮛ, ᮅᮕᮨᮒᮤ, ᮕᮔ᮪ᮌ᮪ᮌᮨᮛᮨᮞ᮪ ᮛᮨᮅᮙ, ᮙᮔ᮪ᮌ᮪ᮊ ᮞᮥᮊ ᮌᮨᮅᮄᮔ᮪ᮌ᮪ ᮅᮛᮔ᮪ᮌ᮪, ᮙᮊ ᮃᮞ ᮊᮓᮒᮔ᮪ᮌᮔ᮪ ᮊᮥ ᮊᮥᮜᮥᮊᮓᮔ᮪ᮌ᮪ ᮘᮛᮚ, ᮊᮥ ᮃᮓᮤ ᮊᮥ ᮜᮔ᮪cᮈᮅᮊ᮪, ᮊᮥ ᮃᮔᮊ᮪ ᮙᮤᮒᮢ ᮞᮥᮃᮔ᮪ ᮊᮕᮧᮔᮊᮔ᮪. ᮞᮊᮤᮒᮥ éᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ᮔ, ᮔ᮪ᮌᮔ᮪ ᮜᮙᮥᮔ᮪ ᮃᮚ ᮕᮔ᮪ᮌᮒ᮪ ᮅᮛᮔ᮪ᮌ᮪, ᮊᮤcᮃᮕ᮪ ᮄᮔᮥᮙ᮪, ᮞᮤᮙ᮪ᮘᮥᮒ᮪ cᮃwᮈᮒ᮪, ᮞᮥᮊ ᮓᮢᮨᮘᮡ. ᮙᮔ᮪ᮌ᮪ᮊ ᮛᮞ ᮕᮥᮏ ᮔᮡᮔ᮪ᮌ᮪ᮌᮢᮠ, ᮊ ᮠᮡᮔ᮪ᮌ᮪ ᮊ ᮓ᮪éwᮃᮒ. ᮃᮔ᮪ᮌ᮪ᮌᮨᮅᮞ᮪ ᮙ ᮏᮌ ᮅᮛᮔ᮪ᮌ᮪ ᮓᮤᮌᮥᮔᮊᮨᮅᮔ᮪, ᮊ ᮌᮌ ᮊ ᮞwᮃᮠ᮪ ᮊ ᮞ᮪éᮛᮔ᮪ᮌ᮪ ᮃᮌᮨᮅᮔ᮪ᮌ᮪, ᮔ᮪ᮌᮤᮊᮤᮞ᮪, ᮙᮛᮤᮌᮤ, ᮔ᮪ᮌᮔ᮪ᮓᮔ᮪ᮌ᮪, ᮔ᮪ᮌ , ᮙᮛᮊ᮪, ᮙᮥᮔ᮪ᮓᮚ᮪, ᮔ᮪ᮌᮓᮧᮌ᮪éᮛ᮪, ᮙᮔ᮪ᮌ᮪ᮕᮚᮔ᮪ᮌ᮪, ᮔᮡᮄᮁ ᮘᮤᮔ᮪cᮃᮔ᮪ᮌ᮪, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮌᮥᮔ ᮒᮧᮠᮔ᮪, ᮅᮜᮠ᮪ ᮞᮥᮔ᮪ᮌ᮪ᮞᮥᮒ᮪, ᮅᮜᮠ᮪ ᮞᮥᮛᮠ᮪, ᮅᮜᮠ᮪ ᮕᮥᮛᮤᮊ᮪, ᮓᮨᮅᮔ᮪ᮌ᮪ ᮌᮛᮤᮔ᮪ᮌ᮪ᮞᮤᮔ᮪ᮌ᮪, ᮕᮠᮤ ᮞᮥᮊ"^^xsd:string ;
+    :hasTransliteration "ku rama ku pangurang, dasa calagara, upeti, panggeres reuma, mangka suka geuing urang, maka asa kadatangan ku kulukadang baraya, ku adi ku lanceuk, ku anak mitra suan kaponakan. sakitu éta kangkenna, ngan lamun aya panghaat urang, kicap inum, simbut cawet, suka drebya. mangka rasa puja nyanggraha, ka hyang ka déwata. anggeus ma jaga urang digunakeun, ka gaga ka sawah ka sérang ageung, ngikis, marigi, ngandang, nga , marak, munday, ngadogér, mangpayang, nyair bincang, sing sawatek guna tohaan, ulah sungsut, ulah surah, ulah purik, deung garingsing, pahi suka"^^xsd:string ;
+    :hasTranslation "oleh rama, pangurang, dasa calagara, upeti, panggeres reuma, maka berbahagialah dalam tindakan kita, anggaplah seperti didatangi oleh kerabat keluarga, adik, kakak, anak, sahabat, suan atau keponakan. Demikianlah ibaratnya. Namun bila ada pengertian kita kepada mereka, maka sediakanlah makanan, minuman, selimut, kain cawat dengan suka hati. Resapkanlah puja dan berlindung kepada hyang dan dewata. Jika kita diperintah bekerja ke ladang, ke sawah, ke sérang besar, mengukuhkan tepian sungai, menggali saluran, mengandangkan ternak. membendung sebagian jalur sungai untuk menangkap ikan, menjala, menarik jaring, memasang jaring, menangguk ikan, merentang jaring, segala pekerjaan untuk kepentingan raja, jangan marah-marah, jangan munafik, jangan resah dan uring-uringan, kerjakanlah dengan senang hati"^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-11" .
 
-# --- Baris 19 (<A.2r>) ---
-:skk_baris_19 a :BarisNaskah ;
+# --- Baris 12 (<A.2r>) ---
+:skk_baris_12 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.2r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮞᮁéᮃᮔ ᮙ ᮊᮥ ᮛᮞ ᮌᮥᮔ ᮅᮛᮔ᮪ᮌ᮪. ᮔ᮪ᮌᮔ᮪ ᮜᮙᮥᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮕᮥᮜᮔ᮪ᮌ᮪ ᮊ ᮓᮚᮨᮅᮠ᮪, ᮅᮜᮠ᮪ ᮔ᮪ᮌᮤᮞᮤᮔ᮪ᮌ᮪ ᮓᮤ ᮕᮤᮔ᮪ᮌ᮪ᮌᮤᮁ ᮏᮜᮔ᮪, ᮞᮤᮞᮤ ᮄᮙᮠ᮪, ᮓᮤ ᮒᮥᮔ᮪ᮌ᮪ᮒᮥᮔ᮪ᮌ᮪ cᮃᮔ᮪ᮌ᮪ᮔ, ᮘᮤᮞᮤ ᮊᮙ᮪ᮘᮨᮅ ᮊᮥ ᮙ᮪éᮔᮊ᮪, ᮊᮥ ᮌᮥᮞ᮪ᮒᮤ, ᮊᮥ ᮙᮔ᮪ᮒᮢᮤ. ᮙᮔ᮪ᮌᮥᮔᮤ ᮊᮥ ᮔᮥ ᮛᮧᮔ᮪ᮌᮠ᮪-ᮛᮧᮔ᮪ᮌᮠ᮪ ᮘᮤᮞᮤ ᮊᮞᮥᮙ᮪ᮕᮠ᮪ ᮊᮕᮓᮠ᮪ᮊᮨᮅᮔ᮪, ᮃᮙ᮪ᮘᮥ ᮘᮕ ᮕᮌᮥᮛᮥᮃᮔ᮪, ᮊᮕᮕᮞ᮪ ᮊᮥ ᮔᮥ ᮊᮛᮧᮜᮧᮒ᮪, ᮊᮥ ᮒ᮪wᮃᮠ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮌᮌᮘᮠ᮪, ᮔ᮪ᮌᮔ᮪ ᮜᮙᮥᮔ᮪ ᮔᮥᮛᮥᮒ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮞᮤᮊ᮪ᮞ ᮙ, ᮔ᮪ᮌᮤᮞᮤᮔ᮪ᮌ᮪ ᮙ ᮒᮥᮏᮥᮠ᮪ ᮜ᮪éᮔ᮪ᮌ᮪ᮊᮠ᮪ ᮒᮤ ᮏᮜᮔ᮪, ᮊᮤᮠ᮪ ᮙ ᮒᮤᮜᮥ ᮜ᮪éᮔ᮪ᮌ᮪ᮊᮠ᮪ ᮒᮤ ᮏᮜᮔ᮪, ᮘᮧᮃ ᮒ ᮙᮧ ᮔᮨᮙᮥ ᮕᮤcᮃᮁéᮊᮨᮅᮔ᮪ ᮞᮊᮜᮤᮠ᮪, ᮏ ᮔᮡᮠᮧ ᮓᮤᮔ ᮅᮜᮠ᮪ ᮕᮙᮜᮤ ᮅᮜᮠ᮪ ᮙ ᮓᮥᮊ ᮕᮙᮜᮤ ᮙ ᮕᮒᮤ, ᮓᮨᮅᮔ᮪ᮌ᮪ ᮏᮨᮅᮔ᮪ᮌ᮪ᮏᮨᮅᮈᮅᮔ᮪ᮌ᮪ ᮌᮌwᮃᮁ, ᮕᮥcᮅᮊ᮪ ᮒᮙ᮪ᮘᮜᮥᮔ᮪ᮌ᮪, ᮞᮥᮌᮔ᮪ ᮒᮙ᮪ᮕᮤᮃᮔ᮪"^^xsd:string ;
     :hasTransliteration "saréana ma ku rasa guna urang. ngan lamun urang pulang ka dayeuh, ulah ngising di pinggir jalan, sisi imah, di tungtung caangna, bisi kaambeu ku ménak, ku gusti, ku mantri. manguni ku nu rongah-rongah bisi kasumpah kapadahkeun, ambu bapa paguruan, kapapas ku nu karolot, ku twah urang gagabah, ngan lamun nurut sang hyang siksa ma, ngising ma tujuh léngkah ti jalan, kiih ma tilu léngkah ti jalan, boa ta mo nemu picarékeun sakalih, ja nyaho dina ulah pamali ulah ma duka pamali ma pati, deung jeungjeueung gagawar, pucuk tambalung, sugan tampian"^^xsd:string ;
     :hasTranslation "semuanya, resapkanlah seperti pekerjaan kita, Namun bila kita pulang ke kota, jangan berak di pinggir jalan atau di pinggir rumah, di ujung bagian yang terbuka terang, khawatir tercium oleh menak, gusti dan mantri, Maka timbunilah yang berlubang-lubang itu agar tidak dikutuk dan disalahkan ibu, bapak dan guru-guru, disesali oleh orang-orang tua karena perbuatan kita yang ceroboh, Namun jika menurut sang hyang siksa yaitu berak harus tujuh langkah dari jalan, kencing harus tiga langkah dari jalan, Mungkin tidak akan dimarahi orang lain, karena kita mengetahui perbuatan yang terlarang, Perbuatan yang mendatangkan kesedihan dan terlarang itu dapat mengakibatkan kematian, dan perhatikanlah tempat hukuman, ujung kayu penjepit tangan, mungkin pemandian"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-19" .
+    dcterms:identifier "SKK-BARIS-12" .
 
-# --- Baris 20 (<A.2v>) ---
-:skk_baris_20 a :BarisNaskah ;
+# --- Baris 13 (<A.2v>) ---
+:skk_baris_13 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.2v>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "dalem, kandang larang, balé larangan. maka nguni ngalangsinang, mapag ngaliwat ratu, macangkrama, kéna na itu paranti _ _ _ _ _ _ asup dalem, mangka réa lieuk, sugan urang ngarumpak, nebuk, megat jajaran. jaga urang diuk, ulah salah hareup, maka rampés na disila, deung sugan urang dibaan lémék ku tohaan, tineungkeun na picarékeun urang. asing sieup ma samapun, tihap sukana tohaan."^^xsd:string ;
-    :hasTranslation "di dalam keraton, kandang larangan, rumah larangan, Demikian pula memintas jalan, menghampiri atau melewati rombongan raja yang sedang macangkrama, karena semua itu masuk ke dalem keraton, maka seringlah menengok, kita melanggar, mendorong memutus jajaran (orang-orang yang sedang duduk), Jangan salah menghadap (ketika duduk), baik-baiklah duduk bersila, dan sekiranya kita diajak bicara oleh raja, pikirkanlah betul-betul bicara kita, Harus layak dan baik supaya menyenangkan raja"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-20" .
+    :hasAksara "ᮓᮜᮨᮙ᮪, ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮜᮛᮔ᮪ᮌ᮪, ᮘᮜ᮪é ᮜᮛᮔ᮪ᮌᮔ᮪. ᮙᮊ ᮔ᮪ᮌᮥᮔᮤ ᮔ᮪ᮌᮜᮔ᮪ᮌ᮪ᮞᮤᮔᮔ᮪ᮌ᮪, ᮙᮕᮌ᮪ ᮔ᮪ᮌᮜᮤwᮃᮒ᮪ ᮛᮒᮥ, ᮙcᮃᮔ᮪ᮌ᮪ᮊᮢᮙ, ᮊ᮪éᮔ ᮔ ᮄᮒᮥ ᮕᮛᮔ᮪ᮒᮤ ᮃᮞᮥᮕ᮪ ᮓᮜᮨᮙ᮪, ᮙᮔ᮪ᮌ᮪ᮊ ᮛ᮪éᮃ ᮜᮤᮈᮅᮊ᮪, ᮞᮥᮌᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮛᮥᮙ᮪ᮕᮊ᮪, ᮔᮨᮘᮥᮊ᮪, ᮙᮨᮌᮒ᮪ ᮏᮏᮛᮔ᮪. ᮏᮌ ᮅᮛᮔ᮪ᮌ᮪ ᮓᮤᮅᮊ᮪, ᮅᮜᮠ᮪ ᮞᮜᮠ᮪ ᮠᮛᮨᮅᮕ᮪, ᮙᮊ ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮔ ᮓᮤᮞᮤᮜ, ᮓᮨᮅᮔ᮪ᮌ᮪ ᮞᮥᮌᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮓᮤᮘᮔ᮪ ᮜ᮪éᮙ᮪éᮊ᮪ ᮊᮥ ᮒᮧᮠᮔ᮪, ᮒᮤᮔᮨᮅᮔ᮪ᮌ᮪ᮊᮨᮅᮔ᮪ ᮔ ᮕᮤcᮃᮁéᮊᮨᮅᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪. ᮃᮞᮤᮔ᮪ᮌ᮪ ᮞᮤᮈᮅᮕ᮪ ᮙ ᮞᮙᮕᮥᮔ᮪, ᮒᮤᮠᮕ᮪ ᮞᮥᮊᮔ ᮒᮧᮠᮔ᮪."^^xsd:string ;
+    :hasTransliteration "dalem, kandang larang, balé larangan. maka nguni ngalangsinang, mapag ngaliwat ratu, macangkrama, kéna na itu paranti asup dalem, mangka réa lieuk, sugan urang ngarumpak, nebuk, megat jajaran. jaga urang diuk, ulah salah hareup, maka rampés na disila, deung sugan urang dibaan lémék ku tohaan, tineungkeun na picarékeun urang. asing sieup ma samapun, tihap sukana tohaan."^^xsd:string ;
+    :hasTranslation "di dalam keraton, kandang larangan, rumah larangan, Demikian pula memintas jalan, menghampiri atau melewati rombongan raja yang sedang macangkrama, karena semua itu masuk ke dalem keraton, maka seringlah menengok, kita melanggar, mendorong
+memutus jajaran (orang-orang yang sedang duduk), Jangan salah menghadap (ketika duduk), baik-baiklah duduk bersila, dan sekiranya kita diajak bicara oleh raja, pikirkanlah betul-betul bicara kita, Harus layak dan baik supaya menyenangkan raja"^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-13" .
 
-# --- Baris 21 (<A.2v>) ---
-:skk_baris_21 a :BarisNaskah ;
+# --- Baris 14 (<A.2v>) ---
+:skk_baris_14 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.2v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮓᮨᮅᮔ᮪ᮌ᮪ ᮙᮊ ᮄᮜᮤᮊ᮪-ᮄᮜᮤᮊ᮪ ᮓᮤᮔ ᮒᮥᮛᮥᮒᮔᮨᮅᮔ᮪, ᮙᮔ᮪ᮒᮢᮤ ᮌᮥᮞ᮪ᮒᮤ ᮊᮞ-ᮃᮞ, ᮘᮚᮔ᮪ᮌ᮪ᮊᮛ, ᮔᮥ ᮙᮛᮨᮊ᮪, ᮌᮤᮛᮔ᮪ᮌ᮪ ᮕᮔ᮪ᮌᮜᮞᮔ᮪, ᮏᮥᮛᮥ ᮜᮥᮊᮤᮞ᮪, ᮕᮔ᮪ᮓ᮪é ᮙᮞ᮪"^^xsd:string ;
     :hasTransliteration "deung maka ilik-ilik dina turutaneun, mantri gusti kaasa-asa, bayangkara, nu marek, girang pangalasan, juru lukis, pandé mas"^^xsd:string ;
     :hasTranslation "Dan perihatikanlah mereka yang dapat ditiru perbuatannya: mantri gusti yang terkemuka, bayangkara, yang menghadap, pangalasan, juru lukis, pandai emas"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-21" .
+    dcterms:identifier "SKK-BARIS-14" .
 
-# --- Baris 22 (<A.3r>) ---
-:skk_baris_22 a :BarisNaskah ;
+# --- Baris 15 (<A.3r>) ---
+:skk_baris_15 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.3r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ geulang, pandé wesi, juru widang, widu wayang, kumbang gending, tatapukan, banyol, pahuma, panyadap, panyawah, panyapu, béla pati _ _ juru moha, barat katiga, pajurit, panyumpit, pamanah, pamerang, pangurang, dasa calagara, raré angon, pacéléngan, pakotokan, palika, preteuleum, sing sawatek guna, aya ma nu satia di guna dina kahulunan, éta kéhna turutaneun sakageuingna, kéna itu sinangguh janma utama ngaranna"^^xsd:string ;
+    :hasAksara "ᮌᮨᮅᮜᮔ᮪ᮌ᮪, ᮕᮔ᮪ᮓ᮪é wᮈᮞᮤ, ᮏᮥᮛᮥ wᮄᮓᮔ᮪ᮌ᮪, wᮄᮓᮥ wᮃᮚᮔ᮪ᮌ᮪, ᮊᮥᮙ᮪ᮘᮔ᮪ᮌ᮪ ᮌᮨᮔ᮪ᮓᮤᮔ᮪ᮌ᮪, ᮒᮒᮕᮥᮊᮔ᮪, ᮘᮔᮡᮧᮜ᮪, ᮕᮠᮥᮙ, ᮕᮔᮡᮓᮕ᮪, ᮕᮔᮡwᮃᮠ᮪, ᮕᮔᮡᮕᮥ, ᮘ᮪éᮜ ᮕᮒᮤ ᮏᮥᮛᮥ ᮙᮧᮠ, ᮘᮛᮒ᮪ ᮊᮒᮤᮌ, ᮕᮏᮥᮛᮤᮒ᮪, ᮕᮔᮡᮥᮙ᮪ᮕᮤᮒ᮪, ᮕᮙᮔᮠ᮪, ᮕᮙᮨᮛᮔ᮪ᮌ᮪, ᮕᮔ᮪ᮌᮥᮛᮔ᮪ᮌ᮪, ᮓᮞ cᮃᮜᮌᮛ, ᮛᮁé ᮃᮔ᮪ᮌᮧᮔ᮪, ᮕcéᮜ᮪éᮔ᮪ᮌᮔ᮪, ᮕᮊᮧᮒᮧᮊᮔ᮪, ᮕᮜᮤᮊ, ᮕᮢᮨᮒᮨᮅᮜᮨᮅᮙ᮪, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮌᮥᮔ, ᮃᮚ ᮙ ᮔᮥ ᮞᮒᮤᮃ ᮓᮤ ᮌᮥᮔ ᮓᮤᮔ ᮊᮠᮥᮜᮥᮔᮔ᮪, éᮒ ᮊ᮪éᮠ᮪ᮔ ᮒᮥᮛᮥᮒᮔᮨᮅᮔ᮪ ᮞᮊᮌᮨᮅᮄᮔ᮪ᮌ᮪ᮔ, ᮊ᮪éᮔ ᮄᮒᮥ ᮞᮤᮔᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮏᮔ᮪ᮙ ᮅᮒᮙ ᮔ᮪ᮌᮛᮔ᮪ᮔ"^^xsd:string ;
+    :hasTransliteration "geulang, pandé wesi, juru widang, widu wayang, kumbang gending, tatapukan, banyol, pahuma, panyadap, panyawah, panyapu, béla pati juru moha, barat katiga, pajurit, panyumpit, pamanah, pamerang, pangurang, dasa calagara, raré angon, pacéléngan, pakotokan, palika, preteuleum, sing sawatek guna, aya ma nu satia di guna dina kahulunan, éta kéhna turutaneun sakageuingna, kéna itu sinangguh janma utama ngaranna"^^xsd:string ;
     :hasTranslation "(pandai) gelang, pandai besi, ahli kulit, dalang wayang, kumbang, pembuat gamelan, pemain sandiwara, pelawak, peladang, penyadap, penyawah, penyapu, bela pati, juru moha, barat katiga, prajurit, penyumpit, pemanah, juru perang, pangurang (petugas pajak), petugas dasa, anak penggembala, peternak babi, peternak ayam, penangkap ikan, juru selam, segala macam pekerjaan yang dilakukan dengan kesetiaan kepada raja, itu semua patut ditiru dan ingatlah dengan baik, sebab mereka disebut manusia utama namanya"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-22" .
+    dcterms:identifier "SKK-BARIS-15" .
 
-# --- Baris 23 (<A.3r>) ---
-:skk_baris_23 a :BarisNaskah ;
+# --- Baris 16 (<A.3r>) ---
+:skk_baris_16 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.3r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮃᮚ ᮙ ᮏᮔ᮪ᮙ ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮛ᮪wᮃᮔ, ᮌᮧᮁéᮔ᮪ᮌ᮪ ᮒ᮪wᮃᮠ᮪ᮔ, ᮄᮛᮨᮌ᮪ ᮒᮤᮔ᮪ᮌ᮪ᮊᮠ᮪ᮔ, ᮄᮒᮥ ᮏᮨᮅᮏᮨᮅᮈᮅᮔ᮪ᮌ᮪ ᮓᮤᮒᮥᮛᮥᮒ᮪ ᮒᮤᮔ᮪ᮌ᮪ᮊᮠ᮪ᮔ, ᮒᮥᮛᮥᮒ᮪ ᮛ᮪wᮃᮔ. ᮃᮚ ᮔ ᮏᮔ᮪ᮙ ᮌᮧᮁéᮔ᮪ᮌ᮪ ᮛ᮪wᮃᮔ ᮛᮙ᮪ᮕ᮪éᮞ᮪"^^xsd:string ;
     :hasTransliteration "aya ma janma rampés rwana, goréng twahna, ireg tingkahna, itu jeujeueung diturut tingkahna, turut rwana. aya na janma goréng rwana rampés"^^xsd:string ;
     :hasTranslation "Bila ada orang baik penampilannya, buruk perbuatannya, buruk tingkahnya, maka perhatikanlah tingkahnya itu, tirulah penampilannya. Bila ada orang yang buruk penampilannya, tetapi baik"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-23" .
+    dcterms:identifier "SKK-BARIS-16" .
 
-# --- Baris 24 (<A.3v>) ---
-:skk_baris_24 a :BarisNaskah ;
+# --- Baris 17 (<A.3v>) ---
+:skk_baris_17 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.3v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮒ᮪wᮃᮠ᮪ᮔ, ᮄᮒᮥ ᮙ ᮅᮜᮠ᮪ ᮓᮤᮒᮥᮛᮥᮒ᮪ ᮒᮤᮔ᮪ᮌ᮪ᮊᮠ᮪ᮔ, ᮓᮛ ᮞᮧᮊ᮪ ᮏᮨᮅᮈᮅᮔ᮪ᮌ᮪ ᮛ᮪wᮃᮔ, ᮒᮥᮛᮥᮒ᮪ ᮒ᮪wᮃᮠ᮪ᮔ. ᮃᮚ ᮙ ᮏᮔ᮪ᮙ ᮌᮧᮁéᮔ᮪ᮌ᮪ ᮛ᮪wᮃᮔ, ᮄᮛᮨᮌ᮪ ᮒᮤᮔ᮪ᮌ᮪ᮊᮠ᮪ᮔ, ᮌᮧᮁéᮔ᮪ᮌ᮪ ᮒ᮪wᮃᮠ᮪ᮔ, ᮄᮒᮥ ᮙ cᮃᮛᮥᮒ᮪ ᮔᮤᮔ᮪ᮌ᮪ ᮘᮥᮙᮤ, ᮞᮤᮜᮤᮠ᮪ ᮓᮤᮛᮤ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮞᮘ᮪wᮃᮔ, ᮔ᮪ᮌᮛᮔ᮪ᮔ cᮃᮜᮔᮤᮔ᮪ᮌ᮪ ᮏᮔ᮪ᮙ."^^xsd:string ;
     :hasTransliteration "twahna, itu ma ulah diturut tingkahna, dara sok jeueung rwana, turut twahna. aya ma janma goréng rwana, ireg tingkahna, goréng twahna, itu ma carut ning bumi, silih diri na urang sabwana, ngaranna calaning janma."^^xsd:string ;
     :hasTranslation "perbuatannya, yang demikian itu jangan ditiru tingkahnya, jangan perhatikan penampilannya, tirulah perbuatannya Bila ada orang yang buruk, penampilannya, pandir tingkahnya dan buruk pula perbuatannya, yang demikian itu noda di dunia, dirinya menjadi pengganti (tumbal) kita sedunia, namanya kebusukan manusia"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-24" .
+    dcterms:identifier "SKK-BARIS-17" .
 
-# --- Baris 25 (<A.3v>) ---
-:skk_baris_25 a :BarisNaskah ;
+# --- Baris 18 (<A.3v>) ---
+:skk_baris_18 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.3v>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "kitu kéhna ingetkeuneun, hala hayu goréng rampés ala pagurwan. ini panginget _ _ aya ma na janma paéh maling, paéh papanjingan, paéh napu, paéh ngabégal, paéh méor, sing sawatek cekap carut, éta kéh jeueung _ _ _ ulah diturutan. ja éta kangken guru nista ngaranna."^^xsd:string ;
+    :hasAksara "ᮊᮤᮒᮥ ᮊ᮪éᮠ᮪ᮔ ᮄᮔ᮪ᮌᮨᮒ᮪ᮊᮨᮅᮔᮨᮅᮔ᮪, ᮠᮜ ᮠᮚᮥ ᮌᮧᮁéᮔ᮪ᮌ᮪ ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮃᮜ ᮕᮌᮥᮁwᮃᮔ᮪. ᮄᮔᮤ ᮕᮔ᮪ᮌᮤᮔ᮪ᮌᮨᮒ᮪ ᮃᮚ ᮙ ᮔ ᮏᮔ᮪ᮙ ᮕéᮠ᮪ ᮙᮜᮤᮔ᮪ᮌ᮪, ᮕéᮠ᮪ ᮕᮕᮔ᮪ᮏᮤᮔ᮪ᮌᮔ᮪, ᮕéᮠ᮪ ᮔᮕᮥ, ᮕéᮠ᮪ ᮔ᮪ᮌᮘ᮪éᮌᮜ᮪, ᮕéᮠ᮪ ᮙ᮪éᮇᮁ, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ cᮈᮊᮕ᮪ cᮃᮛᮥᮒ᮪, éᮒ ᮊ᮪éᮠ᮪ ᮏᮨᮅᮈᮅᮔ᮪ᮌ᮪ ᮅᮜᮠ᮪ ᮓᮤᮒᮥᮛᮥᮒᮔ᮪. ᮏ éᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ ᮔᮤᮞ᮪ᮒ ᮔ᮪ᮌᮛᮔ᮪ᮔ."^^xsd:string ;
+    :hasTransliteration "kitu kéhna ingetkeuneun, hala hayu goréng rampés ala pagurwan. ini panginget aya ma na janma paéh maling, paéh papanjingan, paéh napu, paéh ngabégal, paéh méor, sing sawatek cekap carut, éta kéh jeueung ulah diturutan. ja éta kangken guru nista ngaranna."^^xsd:string ;
     :hasTranslation "Itu semua patut diingat, sengsara dan bahagia, buruk dan baik, tergantung kepada gurunya, Ini sebagai pengingat ada orang yang mati waktu mencuri, mati ketika menggerayangi rumah orang, mati ketika napu, mati waktu menodong, mati waktu merangkum, segala macam perbuatan hianat, itu semua harus diperhatikan jangan diikuti. Karena itulah yang disebut guru nista namanya"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-25" .
+    dcterms:identifier "SKK-BARIS-18" .
 
-# --- Baris 26 (<A.3v>) ---
-:skk_baris_26 a :BarisNaskah ;
+# --- Baris 19 (<A.3v>) ---
+:skk_baris_19 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.3v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮃᮚ ᮓᮨᮅᮄ ᮜᮙᮥᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔᮡᮨᮅᮈᮅᮔ᮪ᮌ᮪ ᮔᮥ ᮔ᮪ᮌᮓᮜᮔ᮪ᮌ᮪ ᮔ᮪ᮌwᮃᮚᮔ᮪ᮌ᮪, ᮔ᮪ᮌᮓ᮪éᮔ᮪ᮌ᮪éᮊᮨᮅᮔ᮪ ᮔᮥ ᮙᮔ᮪ᮒᮥᮔ᮪, ᮔᮨᮙᮥ ᮞᮤᮊ᮪ᮞᮔ᮪"^^xsd:string ;
     :hasTransliteration "aya deui lamun urang nyeueung nu ngadalang ngawayang, ngadéngékeun nu mantun, nemu siksaan"^^xsd:string ;
     :hasTranslation "Ada lagi jika kita menonton yang sedang mendalang memainkan wayang, mendengarkan juru pantun,"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-26" .
+    dcterms:identifier "SKK-BARIS-19" .
 
-# --- Baris 27 (<A.4r>) ---
-:skk_baris_27 a :BarisNaskah ;
+# --- Baris 20 (<A.4r>) ---
+:skk_baris_20 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.4r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮒᮤᮔ cᮃᮛᮤᮒ, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ ᮕᮔ᮪ᮌ᮪ᮌᮥᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮜᮙᮥᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔᮨᮙᮥ ᮞᮤᮊ᮪ᮞᮔ᮪ ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮙ ᮒᮤ ᮔᮥ ᮙcᮃ, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ ᮒᮔ᮪ᮌ᮪ᮒᮥ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮜᮙᮥᮔ᮪ ᮙᮤᮛᮨᮅᮔ᮪ᮌᮨᮅᮠ᮪ ᮘᮨᮅᮔᮔ᮪ᮌ᮪ ᮓᮤᮊᮥᮁᮚᮊ᮪, ᮙ: ᮅᮊᮤᮁ-ᮅᮊᮤᮛᮔ᮪, ᮕᮕᮠᮒᮔ᮪, ᮕᮕᮓᮥᮔ᮪ᮌᮔ᮪, ᮒᮥᮒᮥᮜᮤᮞᮔ᮪, ᮞᮥᮄ ᮔᮔᮡ ᮊ ᮔᮥ ᮓᮤᮊᮥᮁᮚᮊ᮪, ᮒᮨᮙᮥ ᮊᮥ ᮛᮞ ᮞᮧᮛᮔ᮪ᮌᮔ᮪ ᮊᮥ ᮘᮨᮅᮔᮔ᮪ᮌ᮪ᮔ ᮄᮜᮤᮊ᮪ ᮓᮤ ᮌᮥᮔ ᮞᮊᮜᮤᮠ᮪, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ wᮛᮨᮒᮤ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮔᮨᮙᮥ ᮃᮌᮙ ᮒᮤ ᮃᮔᮊ᮪ ᮙ, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ ᮛᮁé ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮔᮨᮙᮥ ᮓᮁᮙ ᮒᮤ ᮃᮊᮤ ᮙ ᮔ᮪ᮌᮛᮔ᮪ᮔ, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ ᮊᮊᮤ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮔᮨᮙᮥ ᮓᮁᮙ ᮒᮤ ᮜᮔ᮪cᮈᮅᮊ᮪ ᮙ, ᮔ᮪ᮌᮛᮔ᮪ᮔ ᮌᮥᮛᮥ ᮊᮊᮔ᮪ᮌ᮪. ᮔᮨᮙᮥ ᮓᮁᮙ ᮒᮤ ᮒᮧᮃ ᮙ, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮥᮛᮥ ᮅᮃ ᮔ᮪ᮌᮛᮔ᮪ᮔ. ᮔᮨᮙᮥ ᮓᮁᮙ ᮒᮤ ᮌᮨᮅᮞᮔ᮪ ᮜᮥᮙᮨᮅᮙ᮪ᮕᮔ᮪ᮌ᮪ ᮙ, ᮔ᮪ᮌᮛᮔ᮪ᮔ, ᮓᮤ ᮜᮨᮙ᮪ᮘᮥᮁ"^^xsd:string ;
     :hasTransliteration "tina carita, ya kangken guru panggung ngaranna. lamun urang nemu siksaan rampés ma ti nu maca, ya kangken guru tangtu ngaranna. lamun mireungeuh beunang dikuryak, ma: ukir-ukiran, papahatan, papadungan, tutulisan, sui nanya ka nu dikuryak, temu ku rasa sorangan ku beunangna ilik di guna sakalih, ya kangken guru wreti ngaranna. nemu agama ti anak ma, ya kangken guru raré ngaranna. nemu darma ti aki ma ngaranna, ya kangken guru kaki ngaranna. nemu darma ti lanceuk ma, ngaranna guru kakang. nemu darma ti toa ma, ya kangken guru ua ngaranna. nemu darma ti geusan lumeumpang ma, ngaranna, di lembur"^^xsd:string ;
     :hasTranslation "dari kisahnya, itu disebut guru panggung namanya, Bila kita menemukan pelajaran yang baik dari membaca, itu disebut guru tangtu namanya, Bila memperhatikan dengan seksama hasil pekerjaan besar seperti ukir-ukiran, hasil pahatan, papadungan (pertukangan kayu), tulisan (lukisan), tanpa bertanya kepada pembuatnya, terpahami oleh rasa sendiri dari hasil mengamati karya orang lain, itu disebut guru wreti namanya, Mendapat ilmu dari anak, itu disebut guru raré namanya. Mendapat pelajaran dari kakek, itu disebut guru kaki namanya, Mendapat pelajaran dari kakak, itu namanya guru kakang, Mendapat palajaran dari toa, itu disebut guru ua, Mendapat pelajaran di tempat bepergian, seperti di kampung"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-27" .
+    dcterms:identifier "SKK-BARIS-20" .
 
-# --- Baris 28 (<A.5r>) ---
-:skk_baris_28 a :BarisNaskah ;
+# --- Baris 21 (<A.5r>) ---
+:skk_baris_21 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.5r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ lih. lamun urang daék dipuji ma, kadyangganing galah dawa sinambungan tu na, rasa atoh ku pamuji. anggeus ma dipaké hangkara, ja ngarasa manéh aya di imah di manéh, ku hakan ku inum, ku suka boga, ku pakarang, téka dipaké anggeuheun. éta kangkeng galah dawa ta. éta kangken paré hapa ta ngaranna."^^xsd:string ;
+    :hasAksara "ᮜᮤᮠ᮪. ᮜᮙᮥᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮓéᮊ᮪ ᮓᮤᮕᮥᮏᮤ ᮙ, ᮊᮓᮡᮔ᮪ᮌ᮪ᮌᮔᮤᮔ᮪ᮌ᮪ ᮌᮜᮠ᮪ ᮓwᮃ ᮞᮤᮔᮙ᮪ᮘᮥᮔ᮪ᮌᮔ᮪ ᮒᮥ ᮔ, ᮛᮞ ᮃᮒᮧᮠ᮪ ᮊᮥ ᮕᮙᮥᮏᮤ. ᮃᮔ᮪ᮌ᮪ᮌᮨᮅᮞ᮪ ᮙ ᮓᮤᮕᮊ᮪é ᮠᮔ᮪ᮌ᮪ᮊᮛ, ᮏ ᮔ᮪ᮌᮛᮞ ᮙᮔ᮪éᮠ᮪ ᮃᮚ ᮓᮤ ᮄᮙᮠ᮪ ᮓᮤ ᮙᮔ᮪éᮠ᮪, ᮊᮥ ᮠᮊᮔ᮪ ᮊᮥ ᮄᮔᮥᮙ᮪, ᮊᮥ ᮞᮥᮊ ᮘᮧᮌ, ᮊᮥ ᮕᮊᮛᮔ᮪ᮌ᮪, ᮒ᮪éᮊ ᮓᮤᮕᮊ᮪é ᮃᮔ᮪ᮌ᮪ᮌᮨᮅᮠᮨᮅᮔ᮪. éᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ᮌ᮪ ᮌᮜᮠ᮪ ᮓwᮃ ᮒ. éᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮕᮁé ᮠᮕ ᮒ ᮔ᮪ᮌᮛᮔ᮪ᮔ."^^xsd:string ;
+    :hasTransliteration "lih. lamun urang daék dipuji ma, kadyangganing galah dawa sinambungan tu na, rasa atoh ku pamuji. anggeus ma dipaké hangkara, ja ngarasa manéh aya di imah di manéh, ku hakan ku inum, ku suka boga, ku pakarang, téka dipaké anggeuheun. éta kangkeng galah dawa ta. éta kangken paré hapa ta ngaranna."^^xsd:string ;
     :hasTranslation "Jika kita ingin dipuji, itu ibarat galah panjang disambung ranting (belalai), karena merasa senang oleh pujian, Lalu menjadi sombong, karena merasa diri berkecukupan di rumah sendiri oleh makanan, oleh minuman, oleh kesenangan harta, oleh perabotan, lalu dipakai untuk andalan, Itu disebut galah panjang, Itu ibarat padi hampa namanya."^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-28" .
+    dcterms:identifier "SKK-BARIS-21" .
 
-# --- Baris 29 (<A.5r>) ---
-:skk_baris_29 a :BarisNaskah ;
+# --- Baris 22 (<A.5r>) ---
+:skk_baris_22 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.5r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮊᮤᮒᮥ ᮜᮙᮥᮔ᮪ ᮃᮚ ᮔᮥ ᮙ᮪éᮓ ᮅᮛᮔ᮪ᮌ᮪, ᮃᮊᮥ ᮞᮕᮙ᮪éᮓᮔ ᮞᮊᮜᮤᮠ᮪. ᮔᮡ ᮙᮔ ᮊᮓᮡᮔ᮪ᮌ᮪ᮌᮔᮤᮔ᮪ᮌ᮪ ᮌᮜᮠ᮪ cᮈᮓᮨᮊ᮪ ᮒᮤᮔᮥᮌᮨᮜᮔ᮪. ᮒ᮪éᮊ ᮅᮕᮙᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮊᮥᮓᮤᮜ᮪, éᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ cᮃᮄ ᮕᮙᮔ᮪ᮓᮡᮔ᮪. ᮅᮕᮙᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮊᮥᮛᮤᮒ᮪ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮓᮒᮔ᮪ᮌ᮪ ᮔᮥ ᮔ᮪ᮌᮙᮤᮔᮡᮊᮔ᮪. ᮅᮕᮙᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮕᮧᮔᮡᮧ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮓᮒᮔ᮪ᮌ᮪ ᮔᮥ ᮙ᮪éᮛ᮪é ᮊ᮪éᮏᮧ. ᮅᮕᮙᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮠ"^^xsd:string ;
     :hasTransliteration "kitu lamun aya nu méda urang, aku sapamédana sakalih. nya mana kadyangganing galah cedek tinugelan. téka upamana urang kudil, éta kangken cai pamandyan. upamana urang kurit kangken datang nu ngaminyakan. upamana urang ponyo kangken datang nu méré kéjo. upamana urang ha"^^xsd:string ;
     :hasTranslation "Begitulah, jika ada yang menegur kita, terimalah teguran itu. Yang demikian itu ibarat galah pendek yang dipotong; lalu ibarat kita sedang dekil, teguran itu bagaikan air pemandian; umpama kita sedang menderita kulit kering bagaikan datang orang yang meminyaki; umpama kita sedang lapar bagaikan datang yang memberi nasi; umpama kita sedang dahaga"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-29" .
+    dcterms:identifier "SKK-BARIS-22" .
 
-# --- Baris 30 (<A.5v>) ---
-:skk_baris_30 a :BarisNaskah ;
+# --- Baris 23 (<A.5v>) ---
+:skk_baris_23 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.5v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮔᮔ᮪ᮌ᮪ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮓᮒᮔ᮪ᮌ᮪ ᮔᮥ ᮙwᮃᮊᮨᮅᮔ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮃᮛᮧᮒᮨᮅᮔ᮪. ᮅᮕᮙᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮠᮔ᮪ᮓᮨᮅᮈᮅᮜ᮪ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮓᮒᮔ᮪ᮌ᮪ ᮔᮥ ᮙwᮃ ᮞᮨᮅᮕᮠᮨᮅᮔ᮪"^^xsd:string ;
     :hasTransliteration "naang kangken datang nu mawakeun urang aroteun. upamana urang handeueul kangken datang nu mawa seupaheun"^^xsd:string ;
     :hasTranslation "bagaikan datang orang yang mengantarkan minuman; ibarat kita sedang kesal hati bagaikan datang orang yang membawa sirih-pinang"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-30" .
+    dcterms:identifier "SKK-BARIS-23" .
 
-# --- Baris 31 (<A.16v:1>) ---
-:skk_baris_31 a :BarisNaskah ;
+# --- Baris 24 (<A.16v:1>) ---
+:skk_baris_24 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.16v:1>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "[ᮓᮒᮔ᮪ᮌ᮪ ᮔᮥ ᮙᮨᮛᮨ ᮞᮨᮅᮕᮠᮨᮅᮔ᮪] ᮚ ᮒ ᮞᮤᮔᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮕᮔ᮪cᮃ ᮕᮛᮤᮞᮥᮓ ᮔ᮪ᮌᮛᮔ᮪ᮔ. éᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮌᮜᮠ᮪ cᮈᮓᮨᮊ᮪ ᮒᮤᮔᮥᮌᮨᮜᮔ᮪ ᮒᮨᮊ."^^xsd:string ;
     :hasTransliteration "[datang nu mere seupaheun] ya ta sinangguh panca parisuda ngaranna. éta kangken galah cedek tinugelan teka."^^xsd:string ;
     :hasTranslation "yaitu yang disebut panca parisuda (lima penawar); itulah perumpamaan galah pendek yang dipotong"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-31" .
+    dcterms:identifier "SKK-BARIS-24" .
 
-# --- Baris 32 (<A.16v:1>) ---
-:skk_baris_32 a :BarisNaskah ;
+# --- Baris 25 (<A.16v:1>) ---
+:skk_baris_25 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.16v:1>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "lamun maka suka ti nu saurang, kangken paré beurat sangga ta, boa maka hurip na urang réa, ja katemu na wwit suka lawan énak, sangkilang nu ngupat urang salah ala panyaraman. aya twah urang eureunan, hanteu twah urang ala a _ _ _ _ _ _ _guruan _ _ _ _ _ _ _né janma ngaranna, ya sinangguh paramareta wisésa ngaranna, ya kangken déwa mangjanma ngaranna, ya sang purna sarira, ya wwat na hayu, ya pa _ _ _ _ _bener."^^xsd:string ;
+    :hasAksara "ᮜᮙᮥᮔ᮪ ᮙᮊ ᮞᮥᮊ ᮒᮤ ᮔᮥ ᮞᮅᮛᮔ᮪ᮌ᮪, ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮕᮁé ᮘᮨᮅᮛᮒ᮪ ᮞᮔ᮪ᮌ᮪ᮌ ᮒ, ᮘᮧᮃ ᮙᮊ ᮠᮥᮛᮤᮕ᮪ ᮔ ᮅᮛᮔ᮪ᮌ᮪ ᮛ᮪éᮃ, ᮏ ᮊᮒᮨᮙᮥ ᮔ wwᮄᮒ᮪ ᮞᮥᮊ ᮜwᮃᮔ᮪ éᮔᮊ᮪, ᮞᮔ᮪ᮌ᮪ᮊᮤᮜᮔ᮪ᮌ᮪ ᮔᮥ ᮔ᮪ᮌᮥᮕᮒ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮞᮜᮠ᮪ ᮃᮜ ᮕᮔᮡᮛᮙᮔ᮪. ᮃᮚ ᮒ᮪wᮃᮠ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮈᮅᮛᮨᮅᮔᮔ᮪, ᮠᮔ᮪ᮒᮨᮅ ᮒ᮪wᮃᮠ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮃᮜ ᮃ ᮌᮥᮛᮥᮃᮔ᮪ ᮔ᮪é ᮏᮔ᮪ᮙ ᮔ᮪ᮌᮛᮔ᮪ᮔ, ᮚ ᮞᮤᮔᮔ᮪ᮌ᮪ᮌᮥᮠ᮪ ᮕᮛᮙᮛᮨᮒ wᮄᮞ᮪éᮞ ᮔ᮪ᮌᮛᮔ᮪ᮔ, ᮚ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮓ᮪éwᮃ ᮙᮔ᮪ᮌ᮪ᮏᮔ᮪ᮙ ᮔ᮪ᮌᮛᮔ᮪ᮔ, ᮚ ᮞᮔ᮪ᮌ᮪ ᮕᮥᮁᮔ ᮞᮛᮤᮛ, ᮚ wwᮃᮒ᮪ ᮔ ᮠᮚᮥ, ᮚ ᮕ ᮘᮨᮔᮨᮁ."^^xsd:string ;
+    :hasTransliteration "lamun maka suka ti nu saurang, kangken paré beurat sangga ta, boa maka hurip na urang réa, ja katemu na wwit suka lawan énak, sangkilang nu ngupat urang salah ala panyaraman. aya twah urang eureunan, hanteu twah urang ala a guruan né janma ngaranna, ya sinangguh paramareta wisésa ngaranna, ya kangken déwa mangjanma ngaranna, ya sang purna sarira, ya wwat na hayu, ya pa bener."^^xsd:string ;
     :hasTranslation "Bila merasa bahagia dari seseorang itu ibarat padi berat isi pasti sejahteralah orang banyak karena bertemu dengan sumber kesenangan dan kenikmatan, meskipun orang yang mengumpat kita menyalahi nasihat. Bila sedang sibuk tundalah sementara tidaklah pekerjaan kita manusia namanya itu bagaikan purna sarira (keutamaan tertinggi) itulah benih kebajikan dan kebenaran"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-32" .
+    dcterms:identifier "SKK-BARIS-25" .
 
-# --- Baris 33 (<A.17r>) ---
-:skk_baris_33 a :BarisNaskah ;
+# --- Baris 26 (<A.17r>) ---
+:skk_baris_26 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.17r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮄᮔᮤ ᮕᮔ᮪ᮌᮤᮙ᮪ᮘᮥᮠ᮪ ᮔᮤᮔ᮪ᮌ᮪ ᮒ᮪wᮃᮠ᮪ ᮕᮊᮨᮅᮔ᮪ wᮃᮞ᮪ᮒᮥ ᮞᮊᮜ ᮙᮔ᮪ᮌᮥᮛᮤᮕ᮪, ᮕᮊᮨᮅᮔ᮪ wᮃᮞ᮪ᮒᮥ ᮓᮤ ᮄᮙᮠ᮪ ᮓᮤ ᮙᮔ᮪éᮠ᮪. éᮙ᮪éᮒ᮪ ᮄᮙᮨᮅᮒ᮪, ᮛᮏᮤᮔ᮪, ᮜᮨᮅᮊᮨᮅᮔ᮪, ᮕᮊ ᮕᮢᮨᮓᮔ, ᮙᮧᮛᮧᮌᮧᮜ᮪ ᮛᮧᮌᮧᮜ᮪, ᮕᮥᮛᮞ wᮄᮓᮌ᮪ᮓ, ᮠᮕᮤᮒᮔ᮪, ᮊᮛwᮃᮜ᮪éᮃ, cᮃᮔ᮪ᮌ᮪cᮄᮔ᮪ᮌᮔ᮪, ᮜᮔ᮪ᮌ᮪ᮞᮤᮒᮔ᮪."^^xsd:string ;
     :hasTransliteration "ini pangimbuh ning twah pakeun wastu sakala manghurip, pakeun wastu di imah di manéh. émét imeut, rajin, leukeun, paka predana, morogol rogol, purasa widagda, hapitan, karawaléa, cangcingan, langsitan."^^xsd:string ;
     :hasTranslation "Ini pelengkap perbuatan agar berhasil dalam menjalani hidup agar berhasil di rumahmu: émét (cermat), imeut (teliti), rajin, leukeun (tekun), paka predana (cukup sandang), morogol-rogol (bersemangat), purasa widagda (berjiwa pahlawan), hapitan (bijaksana), karawaléa (dermawan), cangcingan (cekatan), langsitan (terampil)"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-33" .
+    dcterms:identifier "SKK-BARIS-26" .
 
-# --- Baris 34 (<A.17r>) ---
-:skk_baris_34 a :BarisNaskah ;
+# --- Baris 27 (<A.17r>) ---
+:skk_baris_27 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.17r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮏᮌ ᮅᮛᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮏᮓᮤᮊᮨᮅᮔ᮪ ᮞwᮃᮠ᮪ ᮒᮤᮠᮕ᮪ ᮅᮜᮠ᮪ ᮞᮔ᮪ᮌ᮪ᮞᮛ. ᮏᮌ ᮛᮔ᮪ᮌ᮪ ᮔᮡᮤᮈᮅᮔ᮪ ᮊᮨᮘᮧᮔ᮪, ᮒᮤᮠᮕ᮪ ᮅᮜᮠ᮪ ᮔ᮪ᮌᮥᮔ᮪ᮓᮨᮅᮁ ᮊ ᮠᮥᮙ ᮘ᮪ééᮒ᮪ ᮞᮊᮜᮤᮠ᮪, ᮊ ᮠᮥᮙ ᮜᮨᮌ ᮞᮊᮜᮤᮠ᮪. ᮙᮧ ᮙ ᮘᮨᮅᮔᮔ᮪ᮌ᮪ ᮅᮛᮔ᮪ᮌ᮪ _ _ ᮂᮃ ᮞᮓᮥ ᮘ᮪éᮙ ᮙ᮪éᮔ᮪ᮒ. cᮇcᮇᮃᮔ᮪, ᮒᮤᮠᮕ᮪ ᮅᮜᮠ᮪ ᮙᮨᮅᮜᮤ ᮔᮥᮊᮨᮅᮁ. ᮕᮊᮛᮔ᮪ᮌ᮪ ᮒᮤᮠᮕ᮪ ᮅᮜᮠ᮪ ᮔ᮪ᮌᮤᮔ᮪ᮏᮨᮅᮙ᮪ ᮞᮤᮙ᮪ᮘᮥᮒ᮪, cᮃwᮈᮒ᮪, ᮒᮤᮠᮕ᮪ ᮅᮜᮠ᮪ ᮞᮛᮒ. ᮠᮊᮔ᮪ ᮄᮔᮥᮙ᮪ ᮅᮜᮠ᮪"^^xsd:string ;
     :hasTransliteration "jaga urang ngajadikeun sawah tihap ulah sangsara. jaga rang nyieun kebon, tihap ulah ngundeur ka huma béét sakalih, ka huma lega sakalih. mo ma beunang urang _ _ _ka sadu béma ménta. cocooan, tihap ulah meuli nukeur. pakarang tihap ulah nginjeum simbut, cawet, tihap ulah sarata. hakan inum ulah"^^xsd:string ;
     :hasTranslation "Bila kita akan membuat sawah agar jangan sengsara; bila kita akan membuat kebun agar jangan memetik sayuran ke ladang kecil atau ke ladang luas milik orang lain (sebab) kita tak dapat mohon izin meminta; memelihara ternak agar jangan membeli atau menukar (barter); (memiliki) perkakas (atau perabotan), agar jangan meminjam selimut cawat, sekadar jangan kekurangan; makan dan minum jangan"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-34" .
+    dcterms:identifier "SKK-BARIS-27" .
 
-# --- Baris 35 (<A.17v>) ---
-:skk_baris_35 a :BarisNaskah ;
+# --- Baris 28 (<A.17v>) ---
+:skk_baris_28 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.17v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮊᮊᮥᮛᮔ᮪ᮌᮔ᮪, ᮃᮔᮊ᮪ éwé ᮕᮤᮒᮥᮒᮥᮛᮔ᮪, ᮞᮥᮌᮔ᮪ ᮊᮨᮅᮔ ᮊᮥ ᮔ ᮌᮥᮛᮥ ᮘᮜ ᮞᮤᮊ᮪ᮞ. ᮄᮚᮒ᮪ᮔᮊᮨᮅᮔ᮪ ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮞᮤᮊ᮪ᮞ ᮊᮔ᮪ᮓᮔ᮪ᮌ᮪ ᮊᮛᮨᮞᮡᮔ᮪."^^xsd:string ;
     :hasTransliteration "kakurangan, anak éwé pituturan, sugan keuna ku na guru bala siksa. iyatnakeun sang hyang siksa kandang karesyan."^^xsd:string ;
     :hasTranslation "kekurangan; anak dan isteri diberi nasihat agar tidak dikatakan merusak kesusilaan. Perhatikanlah Sanghyang Siksa Kandang Karesian"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-35" .
+    dcterms:identifier "SKK-BARIS-28" .
 
-# --- Baris 36 (<A.17v>) ---
-:skk_baris_36 a :BarisNaskah ;
+# --- Baris 29 (<A.17v>) ---
+:skk_baris_29 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.17v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮏᮌ ᮅᮛᮔ᮪ᮌ᮪ ᮠ᮪ééᮞ᮪ ᮒᮙ᮪ᮘ ᮒᮥᮔ᮪ᮓᮥᮠ᮪, ᮔ᮪ᮌᮤᮔᮥᮙ᮪ ᮒᮥᮃᮊ᮪ ᮒᮙ᮪ᮘ ᮠᮔᮔ᮪ᮌ᮪, ᮔᮡᮒᮥ ᮒᮙ᮪ᮘ ᮕᮧᮔᮡᮧ, ᮅᮜᮠ᮪ ᮊᮏᮧᮔ᮪ᮌ᮪ᮏᮧᮔ᮪ᮌᮔ᮪ ᮒᮨᮅᮄᮔ᮪ᮌ᮪. ᮒᮤᮔᮨᮅᮔ᮪ᮌ᮪ᮊᮨᮅᮔ᮪ ᮘᮞᮔ ᮠᮔ᮪ᮒᮨᮅ, ᮞᮔ᮪ᮌ᮪ ᮔ᮪ᮌᮥᮔᮤ ᮒᮥ ᮊᮥ ᮃᮔᮊ᮪ ᮊᮥ éwé, ᮙᮥᮜᮠ᮪ ᮓᮨᮊ᮪ ᮊᮕᮜᮤᮊᮨᮒᮔ᮪. ᮞᮥᮌᮔ᮪ ᮙᮧ ᮞᮕᮤᮒ᮪wᮃᮠᮨᮅᮔ᮪, ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮙ ᮘᮨᮅᮔᮔ᮪ᮌ᮪ ᮅᮛᮔ᮪ᮌ᮪ ᮔᮡᮛᮙᮔ᮪, ᮒ᮪éᮊ ᮔᮥᮛᮥᮒ᮪ᮔ ᮕᮔᮡᮛᮙᮔ᮪, ᮔ ᮕᮙᮌᮠᮔ᮪"^^xsd:string ;
     :hasTransliteration "jaga urang héés tamba tunduh, nginum tuak tamba hanaang, nyatu tamba ponyo, ulah kajongjongan teuing. tineungkeun basana hanteu, sang nguni tu ku anak ku éwé, mulah dek kapaliketan. sugan mo sapitwaheun, rampés ma beunang urang nyaraman, téka nurutna panyaraman, na pamagahan"^^xsd:string ;
     :hasTranslation "Hendaknya kita tidur sekadar penghilang kantuk, minum tuak sekadar penghilang haus, makan sekadar penghilang lapar, janganlah terlalu berlebihlebihan. Ingatlah ketika kita tidak (memiliki apa-apa). Demikian pula dengan anak-isteri, jangan bersikap pembeli hati. Supaya tidak hanya tampaknya saja berbuat. Bila kita berhasil mengajarinya, itulah yang menuruti nasihat dan petuah."^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-36" .
+    dcterms:identifier "SKK-BARIS-29" .
 
-# --- Baris 37 (<A.8r>) ---
-:skk_baris_37 a :BarisNaskah ;
+# --- Baris 30 (<A.8r>) ---
+:skk_baris_30 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "_ _ _saur sang darma pitutur, ini silokana"^^xsd:string ;
-    :hasTranslation "_ _ _ucapan sang darma pitutur. Inil selokannya"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-37" .
+    :hasAksara "ᮞᮅᮁ ᮞᮔ᮪ᮌ᮪ ᮓᮁᮙ ᮕᮤᮒᮥᮒᮥᮁ, ᮄᮔᮤ ᮞᮤᮜᮧᮊᮔ"^^xsd:string ;
+    :hasTransliteration "saur sang darma pitutur, ini silokana"^^xsd:string ;
+    :hasTranslation "ucapan sang darma pitutur. Inil selokannya"^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-30" .
 
-# --- Baris 38 (<A.8r>) ---
-:skk_baris_38 a :BarisNaskah ;
+# --- Baris 31 (<A.8r>) ---
+:skk_baris_31 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮒᮒᮊ cᮃᮛᮤᮒ ᮠᮔ᮪ᮌ᮪ᮞ,"^^xsd:string ;
     :hasTransliteration "tataka carita hangsa,"^^xsd:string ;
     :hasTranslation "telaga dikisahkan angsa,"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-38" .
+    dcterms:identifier "SKK-BARIS-31" .
 
-# --- Baris 39 (<A.8r>) ---
-:skk_baris_39 a :BarisNaskah ;
+# --- Baris 32 (<A.8r>) ---
+:skk_baris_32 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮌᮏ᮪éᮔ᮪ᮓᮢ cᮃᮛᮤᮒ ᮘᮔᮨᮙ᮪,"^^xsd:string ;
     :hasTransliteration "gajéndra carita banem,"^^xsd:string ;
     :hasTranslation "gajah mcngisahkan hutan,"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-39" .
+    dcterms:identifier "SKK-BARIS-32" .
 
-# --- Baris 40 (<A.8r>) ---
-:skk_baris_40 a :BarisNaskah ;
+# --- Baris 33 (<A.8r>) ---
+:skk_baris_33 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮙcᮃᮔᮨᮙ᮪ cᮃᮛᮤᮒ ᮞᮌᮛᮨᮙ᮪,"^^xsd:string ;
     :hasTransliteration "macanem carita sagarem,"^^xsd:string ;
     :hasTranslation "ikan mengisahkan laut,"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-40" .
+    dcterms:identifier "SKK-BARIS-33" .
 
-# --- Baris 41 (<A.8r>) ---
-:skk_baris_41 a :BarisNaskah ;
+# --- Baris 34 (<A.8r>) ---
+:skk_baris_34 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮕᮥᮞ᮪ᮕᮔᮨᮙ᮪ cᮃᮛᮤᮒ ᮘᮔ᮪ᮌ᮪ᮘᮛᮨᮙ᮪"^^xsd:string ;
     :hasTransliteration "puspanem carita bangbarem"^^xsd:string ;
     :hasTranslation "bunga dikisahkan kumbang"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-41" .
+    dcterms:identifier "SKK-BARIS-34" .
 
-# --- Baris 42 (<A.8r>) ---
-:skk_baris_42 a :BarisNaskah ;
+# --- Baris 35 (<A.8r>) ---
+:skk_baris_35 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮊᮜᮤᮔ᮪ᮌᮔᮡ ᮒ ᮊᮤᮒᮥ ᮏᮌ ᮅᮛᮔ᮪ᮌ᮪ ᮓ᮪éᮊ᮪ cᮈᮒ ᮅᮜᮠ᮪ ᮞᮜᮠ᮪ ᮌᮨᮅᮞᮔ᮪ ᮔᮔᮡ. ᮜᮙᮥᮔ᮪ ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮒᮜᮌ ᮠ᮪éᮛᮔ᮪ᮌ᮪, ᮘᮔᮡᮥ ᮃᮒᮤᮞ᮪ ᮙ, ᮙcᮃ ᮒᮔᮡ. ᮊᮜᮤᮔ᮪ᮌᮔ ᮒ ᮅᮕᮙᮔ ᮏᮔ᮪ᮙ ᮔᮡᮠᮧ ᮓᮤ ᮠᮤᮓᮨᮕ᮪ ᮞᮔ᮪ᮌ᮪ ᮓ᮪éwᮃ ᮛᮒᮥ, ᮓᮤ ᮠᮤᮓᮨᮕ᮪ ᮙᮠ ᮕᮔ᮪ᮓᮤᮒ, ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮜᮥᮃᮁ ᮜᮨᮅwᮈᮅᮔ᮪ᮌ᮪ ᮙ, ᮜᮤᮙᮔ᮪ ᮒᮔᮡ. ᮄᮔᮤ ᮊᮜᮤᮔ᮪ᮌᮔ, ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮜᮥᮃᮁ ᮜᮨwᮄᮁ ᮒ ᮙ, ᮔᮡᮠᮧ ᮓᮤ ᮠ᮪ᮓᮕ᮪ᮔ ᮛ᮪éᮃ, ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮜᮤᮙᮔ᮪ ᮒ ᮙ ᮔᮡᮠᮧ ᮓᮤᮘᮨᮘᮨᮓᮞ᮪ ᮞᮔ᮪ᮌ᮪ ᮓ᮪éwᮃ ᮛᮒᮥ."^^xsd:string ;
     :hasTransliteration "kalinganya ta kitu jaga urang dék ceta ulah salah geusan nanya. lamun hayang nyaho di talaga hérang, banyu atis ma, maca tanya. kalingana ta upamana janma nyaho di hidep sang déwa ratu, di hidep maha pandita, hayang nyaho di luar leuweung ma, liman tanya. ini kalingana, kangken luar lewir ta ma, nyaho di hdapna réa, kangken liman ta ma nyaho dibebedas sang déwa ratu."^^xsd:string ;
     :hasTranslation "Maksudnya, demikianlah bila kita akan bertindak, janganlah salah (tempat) untuk bertanya. Bila ingin tahu tentang taman yang jernih, telaga berair sejuk tanyalah angsa. Maksudnya jika orang (ingin) tahu tentang budi raja dan budi mahapendeta. Bila ingin tahu tentang isi hutan tanyalah gajah. Ini maksudnya, Yang diibaratkan isi ialah tahu keinginan orang banyak. Yang diibaratkan gajah ialah tahu tentang kekuatan sang raja."^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-42" .
+    dcterms:identifier "SKK-BARIS-35" .
 
-# --- Baris 43 (<A.8r>) ---
-:skk_baris_43 a :BarisNaskah ;
+# --- Baris 36 (<A.8r>) ---
+:skk_baris_36 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8r>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮛᮥᮙ᮪ ᮃᮙᮤᮞ᮪ ᮔᮤᮔ᮪ᮌ᮪ ᮊᮨᮙ᮪ᮘᮔ᮪ᮌ᮪ ᮙ ᮘᮔ᮪ᮌ᮪ᮘᮛ ᮒᮔᮡ."^^xsd:string ;
     :hasTransliteration "hayang nyaho di ruum amis ning kembang ma bangbara tanya."^^xsd:string ;
     :hasTranslation "Bila ingin tahu tentang harum dan manisnya bunga, tanyalah kumbang"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-43" .
+    dcterms:identifier "SKK-BARIS-36" .
 
-# --- Baris 44 (<A.8v>) ---
-:skk_baris_44 a :BarisNaskah ;
+# --- Baris 37 (<A.8v>) ---
+:skk_baris_37 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮊᮜᮤᮔ᮪ᮌᮔ ᮒ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮘᮔ᮪ᮌ᮪ᮘᮛ ᮒ ᮙ, ᮏᮔ᮪ᮙ ᮘᮤᮞ ᮞᮘ ᮔ᮪ᮌᮥᮙ᮪ᮘᮛ, ᮔᮡᮠᮧ ᮓᮤ ᮒᮤᮔᮨᮅᮔ᮪ᮌ᮪ ᮞᮊᮜᮤᮠ᮪ ᮊᮔ᮪ᮌ᮪ᮊᮨᮔ᮪ ᮛᮥᮙ᮪ ᮊᮨᮙ᮪ᮘᮔ᮪ᮌ᮪ ᮒ ᮙ, ᮏᮔ᮪ᮙ ᮛᮙ᮪ᮕ᮪éᮞ᮪ ᮒ᮪wᮃᮠ᮪, ᮃᮞᮤᮔ᮪ᮌ᮪ ᮘᮛᮥᮔ᮪ᮌᮥᮞᮔ᮪, ᮞᮨᮙᮥ ᮌᮥᮚᮥ ᮒᮤᮔ᮪ᮌ᮪ᮊᮠ᮪ ᮞᮥᮊ."^^xsd:string ;
     :hasTransliteration "kalingana ta kangken bangbara ta ma, janma bisa saba ngumbara, nyaho di tineung sakalih kangken ruum kembang ta ma, janma rampés twah, asing barungusan, semu guyu tingkah suka."^^xsd:string ;
     :hasTranslation "Maksudnya yang diibaratkan kumbang itu ialah orang dapat pergi mengembara, tahu perilaku orang lain. Yang diibaratkan ha rum bunga ialah manusia yang sempurna tingkah lakunya, manis tutur katanya, selalu tampak tersenyum penuh kebahagiaan."^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-44" .
+    dcterms:identifier "SKK-BARIS-37" .
 
-# --- Baris 45 (<A.8v>) ---
-:skk_baris_45 a :BarisNaskah ;
+# --- Baris 38 (<A.8v>) ---
+:skk_baris_38 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8v>" ;
-    :hasAksara "nan"^^xsd:string ;
+    :hasAksara "ᮊᮜᮤᮔ᮪ᮌᮔ ᮅᮜᮠ᮪ ᮞᮜᮠ᮪ ᮌᮨᮅᮞᮔ᮪ ᮔᮔᮡ. ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮞᮊᮧéᮠ᮪ ᮔᮤᮔ᮪ᮌ᮪ cᮃᮛᮤᮒ ᮙ, ᮌᮨᮅᮞ᮪ ᮓᮁᮙᮏᮒᮤ, ᮞᮔ᮪ᮌ᮪ ᮠᮡᮔ᮪ᮌ᮪ ᮠᮚᮥ, ᮞ᮪éᮓᮙᮔ, ᮊᮥᮔᮡ᮪ᮏᮚᮊᮁᮔ, ᮛᮙᮚᮔ, ᮃᮓᮤᮕᮁwᮃ, ᮊᮧᮛwᮃᮞᮢᮙ, ᮘᮤᮙᮞᮧᮁᮌ, ᮛᮔ᮪ᮌ᮪ᮌ ᮜwé, ᮘᮧᮙ, ᮞᮥᮙᮔ, ᮊᮜ ᮕᮥᮁᮘᮊ, ᮏᮛᮤᮔᮤ, ᮒᮔ᮪ᮒᮢᮤ, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ cᮃᮛᮤᮒ ᮙ, ᮙ᮪éᮙ᮪éᮔ᮪ ᮒᮔᮡ."^^xsd:string ;
     :hasTransliteration "kalingana ulah salah geusan nanya. hayang nyaho di sakoéh ning carita ma, geus darmajati, sang hyang hayu, sédamana, kunyjayakarna, ramayana, adiparwa, korawasrama, bimasorga, rangga lawé, boma, sumana, kala purbaka, jarini, tantri, sing sawatek carita ma, mémén tanya."^^xsd:string ;
     :hasTranslation "Maksudnya janganlah salah tempat untuk bertanya. Bila ingin tahu semua cerita: Damarjati, Sanghyang Hayu, Sedamana, Kunjayakarma, Ramayana, Adiparwa, Korawasarma, Bimasorga, Rangga Lawe, Boma, Sumana, Kala Purbaka, Jarini, Tantri, segala macam cerita, tanyalah mémén (dalang)"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-45" .
+    dcterms:identifier "SKK-BARIS-38" .
 
-# --- Baris 46 (<A.8v>) ---
-:skk_baris_46 a :BarisNaskah ;
+# --- Baris 39 (<A.8v>) ---
+:skk_baris_39 a :BarisNaskah ;
     :isFromManuscript :siksaKandangKaresian ;
     :lempirNaskah "<A.8v>" ;
-    :hasAksara "nan"^^xsd:string ;
-    :hasTransliteration "dék nyaho di sakoéh ning kawih ma, kawih bwatuha, kawih pujang, kawih lalanguan, kawih panyaraman, kawih sisindiran, kawih péngpélédan, bongbong kaso, porérané, porod eurih,  _ _ _ _ banan, kawih bangbarongan, kawih tungtung, kawih sasambatan, kawih igel igelan, sing sawatek kawih ma, paraguna tanya."^^xsd:string ;
+    :hasAksara "ᮓ᮪éᮊ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮞᮊᮧéᮠ᮪ ᮔᮤᮔ᮪ᮌ᮪ ᮊwᮄᮠ᮪ ᮙ, ᮊwᮄᮠ᮪ ᮘ᮪wᮃᮒᮥᮠ, ᮊwᮄᮠ᮪ ᮕᮥᮏᮔ᮪ᮌ᮪, ᮊwᮄᮠ᮪ ᮜᮜᮔ᮪ᮌᮥᮃᮔ᮪, ᮊwᮄᮠ᮪ ᮕᮔᮡᮛᮙᮔ᮪, ᮊwᮄᮠ᮪ ᮞᮤᮞᮤᮔ᮪ᮓᮤᮛᮔ᮪, ᮊwᮄᮠ᮪ ᮕ᮪éᮔ᮪ᮌ᮪ᮕ᮪éᮜ᮪éᮓᮔ᮪, ᮘᮧᮔ᮪ᮌ᮪ᮘᮧᮔ᮪ᮌ᮪ ᮊᮞᮧ, ᮕᮧᮁéᮛᮔ᮪é, ᮕᮧᮛᮧᮓ᮪ ᮈᮅᮛᮤᮠ᮪, ᮘᮔᮔ᮪, ᮊwᮄᮠ᮪ ᮘᮔ᮪ᮌ᮪ᮘᮛᮧᮔ᮪ᮌᮔ᮪, ᮊwᮄᮠ᮪ ᮒᮥᮔ᮪ᮌ᮪ᮒᮥᮔ᮪ᮌ᮪, ᮊwᮄᮠ᮪ ᮞᮞᮙ᮪ᮘᮒᮔ᮪, ᮊwᮄᮠ᮪ ᮄᮌᮨᮜ᮪ ᮄᮌᮨᮜᮔ᮪, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮊwᮄᮠ᮪ ᮙ, ᮕᮛᮌᮥᮔ ᮒᮔᮡ."^^xsd:string ;
+    :hasTransliteration "dék nyaho di sakoéh ning kawih ma, kawih bwatuha, kawih pujang, kawih lalanguan, kawih panyaraman, kawih sisindiran, kawih péngpélédan, bongbong kaso, porérané, porod eurih, banan, kawih bangbarongan, kawih tungtung, kawih sasambatan, kawih igel igelan, sing sawatek kawih ma, paraguna tanya."^^xsd:string ;
     :hasTranslation "Bila ingin tahu segala macam kawih: kawih bwatuha, kawih panjang, kawih lalanguan, kawih panyaraman, kawih sisindiran, kawih péngpélédan, bongbongkaso, porérané, porod eurih, (kawih babahanan), kawih bangbarongan, kawih tungtung, kawih sasambatan, kawih igel-gelan, segala macam kawih, tanyalah paraguna"^^xsd:string ;
-    dcterms:identifier "SKK-BARIS-46" .
+    dcterms:identifier "SKK-BARIS-39" .
+
+# --- Baris 40 (<A.9r>) ---
+:skk_baris_40 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "<A.9r>" ;
+    :hasAksara "ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮕᮛᮙcᮈᮅᮠ᮪ ᮙ, cᮈᮒ ᮙcᮈᮅᮠ᮪ ᮔᮤᮛᮥᮞ᮪, ᮒᮒᮕᮥᮊᮔ᮪, ᮘᮔ᮪ᮌ᮪ᮘᮛᮧᮔ᮪ᮌᮔ᮪, ᮘᮘᮊᮥᮒᮢᮊᮔ᮪, ᮃᮘᮔ᮪ᮌ᮪-ᮃᮘᮔ᮪ᮌᮔ᮪, ᮔᮨᮅᮛᮨᮅᮚ᮪ ᮕᮔ᮪cᮃ, ᮙᮥᮔᮤᮊᮨᮅᮔ᮪ ᮜᮨᮙ᮪ᮘᮥᮁ, ᮔ᮪ᮌᮓᮥ ᮜᮨᮞᮥᮔ᮪ᮌ᮪, ᮔ᮪ᮌᮓᮥ ᮔᮤᮔᮤ, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮅᮜᮤᮔᮔ᮪, ᮠᮨᮙ᮪ᮕᮥᮜ᮪ ᮒᮔᮡ."^^xsd:string ;
+    :hasTransliteration "hayang nyaho di paramaceuh ma, ceta maceuh nirus, tatapukan, bangbarongan, babakutrakan, abang-abangan, neureuy panca, munikeun lembur, ngadu lesung, ngadu nini, sing sawatek ulinan, hempul tanya."^^xsd:string ;
+    :hasTranslation "Bila ingin tahu permainan, seperti: ceta maceuh, ceta nirus, tatapukan, bangbarongan, babakutrakan, ubang-ubangan, neureuy panca, munikeun lembur, ngadu lesung, ngadu nini, se gala macam permainan, tanyalah hempul."^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-40" .
+
+# --- Baris 41 (<A.9r>) ---
+:skk_baris_41 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "<A.9r>" ;
+    :hasAksara "ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮕᮔ᮪ᮒᮥᮔ᮪ ᮙ, ᮜᮔ᮪ᮌ᮪ᮌᮜᮛᮔ᮪ᮌ᮪, ᮘᮔᮡᮊ᮪cᮃᮒᮢ, ᮞᮤᮜᮤᮠ᮪wᮃᮔ᮪ᮌᮤ, ᮕᮢᮨᮕᮔ᮪ᮒᮥᮔ᮪ ᮒᮔᮡ."^^xsd:string ;
+    :hasTransliteration "hayang nyaho di pantun ma, langgalarang, banyakcatra, silihwangi, prepantun tanya."^^xsd:string ;
+    :hasTranslation "Bila ingin tahu tentang pantun: Langgalarang, Banyakcatra, Siliwangi, tanyalah prepantun (juru pantun)."^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-41" .
+
+# --- Baris 42 (<A.9r>) ---
+:skk_baris_42 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "<A.9r>" ;
+    :hasAksara "ᮞwᮃᮜᮥᮛᮔ᮪ᮔᮤᮔ᮪ᮌ᮪ ᮒᮥᮜᮤᮞ᮪ ᮙ, ᮕᮥᮕᮥᮔ᮪ᮏᮨᮔ᮪ᮌᮔ᮪ ᮒᮔᮡ, ᮃᮞᮥᮕ᮪ ᮊᮔ ᮌᮒᮤ, ᮠᮤᮌᮥᮜ᮪-ᮠᮤᮌᮥᮜᮔ᮪, ᮊᮨᮊᮨᮙ᮪ᮘᮔ᮪ᮌᮔ᮪, ᮃᮜᮞ᮪-ᮃᮜᮞᮔ᮪, ᮅᮛᮔ᮪ᮌ᮪-ᮅᮛᮔ᮪ᮌᮔ᮪, ᮘᮤᮘᮤᮜᮠᮔ᮪, ᮞᮨᮞᮨᮛᮔ᮪ᮌᮔ᮪, ᮒᮒᮛᮥ ᮠᮒ, ᮃ ᮊᮨᮙ᮪ᮘᮔ᮪ᮌ᮪ ᮒᮛᮒ᮪é, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮒᮥᮜᮤᮞ᮪ ᮙ, ᮜᮥᮊᮤᮞ᮪ ᮒᮔᮡ."^^xsd:string ;
+    :hasTransliteration "sawaluranning tulis ma, pupunjengan tanya, asup kana gati, higul-higulan, kekembangan, alas-alasan, urang-urangan, bibilahan, seserangan, tataru hata, a kembang taraté, sing sawatek tulis ma, lukis tanya."^^xsd:string ;
+    :hasTranslation "Segala macam tulis (motif lukisan), seperti: pupunjengan, higul-higulan, kekembangan, alas-alasan, urang-urangan, beubeulahan, seserangan, tataru hata, kembang taraté, segala macam tulis (lukisan), tanyalah lukis."^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-42" .
+
+# --- Baris 43 (<A.10v>) ---
+:skk_baris_43 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "<A.10v>" ;
+    :hasAksara "ᮞwᮃᮜᮥᮛᮔ᮪ ᮔᮤᮔ᮪ᮌ᮪ ᮘᮧéᮠ᮪ ᮙ, ᮊᮨᮙ᮪ᮘᮔ᮪ᮌ᮪ ᮙᮥᮔ᮪cᮃᮔ᮪ᮌ᮪, ᮌᮌᮔ᮪ᮌ᮪ ᮞ᮪éᮔ᮪ᮌ᮪ᮌᮔ᮪ᮌ᮪, ᮞᮙ᮪éᮜ᮪éᮌ᮪, ᮞᮨᮅᮙᮒ᮪ ᮞᮠᮥᮛᮥᮔ᮪, ᮃᮔᮡᮙ᮪ cᮃᮚᮥᮒ᮪, ᮞᮤᮌᮨᮏᮤ, ᮕᮞᮤ-ᮕᮞᮤ, ᮊᮜᮔ᮪ᮌ᮪ᮊᮔ᮪ᮌ᮪ ᮃᮚᮊᮔ᮪, ᮕᮧᮜ᮪éᮔ᮪ᮌ᮪ ᮛᮨᮔ᮪ᮌ᮪ᮌᮔᮤᮞ᮪, ᮏᮚᮔ᮪ᮒᮤ, cᮄcᮄwᮃᮔ᮪, ᮕᮕᮛᮔᮊᮔ᮪, ᮙᮔ᮪ᮌᮤᮔ᮪ ᮠᮛᮤᮞ᮪, ᮞᮜᮤᮔ᮪ ᮌᮔ᮪ᮒᮤ, ᮘᮧéᮠ᮪ ᮞ᮪éᮃᮔ᮪, ᮘᮨᮘᮨᮔᮒᮔ᮪, ᮕᮕᮊ᮪ᮔᮊᮔᮔ᮪, ᮞᮥᮛᮒ᮪ ᮃwᮄ, ᮕᮛᮤᮌᮤ ᮔᮡ᮪éᮔ᮪ᮌ᮪ᮞᮧᮠ᮪, ᮌᮌᮏᮛᮔ᮪, ᮜᮥᮞᮤᮃᮔ᮪ ᮘᮨᮞᮁ, ᮊᮙᮛᮥᮔ᮪ᮌ᮪ ᮏᮚᮔ᮪ᮒᮤ, ᮠᮥᮏᮔ᮪ ᮛᮤᮛᮤᮞ᮪, ᮜᮛᮤᮞ᮪, ᮘᮧéᮠ᮪ ᮃᮜᮥᮞ᮪, ᮛᮌ᮪éᮔ᮪ ᮕᮔ᮪ᮌᮔ᮪ᮒ᮪éᮔ᮪, ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮘᮧᮘᮧéᮠᮔ᮪ ᮙ, ᮕᮔ᮪ᮌᮨᮅᮚᮨᮅᮊ᮪ ᮒᮔᮡ."^^xsd:string ;
+    :hasTransliteration "sawaluran ning boéh ma, kembang muncang, gagang sénggang, samélég, seumat sahurun, anyam cayut, sigeji, pasi-pasi, kalangkang ayakan, poléng rengganis, jayanti, ciciwaan, paparanakan, mangin haris, salin ganti, boéh séan, bebenatan, papaknakanan, surat awi, parigi nyéngsoh, gagajaran, lusian besar, kamarung jayanti, hujan riris, laris, boéh alus, ragén pangantén, sing sawatek boboéhan ma, pangeuyeuk tanya."^^xsd:string ;
+    :hasTranslation "Segala macam kain: kembang muncang, gagang sénggang, samélég, seumat sahurun, anyam cayut, sigeji, pasi-pasi, kalangkang ayakan, poléng rengganis, jayanti, ciciwangan, paparanakan, mangin haris, silihganti, boeh séan, bebenatan, papakna kanan, surat awi, parigi nyéngsoh, gaganjar, lusian besar, kamarung jayanti, hujan riris, boéh alus, ragén pangantén, segala macam kain, pangeuyeuk (penenun) tanya."^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-43" .
+
+# --- Baris 44 (<A.10v>) ---
+:skk_baris_44 a :BarisNaskah ;
+    :isFromManuscript :siksaKandangKaresian ;
+    :lempirNaskah "<A.10v>" ;
+    :hasAksara "ᮜᮙᮥᮔ᮪ ᮠᮚᮔ᮪ᮌ᮪ ᮔᮡᮠᮧ ᮓᮤ ᮃᮌᮙ ᮕᮛᮤᮃᮌᮙ, ᮃcᮃᮛ éᮜ᮪éᮠ᮪ ᮊᮥ ᮃᮓᮤᮌᮙ, ᮃᮓᮤᮌᮙ éᮜ᮪éᮠ᮪ ᮊᮥ ᮌᮥᮛᮥᮌᮙ, ᮌᮥᮛᮥᮌᮙ éᮜ᮪éᮠ᮪ ᮊᮥ ᮒᮥᮠᮌᮙ, ᮒᮥᮠᮌᮙ éᮜ᮪éᮠ᮪ ᮊᮥ ᮞᮒ᮪ᮙᮒ, ᮞᮒ᮪ᮙᮒ éᮜ᮪éᮠ᮪ ᮊᮥ ᮞᮥᮛᮊᮣᮧᮊ, ᮞᮥᮛᮊᮣᮧᮊ éᮜ᮪éᮠ᮪ ᮊᮥ ᮔwᮄcᮃᮛᮠ᮪. ᮅᮒᮙ ᮏᮔ᮪ᮙ wᮃᮠ᮪éᮃ ᮓᮧᮞ, wᮃᮠ᮪éᮃ ᮏᮔ᮪ᮙ ᮅᮒᮙ ᮓᮧᮞ. ᮞᮤᮔ᮪ᮌ᮪ ᮞwᮃᮒᮨᮊ᮪ ᮃᮌᮙ, ᮕᮛᮒᮓ ᮒᮔᮡ."^^xsd:string ;
+    :hasTransliteration "lamun hayang nyaho di agama pariagama, acara éléh ku adigama, adigama éléh ku gurugama, gurugama éléh ku tuhagama, tuhagama éléh ku satmata, satmata éléh ku surakloka, surakloka éléh ku nawicarah. utama janma wahéa dosa, wahéa janma utama dosa. sing sawatek agama, paratada tanya."^^xsd:string ;
+    :hasTranslation "Bila ingin tahu agama dan parigama, acara tunduk kepada adigama, adigama tunduk kepada gurugama, gurugama tunduk kepada tuhagama, tuhagama tunduk kepada satmata, satmata tunduk kepada surakloka, surakloka tunduk kepada nawicarah. Keutamaan manusia bebas dari dosa, (ciri) manusia utama (terbebas dari) dosa, segala hal mengenai agama, pretanda tanya."^^xsd:string ;
+    dcterms:identifier "SKK-BARIS-44" .
