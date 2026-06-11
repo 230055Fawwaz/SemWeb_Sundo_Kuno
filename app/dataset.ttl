@@ -489,6 +489,100 @@
     :lempirNaskah "<A.10v>" ;
     dcterms:identifier "SKK-BARIS-44" .
 
+:amanatGalunggung a :Manuskrip ;
+    dcterms:creator "Rakeyan Darmasiksa" ;
+    dcterms:language "su" ;
+    dcterms:title "Amanat Galunggung" .
+
+:ag_baris_01 a :BagianPembuka ;
+    :hasAksara "ᮃᮝᮤᮌ᮪ᮔᮙ᮪ ᮃᮞ᮪ᮒᮥ. ᮔᮤᮠᮔ᮪ ᮒᮨᮙ᮪ᮘᮨᮚ᮪ ᮞᮊᮊᮜ ᮛᮠᮡᮀ ᮘᮍ, ᮙᮞ ᮞᮡ ᮔ᮪ᮌᮥᮞᮥᮊ᮪ ᮔ ᮕᮊ᮪ᮝᮔ᮪ ᮙᮊᮍᮛᮔ᮪ ᮛᮠᮡᮀᮒ ᮝᮥᮝᮥᮞ᮪."^^xsd:string ;
+    :hasTranslation "Semoga selamat. Inilah permulaan tanda peringatan Rahyang Banga, ketika ia membuat parit (pertahanan) Pakuan, bernama Rahyangta Wuwus."^^xsd:string ;
+    :hasTransliteration "awignam astu. nihan tembey sakakala rahyang banga, masa sya nyusuk na pakwan makangaran rahyangta wuwus."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_02 ;
+    :lempirNaskah "<L.1r>" ;
+    dcterms:identifier "AG-BARIS-01" .
+
+:ag_baris_02 a :BagianAjaranMoral ;
+    :hasAksara "ᮠᮔ ᮍᮥᮔᮤ ᮠᮔ ᮙᮀᮊᮦ, ᮒᮔ᮪ ᮠᮔ ᮍᮥᮔᮤ ᮒᮔ᮪ ᮠᮔ ᮙᮀᮊᮦ."^^xsd:string ;
+    :hasTranslation "Ada masa lalu ada masa kini, tidak ada masa lalu tidak ada masa kini."^^xsd:string ;
+    :hasTransliteration "hana nguni hana mangke, tan hana nguni tan hana mangke."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_03 ;
+    :lempirNaskah "<L.1r>" ;
+    dcterms:identifier "AG-BARIS-02" .
+
+:ag_baris_03 a :BagianAjaranMoral ;
+    :hasAksara "ᮃᮚ ᮙ ᮘᮨᮥᮠᮨᮥᮜ ᮃᮚ ᮒᮥ ᮃᮚᮨᮥᮔ, ᮠᮔ᮪ᮒᮨᮥ ᮙ ᮘᮨᮥᮠᮨᮥᮜ ᮠᮔ᮪ᮒᮨᮥ ᮒᮥ ᮃᮚᮨᮥᮔ."^^xsd:string ;
+    :hasTranslation "Bila ada masa lampau maka ada masa kini, bila tidak ada masa lampau tidak ada masa kini."^^xsd:string ;
+    :hasTransliteration "aya ma beuheula aya tu ayeuna, hanteu ma beuheula hanteu tu ayeuna."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_04 ;
+    :lempirNaskah "<L.1v>" ;
+    dcterms:identifier "AG-BARIS-03" .
+
+:ag_baris_04 a :BagianAjaranMoral ;
+    :hasAksara "ᮠᮔ ᮒᮥᮍ᮪ᮌᮊ᮪ ᮠᮔ ᮝᮒ᮪ᮍ᮪, ᮒᮔ᮪ ᮠᮔ ᮒᮥᮍ᮪ᮌᮊ᮪ ᮒᮔ᮪ ᮠᮔ ᮝᮒ᮪ᮍ᮪."^^xsd:string ;
+    :hasTranslation "Ada tunggul pohon ada batang pohon, tidak ada tunggul tidak ada batang."^^xsd:string ;
+    :hasTransliteration "hana tunggak hana watang, tan hana tunggak tan hana watang."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_05 ;
+    :lempirNaskah "<L.1v>" ;
+    dcterms:identifier "AG-BARIS-04" .
+
+:ag_baris_05 a :BagianAjaranMoral ;
+    :hasAksara "ᮠᮔ ᮙ ᮒᮥᮍ᮪ᮌᮥᮜ᮪ᮔ, ᮃᮚ ᮒᮥ ᮎᮒ᮪ᮍ᮪ᮔ."^^xsd:string ;
+    :hasTranslation "Bila ada tunggulnya, maka ada pula pohon tumbangnya."^^xsd:string ;
+    :hasTransliteration "hana ma tunggulna, aya tu catangna."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_06 ;
+    :lempirNaskah "<L.2r>" ;
+    dcterms:identifier "AG-BARIS-05" .
+
+:ag_baris_06 a :BagianAjaranMoral ;
+    :hasAksara "ᮙᮥᮜᮠ᮪ ᮞᮤᮜᮤᮠ᮪ ᮞᮨᮓᮨᮊ᮪ ᮞᮤᮜᮤᮠ᮪ ᮎᮥᮛᮤᮌ."^^xsd:string ;
+    :hasTranslation "Janganlah saling mendesak, saling mencurigai."^^xsd:string ;
+    :hasTransliteration "mulah silih sedek silih curiga."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_07 ;
+    :lempirNaskah "<L.2r>" ;
+    dcterms:identifier "AG-BARIS-06" .
+
+:ag_baris_07 a :BagianAjaranMoral ;
+    :hasAksara "ᮙᮥᮜᮠ᮪ ᮞᮤᮜᮤᮠ᮪ ᮕᮘᮨᮔ᮪ᮎᮔ᮪ ᮞᮤᮜᮤᮠ᮪ ᮕᮔ᮪ᮎᮔ."^^xsd:string ;
+    :hasTranslation "Janganlah saling bertengkar, saling memfitnah."^^xsd:string ;
+    :hasTransliteration "mulah silih pabencan silih pancan."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_08 ;
+    :lempirNaskah "<L.2v>" ;
+    dcterms:identifier "AG-BARIS-07" .
+
+:ag_baris_08 a :BagianAjaranMoral ;
+    :hasAksara "ᮙᮥᮜᮠ᮪ ᮙᮥᮔᮥᮠ᮪ ᮔᮥ ᮠᮔ᮪ᮒᮨᮥ ᮓᮧᮞ."^^xsd:string ;
+    :hasTranslation "Janganlah membunuh orang yang tidak berdosa."^^xsd:string ;
+    :hasTransliteration "mulah munuh nu hanteu dosa."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_09 ;
+    :lempirNaskah "<L.2v>" ;
+    dcterms:identifier "AG-BARIS-08" .
+
+:ag_baris_09 a :BagianAjaranMoral ;
+    :hasAksara "ᮙᮥᮜᮠ᮪ ᮛᮨᮥᮘᮥᮒ᮪ ᮊᮞᮥᮊᮔ᮪ ᮛᮨᮥᮘᮥᮒ᮪ ᮓᮢᮨᮘᮡ."^^xsd:string ;
+    :hasTranslation "Janganlah berebut kebahagiaan, berebut harta milik."^^xsd:string ;
+    :hasTransliteration "mulah rebut kasukan rebut drebya."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lanjutKeBaris :ag_baris_10 ;
+    :lempirNaskah "<L.3r>" ;
+    dcterms:identifier "AG-BARIS-09" .
+
+:ag_baris_10 a :BagianDeskripsiBudaya ;
+    :hasAksara "ᮏᮌ ᮝᮛᮞ᮪ ᮊᮘᮥᮚᮥᮒ᮪ᮔ ᮕᮊᮨᮥᮔ᮪ ᮎᮡᮀ ᮏᮜᮔ᮪."^^xsd:string ;
+    :hasTranslation "Jagalah agar kabuyutan tetap selamat agar jalan menjadi terang."^^xsd:string ;
+    :hasTransliteration "jaga waras kabuyutna pakeun caang jalan."^^xsd:string ;
+    :isFromManuscript :amanatGalunggung ;
+    :lempirNaskah "<L.3r>" ;
+    dcterms:identifier "AG-BARIS-10" .
+
 :Manuskrip a owl:Class ;
     rdfs:label "Manuskrip"@id ;
     rdfs:comment "Kelas yang mewakili naskah atau manuskrip kuno secara keseluruhan."@id .

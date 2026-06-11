@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %}SPARQL Console - Sundo Kuno{% endblock %}
+
+{% block content %}
+<div class="korpus-container">
+    <header class="korpus-header">
+        <h2 class="korpus-title">⚡ SPARQL Query Console</h2>
+        <p class="korpus-subtitle">Antarmuka Endpoint Aktif untuk Penjelajahan Graf Semantik secara Mandiri</p>
+    </header>
+
+    <section class="search-section">
+        <div class="search-card">
+            <h4 style="margin-bottom: 15px; font-weight: 600;"><i class="bi bi-gear-fill"></i> Konfigurasi Query</h4>
+            
+            <div class="select-field-group" style="margin-bottom: 20px;">
+                <label for="preset-select" class="search-label">
+                    <i class="bi bi-card-list"></i> Pilih Query Preset (Evaluasi Proposal)
+                </label>
+                <select id="preset-select" class="search-select-field">
+                    <option value="" disabled selected>-- Pilih dari 10 Query Preset --</option>
+                    {% for pq in preset_queries %}
+                        <option value="{{ pq.id }}">{{ pq.id }}. {{ pq.name }}</option>
+                    {% endfor %}
+                </select>
+                <p id="preset-desc" style="font-size: 0.85rem; color: var(--secondary-color); margin-top: 5px; font-style: italic;"></p>
+            </div>
+
+            <form method="POST" action="{{ url_for('main.sparql_endpoint') }}" id="sparql-form">
+                <div class="input-field-group">
+                    <label for="query-editor" class="search-label">
+                        <i class="bi bi-code-square"></i> Editor Query SPARQL
+                    </label>
+                    <textarea id="query-editor" name="query" class="sparql-textarea" rows="12" placeholder="Tulis query SPARQL Anda di sini..." required>{{ query or '' }}</textarea>
+                </div>
+
+                <div class="search-button-group" style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="search-button-premium" type="submit">
+                        <i class="bi bi-play-fill"></i> Jalankan Query (HTML)
+                    </button>
+                    <button class="search-button-premium" type="button" id="btn-run-json" style="background: linear-gradient(135deg, #10B981, #059669);">
+                        <i class="bi bi-filetype-json"></i> Ambil Respon (JSON API)
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    {% if error %}
+    <section class="results-section">
+        <div class="custom-alert alert-warning" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <div>
+                <strong>Error Eksekusi SPARQL:</strong>
+                <pre style="margin-top: 10px; white-space: pre-wrap; font-family: monospace; font-size: 0.85rem; text-align: left;">{{ error }}</pre>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="results-section" id="results-display-section" {% if not success %}style="display: none;"{% endif %}>
+        <div class="results-container">
+            <div class="results-summary" style="display: flex; justify-content: space-between; align-items: center;">
+                <h5 class="results-count-title"><i class="bi bi-table"></i> Hasil Eksekusi Query:</h5>
+                <span class="custom-badge badge-success" id="result-count-badge">{{ rows|length if rows else 0 }} Baris Hasil</span>
+            </div>
+
+            <div class="table-responsive" id="table-container">
+                {% if success and headers %}
+                <table class="premium-table">
+                    <thead>
+                        <tr>
+                            {% for h in headers %}
+                            <th>?{{ h }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in rows %}
+                        <tr>
+                            {% for val in r %}
+                            <td>{{ val }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Menyimpan preset query ke dalam objek Javascript
+    const presetQueries = {
+        {% for pq in preset_queries %}
+        "{{ pq.id }}": {
+            "name": "{{ pq.name | replace('"', '\\"') }}",
+            "description": "{{ pq.description | replace('"', '\\"') }}",
+            "sparql": `{{ pq.sparql | safe }}`
+        },
+        {% endfor %}
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const presetSelect = document.getElementById('preset-select');
+        const presetDesc = document.getElementById('preset-desc');
+        const queryEditor = document.getElementById('query-editor');
+        const btnRunJson = document.getElementById('btn-run-json');
+        const form = document.getElementById('sparql-form');
+        const resultsSection = document.getElementById('results-display-section');
+        const tableContainer = document.getElementById('table-container');
+        const resultCountBadge = document.getElementById('result-count-badge');
+
+        // Handler perubahan dropdown preset
+        presetSelect.addEventListener('change', function() {
+            const selectedId = this.value;
+            if (presetQueries[selectedId]) {
+                queryEditor.value = presetQueries[selectedId].sparql;
+                presetDesc.textContent = presetQueries[selectedId].description;
+            }
+        });
+
+        // Handler tombol Ambil Respon JSON API
+        btnRunJson.addEventListener('click', function() {
+            const queryText = queryEditor.value.trim();
+            if (!queryText) {
+                alert("Query tidak boleh kosong!");
+                return;
+            }
+
+            // Lakukan pemanggilan AJAX dengan Accept: application/json
+            fetch("{{ url_for('main.sparql_endpoint') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "application/json"
+                },
+                body: new URLSearchParams({ "query": queryText })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw new Error(err.error || "Gagal mengeksekusi query") });
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Tampilkan hasil mentah JSON
+                resultsSection.style.display = "block";
+                resultCountBadge.className = "custom-badge badge-success";
+                
+                let count = 0;
+                if (data.results && data.results.bindings) {
+                    count = data.results.bindings.length;
+                }
+                resultCountBadge.textContent = count + " bindings (format JSON)";
+
+                // Format JSON yang cantik di dalam PRE
+                tableContainer.innerHTML = `<pre style="background: #1e293b; color: #38bdf8; padding: 15px; border-radius: 8px; overflow-x: auto; text-align: left; font-family: monospace; font-size: 0.85rem; max-height: 400px;">${JSON.stringify(data, null, 4)}</pre>`;
+                
+                // Scroll ke section hasil
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                alert("Error: " + error.message);
+                resultsSection.style.display = "block";
+                resultCountBadge.className = "custom-badge badge-disabled";
+                resultCountBadge.textContent = "Error";
+                tableContainer.innerHTML = `<div class="custom-alert alert-warning"><i class="bi bi-exclamation-triangle-fill"></i> ${error.message}</div>`;
+            });
+        });
+    });
+</script>
+{% endblock %}

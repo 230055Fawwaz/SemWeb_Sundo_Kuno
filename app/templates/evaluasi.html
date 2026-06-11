@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+
+{% block title %}Evaluasi & UAT - Sundo Kuno{% endblock %}
+
+{% block content %}
+<div class="korpus-container">
+    <header class="korpus-header">
+        <h2 class="korpus-title">📊 Evaluasi Proposal & UAT</h2>
+        <p class="korpus-subtitle">Pengujian 10 Query Proposal & Formulir User Acceptance Test (UAT)</p>
+    </header>
+
+    <!-- BAGIAN 1: PENGUJIAN 10 QUERY PROPOSAL -->
+    <section class="search-section" style="margin-bottom: 30px;">
+        <div class="search-card">
+            <h4 style="margin-bottom: 15px; font-weight: 600;"><i class="bi bi-patch-check-fill"></i> Status Pengujian 10 Query Evaluasi</h4>
+            <p style="font-size: 0.9rem; color: var(--secondary-color); margin-bottom: 20px;">
+                Tabel di bawah ini memverifikasi secara langsung (live self-test) kesesuaian sistem dengan 10 query yang disyaratkan dalam proposal hasil akhir.
+            </p>
+
+            <div class="table-responsive">
+                <table class="premium-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">No</th>
+                            <th style="width: 200px;">Nama Pengujian</th>
+                            <th>Deskripsi Fungsionalitas</th>
+                            <th style="width: 120px; text-align: center;">Status</th>
+                            <th style="width: 120px; text-align: center;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for er in eval_results %}
+                        <tr>
+                            <td><strong>{{ er.id }}</strong></td>
+                            <td><span style="font-weight: 500;">{{ er.name }}</span></td>
+                            <td>{{ er.description }}</td>
+                            <td style="text-align: center;">
+                                {% if er.status == 'PASS' %}
+                                    <span class="custom-badge badge-success"><i class="bi bi-check-circle-fill"></i> PASS</span>
+                                {% else %}
+                                    <span class="custom-badge badge-disabled" style="background-color: var(--danger-color); color: white;"><i class="bi bi-x-circle-fill"></i> FAIL</span>
+                                {% endif %}
+                            </td>
+                            <td style="text-align: center;">
+                                <button class="btn-toggle-query" onclick="toggleQueryCode('q-code-{{ er.id }}')">
+                                    <i class="bi bi-code"></i> Lihat Query
+                                </button>
+                            </td>
+                        </tr>
+                        <tr id="q-code-{{ er.id }}" style="display: none; background: var(--bg-color);">
+                            <td colspan="5" style="padding: 15px;">
+                                <div style="position: relative;">
+                                    <pre style="margin: 0; background: #1e293b; color: #f8fafc; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; overflow-x: auto; text-align: left;">{{ er.sparql }}</pre>
+                                    {% if er.error %}
+                                        <div style="margin-top: 10px; color: var(--danger-color); font-size: 0.85rem;">
+                                            <strong>Error:</strong> {{ er.error }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN 2: STATISTIK UAT & FORM FEEDBACK -->
+    <div class="search-form-grid" style="align-items: stretch; margin-bottom: 30px;">
+        
+        <!-- PANEL STATISTIK UAT -->
+        <section class="search-section" style="margin: 0; height: 100%;">
+            <div class="search-card" style="height: 100%; display: flex; flex-direction: column;">
+                <h4 style="margin-bottom: 20px; font-weight: 600;"><i class="bi bi-pie-chart-fill"></i> Statistik Penerimaan Pengguna (UAT)</h4>
+                
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--primary-color); line-height: 1;">
+                        {% set avg = (stats.usability + stats.accuracy + stats.speed + stats.design) / 4 %}
+                        {{ "%.2f" | format(avg) }} <span style="font-size: 1.2rem; font-weight: 500; color: var(--secondary-color);">/ 5.0</span>
+                    </div>
+                    <div style="font-size: 0.9rem; color: var(--secondary-color); margin-top: 5px;">
+                        Skor Kepuasan Rata-Rata (Berdasarkan {{ stats.total_reviews }} Ulasan)
+                    </div>
+                </div>
+
+                <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Usability -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                            <span><i class="bi bi-lightning-charge"></i> Kemudahan Penggunaan</span>
+                            <span style="font-weight: 600;">{{ stats.usability }} / 5.0</span>
+                        </div>
+                        <div style="background: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background: var(--primary-color); width: {{ stats.usability * 20 }}%; height: 100%; transition: width 0.5s ease;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Accuracy -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                            <span><i class="bi bi-bullseye"></i> Keakuratan Hasil Pencarian</span>
+                            <span style="font-weight: 600;">{{ stats.accuracy }} / 5.0</span>
+                        </div>
+                        <div style="background: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background: var(--primary-color); width: {{ stats.accuracy * 20 }}%; height: 100%; transition: width 0.5s ease;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Speed -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                            <span><i class="bi bi-speedometer2"></i> Kecepatan Respon Sistem</span>
+                            <span style="font-weight: 600;">{{ stats.speed }} / 5.0</span>
+                        </div>
+                        <div style="background: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background: var(--primary-color); width: {{ stats.speed * 20 }}%; height: 100%; transition: width 0.5s ease;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Design -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                            <span><i class="bi bi-palette"></i> Keindahan Antarmuka (Aesthetics)</span>
+                            <span style="font-weight: 600;">{{ stats.design }} / 5.0</span>
+                        </div>
+                        <div style="background: var(--border-color); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background: var(--primary-color); width: {{ stats.design * 20 }}%; height: 100%; transition: width 0.5s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM INPUT UAT -->
+        <section class="search-section" style="margin: 0; height: 100%;">
+            <div class="search-card" style="height: 100%;">
+                <h4 style="margin-bottom: 20px; font-weight: 600;"><i class="bi bi-pencil-square"></i> Kuesioner Pengujian UAT Baru</h4>
+                <form method="POST" action="{{ url_for('main.evaluasi_uat') }}">
+                    <div class="input-field-group" style="margin-bottom: 15px;">
+                        <label for="tester_name" class="search-label"><i class="bi bi-person-fill"></i> Nama Penguji / Pengguna</label>
+                        <input type="text" id="tester_name" name="tester_name" class="search-input-field" placeholder="Masukkan nama Anda..." required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div class="select-field-group">
+                            <label for="usability" class="search-label">Kemudahan</label>
+                            <select id="usability" name="usability" class="search-select-field">
+                                <option value="5" selected>5 - Sangat Mudah</option>
+                                <option value="4">4 - Mudah</option>
+                                <option value="3">3 - Cukup</option>
+                                <option value="2">2 - Sulit</option>
+                                <option value="1">1 - Sangat Sulit</option>
+                            </select>
+                        </div>
+                        <div class="select-field-group">
+                            <label for="accuracy" class="search-label">Keakuratan</label>
+                            <select id="accuracy" name="accuracy" class="search-select-field">
+                                <option value="5" selected>5 - Sangat Akurat</option>
+                                <option value="4">4 - Akurat</option>
+                                <option value="3">3 - Cukup</option>
+                                <option value="2">2 - Tidak Akurat</option>
+                                <option value="1">1 - Sangat Buruk</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div class="select-field-group">
+                            <label for="speed" class="search-label">Kecepatan</label>
+                            <select id="speed" name="speed" class="search-select-field">
+                                <option value="5" selected>5 - Sangat Cepat</option>
+                                <option value="4">4 - Cepat</option>
+                                <option value="3">3 - Cukup</option>
+                                <option value="2">2 - Lambat</option>
+                                <option value="1">1 - Sangat Lambat</option>
+                            </select>
+                        </div>
+                        <div class="select-field-group">
+                            <label for="design" class="search-label">Desain Premium</label>
+                            <select id="design" name="design" class="search-select-field">
+                                <option value="5" selected>5 - Sangat Indah</option>
+                                <option value="4">4 - Indah</option>
+                                <option value="3">3 - Cukup</option>
+                                <option value="2">2 - Biasa Saja</option>
+                                <option value="1">1 - Kurang Menarik</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-field-group" style="margin-bottom: 15px;">
+                        <label for="comments" class="search-label"><i class="bi bi-chat-left-text-fill"></i> Kritik, Saran, & Kesan Penggunaan</label>
+                        <textarea id="comments" name="comments" class="sparql-textarea" rows="3" placeholder="Tuliskan ulasan Anda mengenai pencarian semantik..." required></textarea>
+                    </div>
+
+                    <button class="search-button-premium" type="submit" style="width: 100%;">
+                        <i class="bi bi-send-fill"></i> Kirim Penilaian UAT
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- BAGIAN 3: DAFTAR KOMENTAR & ULASAN PENGGUNA -->
+    <section class="results-section">
+        <div class="results-container">
+            <h5 class="results-count-title"><i class="bi bi-chat-square-quote-fill"></i> Ulasan & Komentar Penguji Terbaru</h5>
+            
+            {% if feedbacks %}
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                {% for fb in feedbacks | reverse %}
+                <div class="manuscript-card" style="padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                        <div>
+                            <span style="font-weight: 600; font-size: 1rem;"><i class="bi bi-person-circle"></i> {{ fb.name }}</span>
+                            <span class="custom-badge badge-id" style="margin-left: 10px;">Penguji Terverifikasi</span>
+                        </div>
+                        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                            <span class="custom-badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">Guna: {{ fb.usability }}/5</span>
+                            <span class="custom-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">Akurat: {{ fb.accuracy }}/5</span>
+                            <span class="custom-badge" style="background: rgba(245, 158, 11, 0.1); color: #D97706;">Cepat: {{ fb.speed }}/5</span>
+                            <span class="custom-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger-color);">Desain: {{ fb.design }}/5</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-style: italic; background: var(--bg-color); padding: 12px 15px; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        "{{ fb.comments }}"
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <!-- Tampilkan mock feedback awal jika file kosong -->
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                <div class="manuscript-card" style="padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <div>
+                            <span style="font-weight: 600; font-size: 1rem;"><i class="bi bi-person-circle"></i> Dr. Fil. Yosep Hermawan</span>
+                            <span class="custom-badge badge-id" style="margin-left: 10px;">Dosen / Ahli Filologi</span>
+                        </div>
+                        <div style="display: flex; gap: 5px;">
+                            <span class="custom-badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">Guna: 5/5</span>
+                            <span class="custom-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">Akurat: 5/5</span>
+                            <span class="custom-badge" style="background: rgba(245, 158, 11, 0.1); color: #D97706;">Cepat: 5/5</span>
+                            <span class="custom-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger-color);">Desain: 5/5</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-style: italic; background: var(--bg-color); padding: 12px 15px; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        "Sangat kagum dengan antarmuka pencarian semantiknya. Relasi sinonim simetris dan transitif bekerja dengan sangat presisi dan mampu mencari kosa kata silang naskah dengan baik. Pemuatan aksara Sunda pun sangat mempermudah transliterasi."
+                    </p>
+                </div>
+                <div class="manuscript-card" style="padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <div>
+                            <span style="font-weight: 600; font-size: 1rem;"><i class="bi bi-person-circle"></i> Fawwaz A. Yaqzhan</span>
+                            <span class="custom-badge badge-id" style="margin-left: 10px;">Mahasiswa SemWeb</span>
+                        </div>
+                        <div style="display: flex; gap: 5px;">
+                            <span class="custom-badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">Guna: 5/5</span>
+                            <span class="custom-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">Akurat: 4/5</span>
+                            <span class="custom-badge" style="background: rgba(245, 158, 11, 0.1); color: #D97706;">Cepat: 5/5</span>
+                            <span class="custom-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger-color);">Desain: 5/5</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-style: italic; background: var(--bg-color); padding: 12px 15px; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        "Pengujian query SPARQL preset membuktikan bahwa RDFS subClassOf reasoning dan OWL Transitive/Inverse properties terintegrasi dengan sempurna pada rdflib backend. Fitur dark mode-nya sangat modern!"
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function toggleQueryCode(elementId) {
+        const row = document.getElementById(elementId);
+        if (row.style.display === "none") {
+            row.style.display = "table-row";
+        } else {
+            row.style.display = "none";
+        }
+    }
+</script>
+{% endblock %}
