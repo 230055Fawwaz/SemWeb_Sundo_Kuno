@@ -1,0 +1,183 @@
+<!--
+  Nama File: kamus.html
+  Deskripsi: Indeks Kamus / Glossary kosakata Sunda Kuno per kata
+  Penulis:   Stan Fredheric, Miftah Rijallul Aziz, Fawwaz Areefa Yaqzhan
+  NPM:        140810230046 ,     140810230053    ,     140810230055
+  Tanggal:   19-06-2026
+  Catatan:
+    - Data dibangun dari lapisan leksikon RDF (:EntriLeksikal) via SPARQL
+-->
+
+{% extends 'base.html' %}
+
+{% block title %}Indeks Kamus - Sundo Kuno{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/kamus.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="korpus-container">
+    <header class="korpus-header">
+        <span class="eyebrow"><i class="bi bi-translate"></i> Leksikon Semantik</span>
+        <h2 class="korpus-title">📖 Indeks Kamus Sunda Kuno → Indonesia</h2>
+        <p class="korpus-subtitle">
+            Daftar kosakata Sunda Kuno beserta arti per kata, kelas kata, baris naskah asal,
+            dan relasi sinonim semantik yang ditelusuri langsung dari graf RDF.
+        </p>
+    </header>
+
+    <section class="search-section">
+        <div class="search-card">
+            <div class="kamus-toolbar">
+                <div class="input-field-group">
+                    <label for="kamus-search" class="search-label"><i class="bi bi-search"></i> Cari Kata atau Arti</label>
+                    <input type="text" id="kamus-search" class="search-input-field"
+                           placeholder="Ketik kata Sunda Kuno atau arti Indonesia..." autocomplete="off">
+                </div>
+                <div class="select-field-group">
+                    <label for="kamus-pos" class="search-label"><i class="bi bi-funnel"></i> Kelas Kata</label>
+                    <select id="kamus-pos" class="search-select-field">
+                        <option value="">-- Semua Kelas Kata --</option>
+                        {% for k in kelas_list %}
+                        <option value="{{ k }}">{{ k | capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="kamus-count">
+                    <i class="bi bi-collection"></i>
+                    <span><strong id="visible-count">{{ entries|length }}</strong> kata</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigasi Alfabet -->
+    {% set available = entries | map(attribute='huruf') | list %}
+    <nav class="alphabet-nav" id="alphabet-nav">
+        {% for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
+        <a href="#huruf-{{ letter }}" class="{{ '' if letter in available else 'disabled' }}" data-letter="{{ letter }}">{{ letter }}</a>
+        {% endfor %}
+    </nav>
+
+    <section class="results-section">
+        <div class="results-container" id="kamus-list">
+            {% for letter, items in entries | groupby('huruf') %}
+            <div class="letter-group" id="huruf-{{ letter }}" data-letter="{{ letter }}">
+                <h3 class="letter-heading">
+                    {{ letter }}
+                    <span class="count">{{ items | list | length }} kata</span>
+                </h3>
+                <div class="word-grid">
+                    {% for e in items %}
+                    <article class="word-card"
+                             data-kata="{{ e.kata | lower }}"
+                             data-arti="{{ e.arti | lower }}"
+                             data-pos="{{ e.kelas }}">
+                        <div class="word-head">
+                            <span class="word-sunda">{{ e.kata }}</span>
+                            {% if e.kelas and e.kelas != '—' %}
+                            <span class="word-pos">{{ e.kelas }}</span>
+                            {% endif %}
+                        </div>
+                        {% if e.aksara_kata %}
+                        <div class="word-aksara" lang="su" title="Bentuk Aksara Sunda dari '{{ e.kata }}'">{{ e.aksara_kata }}</div>
+                        {% endif %}
+                        <div class="word-arti">
+                            <span class="arrow">→</span>{{ e.arti }}
+                        </div>
+
+                        {% if e.sinonim %}
+                        <div class="word-synonyms">
+                            <span class="syn-label"><i class="bi bi-diagram-2"></i> sinonim:</span>
+                            {% for s in e.sinonim %}
+                            <span class="syn-pill">{{ s }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <div class="word-meta">
+                            {% if e.manuskrip %}
+                            <span class="word-source" title="Baris naskah tempat kata muncul">
+                                <i class="bi bi-book-half"></i> {{ e.manuskrip }} · {{ e.id_baris }}
+                            </span>
+                            {% endif %}
+                            {% if e.konsep %}
+                            <span class="word-source" title="Konsep kamus terkait">
+                                <i class="bi bi-tag-fill"></i> {{ e.konsep }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="kamus-empty" id="kamus-empty">
+                <i class="bi bi-emoji-frown"></i>
+                Tidak ada kata yang cocok dengan pencarian Anda.
+            </div>
+        </div>
+    </section>
+
+    <p class="method-note">
+        <i class="bi bi-info-circle"></i>
+        Seluruh entri di atas dibangkitkan dari kelas <code>:EntriLeksikal</code> pada graf RDF.
+        Bentuk <strong>Aksara Sunda</strong> (<code>:aksaraKata</code>) merupakan alih aksara dari
+        transliterasi Latin sesuai kaidah rarangkén Unicode (Aksara Sunda Baku).
+        Relasi <code>:munculDi</code> menautkan kata ke baris naskah, sedangkan
+        <code>:terkaitKonsep</code> + property path <code>(:hasSynonym|^:hasSynonym)+</code>
+        menelusuri sinonim secara simetris &amp; transitif.
+    </p>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('kamus-search');
+    const posSelect = document.getElementById('kamus-pos');
+    const cards = Array.from(document.querySelectorAll('.word-card'));
+    const groups = Array.from(document.querySelectorAll('.letter-group'));
+    const emptyState = document.getElementById('kamus-empty');
+    const visibleCount = document.getElementById('visible-count');
+    const alphaLinks = Array.from(document.querySelectorAll('#alphabet-nav a'));
+
+    function applyFilter() {
+        const q = searchInput.value.trim().toLowerCase();
+        const pos = posSelect.value;
+        let visible = 0;
+        const lettersWithMatch = new Set();
+
+        cards.forEach(card => {
+            const matchText = !q || card.dataset.kata.includes(q) || card.dataset.arti.includes(q);
+            const matchPos = !pos || card.dataset.pos === pos;
+            const show = matchText && matchPos;
+            card.style.display = show ? '' : 'none';
+            if (show) {
+                visible++;
+                lettersWithMatch.add(card.closest('.letter-group').dataset.letter);
+            }
+        });
+
+        // Sembunyikan grup huruf yang seluruh kartunya tersaring
+        groups.forEach(g => {
+            g.style.display = lettersWithMatch.has(g.dataset.letter) ? '' : 'none';
+        });
+
+        // Update navigasi alfabet
+        alphaLinks.forEach(a => {
+            if (a.classList.contains('disabled')) return;
+            a.style.opacity = lettersWithMatch.has(a.dataset.letter) ? '' : '0.32';
+        });
+
+        visibleCount.textContent = visible;
+        emptyState.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', applyFilter);
+    posSelect.addEventListener('change', applyFilter);
+});
+</script>
+{% endblock %}

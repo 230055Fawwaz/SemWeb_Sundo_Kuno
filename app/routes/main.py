@@ -162,6 +162,59 @@ WHERE {
 }
 ORDER BY ?id
 LIMIT 5"""
+    },
+    {
+        "id": 11,
+        "name": "Indeks Kamus: Kata + Aksara Sunda + Arti",
+        "description": "Menampilkan entri leksikal beserta bentuk Aksara Sunda (:aksaraKata), arti Indonesia, dan kelas katanya.",
+        "sparql": """PREFIX : <http://contoh.org/ontology#>
+
+SELECT ?kata ?aksara ?arti ?kelas
+WHERE {
+    ?entri a :EntriLeksikal ;
+           :kataSunda ?kata ;
+           :aksaraKata ?aksara ;
+           :artiIndonesia ?arti ;
+           :kelasKata ?kelas .
+}
+ORDER BY ?kata
+LIMIT 15"""
+    },
+    {
+        "id": 12,
+        "name": "Konkordansi: Kata + Baris + Manuskrip Asal",
+        "description": "Menelusuri di baris dan manuskrip mana sebuah kata muncul (relasi :munculDi -> :isFromManuscript).",
+        "sparql": """PREFIX : <http://contoh.org/ontology#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?kata ?arti ?idBaris ?judul
+WHERE {
+    ?entri :kataSunda ?kata ;
+           :artiIndonesia ?arti ;
+           :munculDi ?baris .
+    ?baris dcterms:identifier ?idBaris ;
+           :isFromManuscript ?m .
+    ?m dcterms:title ?judul .
+}
+ORDER BY ?judul ?idBaris
+LIMIT 15"""
+    },
+    {
+        "id": 13,
+        "name": "Kata Bersinonim Lintas Konsep (Lexicon + Property Path)",
+        "description": "Menghubungkan kata leksikal ke konsep kamus lalu menelusuri sinonimnya secara transitif & simetris.",
+        "sparql": """PREFIX : <http://contoh.org/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?kata ?arti ?sinonim
+WHERE {
+    ?entri :kataSunda ?kata ;
+           :artiIndonesia ?arti ;
+           :terkaitKonsep ?konsep .
+    ?konsep (:hasSynonym|^:hasSynonym)+ ?konsepLain .
+    ?konsepLain rdfs:label ?sinonim .
+}
+ORDER BY ?kata"""
     }
 ]
 
@@ -315,13 +368,121 @@ def index():
                 print(f"SPARQL Error: {e}")
                 
     return render_template(
-        'index.html', 
-        results=results, 
-        query=search_query, 
+        'index.html',
+        results=results,
+        query=search_query,
         synonyms=synonyms_found,
         categories=categories,
-        selected_category=selected_category
+        selected_category=selected_category,
+        stats=get_corpus_stats(g)
     )
+
+# Helper: Statistik Korpus (dihitung langsung dari graf RDF via SPARQL)
+def get_corpus_stats(g):
+    stats = {"manuskrip": 0, "baris": 0, "kata": 0, "konsep": 0}
+    queries = {
+        "manuskrip": """PREFIX : <http://contoh.org/ontology#>
+            SELECT (COUNT(DISTINCT ?m) AS ?n) WHERE { ?m a :Manuskrip }""",
+        "baris": """PREFIX : <http://contoh.org/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT (COUNT(DISTINCT ?b) AS ?n) WHERE { ?b a ?c . ?c rdfs:subClassOf* :BarisNaskah }""",
+        "kata": """PREFIX : <http://contoh.org/ontology#>
+            SELECT (COUNT(DISTINCT ?e) AS ?n) WHERE { ?e a :EntriLeksikal }""",
+        "konsep": """PREFIX : <http://contoh.org/ontology#>
+            SELECT (COUNT(DISTINCT ?k) AS ?n) WHERE { ?k a :KonsepKamus }""",
+    }
+    for key, q in queries.items():
+        try:
+            for row in g.query(q):
+                stats[key] = int(row.n)
+        except Exception as e:
+            print(f"Error stats {key}: {e}")
+    return stats
+
+
+# Indeks Kamus / Glossary Route (Per-Kata Lexicon)
+@main_bp.route('/kamus')
+def kamus():
+    g = current_app.config['RDF_GRAPH']
+
+    # 1. Ambil seluruh entri leksikal beserta arti, kelas kata, konsep, dan asal kemunculan
+    entries_query = """
+    PREFIX : <http://contoh.org/ontology#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX dcterms: <http://purl.org/dc/terms/>
+
+    SELECT ?kata ?aksaraKata ?arti ?kelas ?konsep ?konsepLabel ?idBaris ?judul ?aksara
+    WHERE {
+        ?entri a :EntriLeksikal ;
+               :kataSunda ?kata ;
+               :artiIndonesia ?arti .
+        OPTIONAL { ?entri :aksaraKata ?aksaraKata . }
+        OPTIONAL { ?entri :kelasKata ?kelas . }
+        OPTIONAL { ?entri :terkaitKonsep ?konsep . ?konsep rdfs:label ?konsepLabel . }
+        OPTIONAL {
+            ?entri :munculDi ?baris .
+            ?baris dcterms:identifier ?idBaris ;
+                   :hasAksara ?aksara ;
+                   :isFromManuscript ?m .
+            ?m dcterms:title ?judul .
+        }
+    }
+    ORDER BY ?kata
+    """
+
+    # 2. Bangun peta konsep -> daftar sinonim (Property Path: simetris & transitif)
+    synonyms_query = """
+    PREFIX : <http://contoh.org/ontology#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT ?konsep ?synLabel
+    WHERE {
+        ?konsep a :KonsepKamus ;
+                (:hasSynonym|^:hasSynonym)+ ?syn .
+        ?syn rdfs:label ?synLabel .
+    }
+    """
+
+    concept_synonyms = {}
+    try:
+        for row in g.query(synonyms_query):
+            cu = str(row.get('konsep'))
+            concept_synonyms.setdefault(cu, []).append(str(row.get('synLabel')))
+    except Exception as e:
+        print(f"Error fetching concept synonyms: {e}")
+
+    entries = []
+    try:
+        qres = g.query(entries_query)
+        for row in qres:
+            konsep_uri = str(row.get('konsep')) if row.get('konsep') else ""
+            entries.append({
+                "kata": str(row.get('kata')),
+                "aksara_kata": str(row.get('aksaraKata')) if row.get('aksaraKata') else "",
+                "arti": str(row.get('arti')),
+                "kelas": str(row.get('kelas')) if row.get('kelas') else "—",
+                "konsep": str(row.get('konsepLabel')) if row.get('konsepLabel') else "",
+                "sinonim": concept_synonyms.get(konsep_uri, []),
+                "id_baris": str(row.get('idBaris')) if row.get('idBaris') else "",
+                "manuskrip": str(row.get('judul')) if row.get('judul') else "",
+                "aksara": str(row.get('aksara')) if row.get('aksara') else "",
+                "huruf": str(row.get('kata'))[0].upper() if row.get('kata') else "#",
+            })
+    except Exception as e:
+        print(f"Error fetching lexical entries: {e}")
+
+    # Kumpulkan daftar kelas kata unik untuk filter
+    kelas_set = sorted({e["kelas"] for e in entries if e["kelas"] != "—"})
+
+    stats = get_corpus_stats(g)
+
+    return render_template(
+        'kamus.html',
+        entries=entries,
+        kelas_list=kelas_set,
+        stats=stats
+    )
+
 
 # SPARQL Endpoint Route
 @main_bp.route('/sparql', methods=['GET', 'POST'])

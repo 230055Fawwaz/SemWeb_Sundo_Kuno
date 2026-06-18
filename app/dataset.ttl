@@ -610,3 +610,433 @@
     dcterms:language "su" ;
     dcterms:title "Siksa Kandang Karesian" .
 
+# =====================================================================
+# LAPISAN LEKSIKON / KAMUS KATA PER KATA (LEXICAL LAYER)
+# ---------------------------------------------------------------------
+# Menghubungkan kosakata Sunda Kuno (per kata) dengan arti bahasa
+# Indonesia, kelas kata, baris naskah tempat kata muncul, dan konsep
+# kamus (untuk relasi sinonim). Memperkaya graf: Kata -> Baris ->
+# Manuskrip dan Kata -> Konsep -> Sinonim.
+# =====================================================================
+
+:EntriLeksikal a owl:Class ;
+    rdfs:label "Entri Leksikal"@id ;
+    rdfs:comment "Kelas yang merepresentasikan satu entri kata (lema) Sunda Kuno beserta artinya dalam bahasa Indonesia."@id .
+
+:kataSunda a owl:DatatypeProperty ;
+    rdfs:label "Kata Sunda Kuno"@id ;
+    rdfs:comment "Bentuk transliterasi Latin dari kata Sunda Kuno."@id ;
+    rdfs:domain :EntriLeksikal ;
+    rdfs:range xsd:string .
+
+:aksaraKata a owl:DatatypeProperty ;
+    rdfs:label "Bentuk Aksara Sunda"@id ;
+    rdfs:comment "Bentuk tulisan kata dalam Aksara Sunda Baku (alih aksara dari transliterasi Latin sesuai kaidah rarangkén Unicode)."@id ;
+    rdfs:domain :EntriLeksikal ;
+    rdfs:range xsd:string .
+
+:artiIndonesia a owl:DatatypeProperty ;
+    rdfs:label "Arti Bahasa Indonesia"@id ;
+    rdfs:comment "Padanan makna kata dalam bahasa Indonesia."@id ;
+    rdfs:domain :EntriLeksikal ;
+    rdfs:range xsd:string .
+
+:kelasKata a owl:DatatypeProperty ;
+    rdfs:label "Kelas Kata"@id ;
+    rdfs:comment "Kategori gramatikal kata (nomina, verba, adjektiva, dll.)."@id ;
+    rdfs:domain :EntriLeksikal ;
+    rdfs:range xsd:string .
+
+:munculDi a owl:ObjectProperty ;
+    rdfs:label "Muncul Di Baris"@id ;
+    rdfs:comment "Menghubungkan entri kata dengan baris naskah tempat kata tersebut muncul."@id ;
+    rdfs:domain :EntriLeksikal ;
+    rdfs:range :BarisNaskah ;
+    owl:inverseOf :mengandungKata .
+
+:mengandungKata a owl:ObjectProperty ;
+    rdfs:label "Mengandung Kata"@id ;
+    rdfs:comment "Kebalikan dari :munculDi; baris naskah mengandung entri kata."@id ;
+    rdfs:domain :BarisNaskah ;
+    rdfs:range :EntriLeksikal .
+
+:terkaitKonsep a owl:ObjectProperty ;
+    rdfs:label "Terkait Konsep"@id ;
+    rdfs:comment "Menghubungkan entri kata dengan konsep kamus untuk penelusuran sinonim semantik."@id ;
+    rdfs:domain :EntriLeksikal ;
+    rdfs:range :KonsepKamus .
+
+:lema_hayu a :EntriLeksikal ;
+    :kataSunda "hayu" ;
+    :aksaraKata "ᮠᮚᮥ" ;
+    :artiIndonesia "kebahagiaan; kebaikan; selamat" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_01 ;
+    :terkaitKonsep :konsep_kebaikan .
+
+:lema_sadu a :EntriLeksikal ;
+    :kataSunda "sadu" ;
+    :aksaraKata "ᮞᮓᮥ" ;
+    :artiIndonesia "orang budiman; orang bijak" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_01 .
+
+:lema_urang a :EntriLeksikal ;
+    :kataSunda "urang" ;
+    :aksaraKata "ᮅᮛᮀ" ;
+    :artiIndonesia "kita; orang" ;
+    :kelasKata "pronomina" ;
+    :munculDi :skk_baris_02 .
+
+:lema_ngaran a :EntriLeksikal ;
+    :kataSunda "ngaran" ;
+    :aksaraKata "ᮍᮛᮔ᮪" ;
+    :artiIndonesia "nama" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_08 .
+
+:lema_imah a :EntriLeksikal ;
+    :kataSunda "imah" ;
+    :aksaraKata "ᮄᮙᮂ" ;
+    :artiIndonesia "rumah" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_12 .
+
+:lema_buruan a :EntriLeksikal ;
+    :kataSunda "buruan" ;
+    :aksaraKata "ᮘᮥᮛᮥᮃᮔ᮪" ;
+    :artiIndonesia "halaman rumah" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_03 .
+
+:lema_ulah a :EntriLeksikal ;
+    :kataSunda "ulah" ;
+    :aksaraKata "ᮅᮜᮂ" ;
+    :artiIndonesia "jangan" ;
+    :kelasKata "partikel" ;
+    :munculDi :skk_baris_05 .
+
+:lema_mata a :EntriLeksikal ;
+    :kataSunda "mata" ;
+    :aksaraKata "ᮙᮒ" ;
+    :artiIndonesia "mata" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_05 .
+
+:lema_ceuli a :EntriLeksikal ;
+    :kataSunda "ceuli" ;
+    :aksaraKata "ᮎᮩᮜᮤ" ;
+    :artiIndonesia "telinga" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_05 .
+
+:lema_jalan a :EntriLeksikal ;
+    :kataSunda "jalan" ;
+    :aksaraKata "ᮏᮜᮔ᮪" ;
+    :artiIndonesia "jalan" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_03 .
+
+:lema_hurip a :EntriLeksikal ;
+    :kataSunda "hurip" ;
+    :aksaraKata "ᮠᮥᮛᮤᮕ᮪" ;
+    :artiIndonesia "hidup" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_02 .
+
+:lema_paeh a :EntriLeksikal ;
+    :kataSunda "paéh" ;
+    :aksaraKata "ᮕᮆᮂ" ;
+    :artiIndonesia "mati" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_18 .
+
+:lema_guru a :EntriLeksikal ;
+    :kataSunda "guru" ;
+    :aksaraKata "ᮌᮥᮛᮥ" ;
+    :artiIndonesia "guru" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_18 .
+
+:lema_janma a :EntriLeksikal ;
+    :kataSunda "janma" ;
+    :aksaraKata "ᮏᮔ᮪ᮙ" ;
+    :artiIndonesia "manusia" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_15 .
+
+:lema_hayang a :EntriLeksikal ;
+    :kataSunda "hayang" ;
+    :aksaraKata "ᮠᮚᮀ" ;
+    :artiIndonesia "ingin; mau" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_35 .
+
+:lema_nyaho a :EntriLeksikal ;
+    :kataSunda "nyaho" ;
+    :aksaraKata "ᮑᮠᮧ" ;
+    :artiIndonesia "tahu; mengetahui" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_35 .
+
+:lema_leuweung a :EntriLeksikal ;
+    :kataSunda "leuweung" ;
+    :aksaraKata "ᮜᮩᮝᮩᮀ" ;
+    :artiIndonesia "hutan" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_35 .
+
+:lema_talaga a :EntriLeksikal ;
+    :kataSunda "talaga" ;
+    :aksaraKata "ᮒᮜᮌ" ;
+    :artiIndonesia "telaga; danau" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_35 .
+
+:lema_kembang a :EntriLeksikal ;
+    :kataSunda "kembang" ;
+    :aksaraKata "ᮊᮨᮙ᮪ᮘᮀ" ;
+    :artiIndonesia "bunga" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_36 .
+
+:lema_bangbara a :EntriLeksikal ;
+    :kataSunda "bangbara" ;
+    :aksaraKata "ᮘᮀᮘᮛ" ;
+    :artiIndonesia "kumbang" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_36 .
+
+:lema_liman a :EntriLeksikal ;
+    :kataSunda "liman" ;
+    :aksaraKata "ᮜᮤᮙᮔ᮪" ;
+    :artiIndonesia "gajah" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_35 .
+
+:lema_cai a :EntriLeksikal ;
+    :kataSunda "cai" ;
+    :aksaraKata "ᮎᮄ" ;
+    :artiIndonesia "air" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_22 .
+
+:lema_anak a :EntriLeksikal ;
+    :kataSunda "anak" ;
+    :aksaraKata "ᮃᮔᮊ᮪" ;
+    :artiIndonesia "anak" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_28 .
+
+:lema_ewe a :EntriLeksikal ;
+    :kataSunda "éwé" ;
+    :aksaraKata "ᮆᮝᮦ" ;
+    :artiIndonesia "istri; perempuan" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_28 .
+
+:lema_hakan a :EntriLeksikal ;
+    :kataSunda "hakan" ;
+    :aksaraKata "ᮠᮊᮔ᮪" ;
+    :artiIndonesia "makan; makanan" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_29 .
+
+:lema_inum a :EntriLeksikal ;
+    :kataSunda "inum" ;
+    :aksaraKata "ᮄᮔᮥᮙ᮪" ;
+    :artiIndonesia "minum" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_29 .
+
+:lema_hees a :EntriLeksikal ;
+    :kataSunda "héés" ;
+    :aksaraKata "ᮠᮦᮆᮞ᮪" ;
+    :artiIndonesia "tidur" ;
+    :kelasKata "verba" ;
+    :munculDi :skk_baris_29 .
+
+:lema_tuak a :EntriLeksikal ;
+    :kataSunda "tuak" ;
+    :aksaraKata "ᮒᮥᮃᮊ᮪" ;
+    :artiIndonesia "tuak (minuman)" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_29 .
+
+:lema_ratu a :EntriLeksikal ;
+    :kataSunda "ratu" ;
+    :aksaraKata "ᮛᮒᮥ" ;
+    :artiIndonesia "raja" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_13 .
+
+:lema_prebu a :EntriLeksikal ;
+    :kataSunda "prebu" ;
+    :aksaraKata "ᮕᮢᮨᮘᮥ" ;
+    :artiIndonesia "raja; prabu" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_06 .
+
+:lema_mantri a :EntriLeksikal ;
+    :kataSunda "mantri" ;
+    :aksaraKata "ᮙᮔ᮪ᮒᮢᮤ" ;
+    :artiIndonesia "mantri; pejabat" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_14 .
+
+:lema_brahmana a :EntriLeksikal ;
+    :kataSunda "brahmana" ;
+    :aksaraKata "ᮘᮢᮂᮙᮔ" ;
+    :artiIndonesia "brahmana; pendeta" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_06 .
+
+:lema_tangan a :EntriLeksikal ;
+    :kataSunda "tangan" ;
+    :aksaraKata "ᮒᮍᮔ᮪" ;
+    :artiIndonesia "tangan" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_07 .
+
+:lema_hyang a :EntriLeksikal ;
+    :kataSunda "hyang" ;
+    :aksaraKata "ᮠᮡᮀ" ;
+    :artiIndonesia "yang suci; dewa" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_11 .
+
+:lema_dewata a :EntriLeksikal ;
+    :kataSunda "déwata" ;
+    :aksaraKata "ᮓᮦᮝᮒ" ;
+    :artiIndonesia "dewata" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_11 .
+
+:lema_caang a :EntriLeksikal ;
+    :kataSunda "caang" ;
+    :aksaraKata "ᮎᮃᮀ" ;
+    :artiIndonesia "terang" ;
+    :kelasKata "adjektiva" ;
+    :munculDi :skk_baris_03 .
+
+:lema_sawah a :EntriLeksikal ;
+    :kataSunda "sawah" ;
+    :aksaraKata "ᮞᮝᮂ" ;
+    :artiIndonesia "sawah" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_11 .
+
+:lema_huma a :EntriLeksikal ;
+    :kataSunda "huma" ;
+    :aksaraKata "ᮠᮥᮙ" ;
+    :artiIndonesia "ladang" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_03 .
+
+:lema_gajendra a :EntriLeksikal ;
+    :kataSunda "gajéndra" ;
+    :aksaraKata "ᮌᮏᮦᮔ᮪ᮓᮢ" ;
+    :artiIndonesia "gajah" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_32 .
+
+:lema_sagara a :EntriLeksikal ;
+    :kataSunda "sagara" ;
+    :aksaraKata "ᮞᮌᮛ" ;
+    :artiIndonesia "laut" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_33 .
+
+:lema_kreta a :EntriLeksikal ;
+    :kataSunda "kreta" ;
+    :aksaraKata "ᮊᮢᮨᮒ" ;
+    :artiIndonesia "sejahtera; tata tentram" ;
+    :kelasKata "adjektiva" ;
+    :munculDi :skk_baris_02 ;
+    :terkaitKonsep :konsep_sejahtera .
+
+:lema_kasukan a :EntriLeksikal ;
+    :kataSunda "kasukan" ;
+    :aksaraKata "ᮊᮞᮥᮊᮔ᮪" ;
+    :artiIndonesia "kebahagiaan; kesenangan" ;
+    :kelasKata "nomina" ;
+    :munculDi :skk_baris_25 ;
+    :terkaitKonsep :konsep_bahagia .
+
+:lema_nguni a :EntriLeksikal ;
+    :kataSunda "nguni" ;
+    :aksaraKata "ᮍᮥᮔᮤ" ;
+    :artiIndonesia "masa lampau; dahulu" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_02 .
+
+:lema_mangke a :EntriLeksikal ;
+    :kataSunda "mangke" ;
+    :aksaraKata "ᮙᮀᮊᮨ" ;
+    :artiIndonesia "masa kini; sekarang" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_02 .
+
+:lema_beuheula a :EntriLeksikal ;
+    :kataSunda "beuheula" ;
+    :aksaraKata "ᮘᮩᮠᮩᮜ" ;
+    :artiIndonesia "masa lampau; dahulu kala" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_03 .
+
+:lema_ayeuna a :EntriLeksikal ;
+    :kataSunda "ayeuna" ;
+    :aksaraKata "ᮃᮚᮩᮔ" ;
+    :artiIndonesia "sekarang" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_03 .
+
+:lema_dosa a :EntriLeksikal ;
+    :kataSunda "dosa" ;
+    :aksaraKata "ᮓᮧᮞ" ;
+    :artiIndonesia "dosa" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_08 .
+
+:lema_munuh a :EntriLeksikal ;
+    :kataSunda "munuh" ;
+    :aksaraKata "ᮙᮥᮔᮥᮂ" ;
+    :artiIndonesia "membunuh" ;
+    :kelasKata "verba" ;
+    :munculDi :ag_baris_08 .
+
+:lema_drebya a :EntriLeksikal ;
+    :kataSunda "drebya" ;
+    :aksaraKata "ᮓᮢᮨᮘᮡ" ;
+    :artiIndonesia "harta; milik" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_09 .
+
+:lema_tunggak a :EntriLeksikal ;
+    :kataSunda "tunggak" ;
+    :aksaraKata "ᮒᮥᮀᮌᮊ᮪" ;
+    :artiIndonesia "tunggul pohon" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_04 .
+
+:lema_watang a :EntriLeksikal ;
+    :kataSunda "watang" ;
+    :aksaraKata "ᮝᮒᮀ" ;
+    :artiIndonesia "batang pohon" ;
+    :kelasKata "nomina" ;
+    :munculDi :ag_baris_04 .
+
+:lema_silih a :EntriLeksikal ;
+    :kataSunda "silih" ;
+    :aksaraKata "ᮞᮤᮜᮤᮂ" ;
+    :artiIndonesia "saling" ;
+    :kelasKata "adverbia" ;
+    :munculDi :ag_baris_06 .
+
+:lema_curiga a :EntriLeksikal ;
+    :kataSunda "curiga" ;
+    :aksaraKata "ᮎᮥᮛᮤᮌ" ;
+    :artiIndonesia "curiga; mencurigai" ;
+    :kelasKata "verba" ;
+    :munculDi :ag_baris_06 .
+

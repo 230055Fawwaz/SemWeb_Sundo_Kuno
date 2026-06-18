@@ -6,15 +6,15 @@
 <div class="korpus-container">
     <header class="korpus-header">
         <h2 class="korpus-title">📊 Evaluasi Proposal & UAT</h2>
-        <p class="korpus-subtitle">Pengujian 10 Query Proposal & Formulir User Acceptance Test (UAT)</p>
+        <p class="korpus-subtitle">Pengujian {{ eval_results|length }} Query (10 Proposal + Leksikon) & Formulir User Acceptance Test (UAT)</p>
     </header>
 
     <!-- BAGIAN 1: PENGUJIAN 10 QUERY PROPOSAL -->
     <section class="search-section" style="margin-bottom: 30px;">
         <div class="search-card">
-            <h4 style="margin-bottom: 15px; font-weight: 600;"><i class="bi bi-patch-check-fill"></i> Status Pengujian 10 Query Evaluasi</h4>
+            <h4 style="margin-bottom: 15px; font-weight: 600;"><i class="bi bi-patch-check-fill"></i> Status Pengujian {{ eval_results|length }} Query Evaluasi</h4>
             <p style="font-size: 0.9rem; color: var(--secondary-color); margin-bottom: 20px;">
-                Tabel di bawah ini memverifikasi secara langsung (live self-test) kesesuaian sistem dengan 10 query yang disyaratkan dalam proposal hasil akhir.
+                Tabel di bawah ini memverifikasi secara langsung (live self-test) kesesuaian sistem dengan 10 query yang disyaratkan dalam proposal, ditambah 3 query lapisan leksikon (kamus per kata).
             </p>
 
             <div class="table-responsive">
@@ -216,7 +216,7 @@
                             <span class="custom-badge badge-id" style="margin-left: 10px;">Penguji Terverifikasi</span>
                         </div>
                         <div style="display: flex; gap: 5px; flex-wrap: wrap;">
-                            <span class="custom-badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">Guna: {{ fb.usability }}/5</span>
+                            <span class="custom-badge" style="background: var(--accent-soft); color: var(--primary-color);">Guna: {{ fb.usability }}/5</span>
                             <span class="custom-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">Akurat: {{ fb.accuracy }}/5</span>
                             <span class="custom-badge" style="background: rgba(245, 158, 11, 0.1); color: #D97706;">Cepat: {{ fb.speed }}/5</span>
                             <span class="custom-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger-color);">Desain: {{ fb.design }}/5</span>
@@ -238,7 +238,7 @@
                             <span class="custom-badge badge-id" style="margin-left: 10px;">Dosen / Ahli Filologi</span>
                         </div>
                         <div style="display: flex; gap: 5px;">
-                            <span class="custom-badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">Guna: 5/5</span>
+                            <span class="custom-badge" style="background: var(--accent-soft); color: var(--primary-color);">Guna: 5/5</span>
                             <span class="custom-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">Akurat: 5/5</span>
                             <span class="custom-badge" style="background: rgba(245, 158, 11, 0.1); color: #D97706;">Cepat: 5/5</span>
                             <span class="custom-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger-color);">Desain: 5/5</span>
@@ -255,7 +255,7 @@
                             <span class="custom-badge badge-id" style="margin-left: 10px;">Mahasiswa SemWeb</span>
                         </div>
                         <div style="display: flex; gap: 5px;">
-                            <span class="custom-badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">Guna: 5/5</span>
+                            <span class="custom-badge" style="background: var(--accent-soft); color: var(--primary-color);">Guna: 5/5</span>
                             <span class="custom-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success-color);">Akurat: 4/5</span>
                             <span class="custom-badge" style="background: rgba(245, 158, 11, 0.1); color: #D97706;">Cepat: 5/5</span>
                             <span class="custom-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger-color);">Desain: 5/5</span>

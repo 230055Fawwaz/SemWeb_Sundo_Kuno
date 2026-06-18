@@ -1,581 +1,105 @@
 /* ==========================================
-   Nama File: halaman1.css
-   Deskripsi: Pengatur tampilan bagi beranda
+   Nama File: beranda.css
+   Deskripsi: Gaya khusus halaman Beranda (hero + dashboard statistik)
    Penulis:   Stan Fredheric, Miftah Rijallul Aziz, Fawwaz Areefa Yaqzhan
-   NPM:        140810230046 ,     140810230053    ,     140810230055     
+   NPM:        140810230046 ,     140810230053    ,     140810230055
    Tanggal:   01-06-2026
    Catatan:
-     - Hanya beranda yang diatur oleh file ini
-     - Halaman lain diatur oleh file css lain
+     - Komponen bersama (kartu, badge, form) ada di style.css
    ========================================== */
 
-   /* --- Base Container & Layout --- */
-   .korpus-container {
-       max-width: 1200px;
-       margin: 0 auto;
-       padding: 2rem 1rem;
-       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-       box-sizing: border-box;
-   }
-   
-   /* --- Header Section --- */
-   .korpus-header {
-       text-align: center;
-       margin-bottom: 2.5rem;
-   }
-   
-   .korpus-title {
-       font-size: 1.8rem;
-       font-weight: 700;
-       color: var(--text-main);
-       margin-bottom: 0.5rem;
-   }
-   
-   .korpus-subtitle {
-       color: var(--secondary-color);
-       font-size: 1rem;
-       margin: 0;
-   }
-   
-   /* --- Search Card & Form --- */
-   .search-section {
-       display: flex;
-       justify-content: center;
-       margin-bottom: 2.5rem;
-   }
-   
-   .search-card {
-       background-color: var(--card-bg);
-       border: 1px solid var(--border-color);
-       border-radius: 8px;
-       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-       padding: 1.5rem;
-       width: 100%;
-       max-width: 800px;
-   }
-   
-   .search-label {
-       display: block;
-       font-weight: 600;
-       color: var(--text-main);
-       margin-bottom: 0.5rem;
-       font-size: 0.95rem;
-   }
-   
-   .search-bar-group {
-       display: flex;
-       gap: 0; /* Gabung input dan button ala Bootstrap */
-       border: 1px solid var(--border-color);
-       border-radius: 6px;
-       overflow: hidden;
-       transition: border-color 0.2s ease;
-   }
-   
-   .search-bar-group:focus-within {
-       border-color: #4299e1;
-       box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-   }
-   
-   .search-input {
-       flex: 1;
-       border: none;
-       background-color: transparent;
-       padding: 0.75rem 1rem;
-       font-size: 1rem;
-       outline: none;
-       color: var(--text-main);
-       width: 100%;
-   }
-   
-   .search-button {
-       background-color: #3182ce;
-       color: white;
-       border: none;
-       padding: 0.75rem 1.5rem;
-       font-size: 1rem;
-       font-weight: 500;
-       cursor: pointer;
-       white-space: nowrap;
-       transition: background-color 0.2s ease;
-   }
-   
-   .search-button:hover {
-       background-color: #2b6cb0;
-   }
-   
-   .search-info {
-       font-size: 0.85rem;
-       color: var(--secondary-color);
-       margin-top: 0.5rem;
-       margin-bottom: 0;
-   }
-   
-    /* --- Results Section (Grid & Cards) --- */
-    .results-section {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .results-container {
-        width: 100%;
-        max-width: 1000px;
-    }
-    
-    .results-summary {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.25rem;
-    }
-    
-    .results-count-title {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--text-main);
-    }
-    
-    .manuscript-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 1rem;
-    }
-    
-    @media (min-width: 768px) {
-        .manuscript-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    
-    .manuscript-card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    
-    .manuscript-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
-        border-color: rgba(79, 70, 229, 0.3);
-    }
-    
-    /* Header inside Card */
-    .manuscript-card .card-header {
-        padding: 1rem 1.25rem;
-        background-color: rgba(0, 0, 0, 0.01);
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-    
-    .header-left {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-    
-    .header-right {
-        display: flex;
-        align-items: center;
-    }
-    
-    /* Card Body */
-    .manuscript-card .card-body {
-        padding: 1.25rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    /* Aksara Sunda (Large, right aligned) */
-    .manuscript-card .text-aksara-sunda {
-        color: var(--primary-color);
-        font-size: 1.35rem;
-        line-height: 1.6;
-        letter-spacing: 1px;
-        text-align: right;
-        margin-bottom: 0.5rem;
-        font-family: 'Segoe UI', sans-serif;
-        word-wrap: break-word;
-    }
-    
-    /* Transliteration */
-    .manuscript-card .card-translit {
-        color: var(--text-main);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        background-color: rgba(0, 0, 0, 0.02);
-        padding: 0.75rem 1rem;
-        border-radius: 6px;
-        border-left: 3px solid var(--primary-color);
-    }
-    
-    [data-theme="dark"] .manuscript-card .card-translit {
-        background-color: rgba(255, 255, 255, 0.03);
-    }
-    
-    .card-divider {
-        border: 0;
-        height: 1px;
-        background: var(--border-color);
-        margin: 0.25rem 0;
-    }
-    
-    /* Translation section */
-    .manuscript-card .card-translation {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-    
-    .translation-label {
-        display: block;
-        font-weight: 600;
-        color: var(--secondary-color);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 0.25rem;
-    }
-    
-    .manuscript-card .card-translation p {
-        color: var(--text-main);
-        margin: 0;
-    }
-    
-    /* Footer / OWL relation badge */
-    .manuscript-card .card-footer {
-        padding: 0.75rem 1.25rem;
-        background-color: rgba(0, 0, 0, 0.01);
-        border-top: 1px solid var(--border-color);
-    }
-    
-    /* --- Badges & Alerts --- */
-    .custom-badge {
-        display: inline-block;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.75rem;
-        font-weight: 600;
-        border-radius: 4px;
-        line-height: 1;
-    }
-    
-    .badge-success {
-        background-color: #c6f6d5;
-        color: #22543d;
-    }
-    
-    .badge-dark {
-        background-color: #2d3748;
-        color: #ffffff;
-    }
-    
-    .badge-id {
-        background-color: #1e293b;
-        color: #f8fafc;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-        font-weight: 600;
-        border-radius: 6px;
-    }
-    
-    [data-theme="dark"] .badge-id {
-        background-color: #0f172a;
-        border: 1px solid #334155;
-    }
-    
-    .text-lempir {
-        color: var(--secondary-color);
-        font-size: 0.85rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    
-    /* RDFS Category Badge (Purple) */
-    .badge-kategori {
-        background-color: #f3e8ff;
-        color: #6b21a8;
-        border: 1px solid #e9d5ff;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-        font-weight: 600;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    
-    [data-theme="dark"] .badge-kategori {
-        background-color: rgba(168, 85, 247, 0.15);
-        color: #c084fc;
-        border-color: rgba(168, 85, 247, 0.3);
-    }
-    
-    .badge-next {
-        background-color: rgba(79, 70, 229, 0.08);
-        color: var(--primary-color);
-        border: 1px dashed var(--primary-color);
-        padding: 0.25rem 0.5rem;
-        font-size: 0.75rem;
-        border-radius: 4px;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    
-    [data-theme="dark"] .badge-next {
-        background-color: rgba(129, 140, 248, 0.1);
-        color: #a5b4fc;
-        border-color: #6366f1;
-    }
-    
-    .badge-synonym {
-        background-color: var(--primary-color);
-        color: white;
-        font-size: 0.8rem;
-        padding: 4px 8px;
-        margin-left: 5px;
-        border-radius: 4px;
-    }
-    
-    .custom-alert {
-        padding: 1rem;
-        border-radius: 8px;
-        width: 100%;
-        text-align: center;
-        font-size: 0.95rem;
-    }
-    
-    .alert-warning {
-        background-color: #feebc8;
-        color: #744210;
-        border: 1px solid #fbd38d;
-        margin: 0 auto;
-    }
-    
-    .alert-semantic {
-        background-color: rgba(79, 70, 229, 0.08);
-        color: var(--primary-color);
-        border: 1px solid rgba(79, 70, 229, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 1rem 1.5rem;
-        margin-bottom: 1.5rem;
-        width: 100%;
-        font-weight: 500;
-    }
-    
-    [data-theme="dark"] .alert-semantic {
-        background-color: rgba(129, 140, 248, 0.12);
-        color: #a5b4fc;
-        border-color: rgba(129, 140, 248, 0.25);
-    }
-   
-   /* --- Media Queries (Responsivitas HP) --- */
-   @media (max-width: 768px) {
-       .korpus-title {
-           font-size: 1.5rem;
-       }
-       
-       .search-bar-group {
-           flex-direction: column;
-           border: none;
-       }
-       
-       .search-input {
-           border: 1px solid var(--border-color);
-           border-radius: 6px;
-           margin-bottom: 0.5rem;
-       }
-       
-       .search-button {
-           border-radius: 6px;
-           width: 100%;
-           padding: 0.75rem;
-       }
-   
-       .results-header {
-           flex-direction: column;
-           align-items: flex-start;
-           gap: 0.5rem;
-       }
-   }
-
-/* =================================================================
-   PENGEMBANGAN FITUR SEMANTIK (FORM BARU, TOOLTIP, NAVIGASI OWL)
-   ================================================================= */
-
-/* Form Grid untuk keyword & category dropdown */
-.search-form-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-bottom: 1.25rem;
+/* --- Hero --- */
+.hero {
+    text-align: center;
+    padding: 1rem 0 2.5rem;
 }
-
-@media (min-width: 768px) {
-    .search-form-grid {
-        grid-template-columns: 3fr 2fr;
-    }
-}
-
-.input-field-group, .select-field-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.search-input-field, .search-select-field {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--card-bg);
-    color: var(--text-main);
-    outline: none;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.search-input-field:focus, .search-select-field:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-}
-
-/* Info Box untuk deskripsi kategori (RDFS comment) */
-.category-info-box {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.9rem 1.25rem;
-    border-radius: 8px;
-    background-color: rgba(79, 70, 229, 0.05);
-    border-left: 4px solid var(--primary-color);
-    color: var(--text-main);
-    font-size: 0.88rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.4;
-    animation: fadeIn 0.3s ease;
-}
-
-[data-theme="dark"] .category-info-box {
-    background-color: rgba(129, 140, 248, 0.08);
-}
-
-.fade-in {
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Button Premium Group */
-.search-button-group {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.search-button-premium {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 0.8rem 2rem;
-    font-size: 0.98rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-}
-
-.search-button-premium:hover {
-    background-color: var(--primary-hover);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
-    transform: translateY(-1px);
-}
-
-.search-button-premium:active {
-    transform: translateY(0);
-}
-
-/* Premium Card Footer for OWL Navigations */
-.card-footer-premium {
-    padding: 0.9rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.015);
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-[data-theme="dark"] .card-footer-premium {
-    background-color: rgba(255, 255, 255, 0.01);
-}
-
-.badge-prev {
-    background-color: rgba(16, 185, 129, 0.08);
-    color: var(--success-color);
-    border: 1px dashed var(--success-color);
-    padding: 0.35rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.78rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    cursor: help;
-}
-
-[data-theme="dark"] .badge-prev {
-    background-color: rgba(52, 211, 153, 0.1);
-    color: #34d399;
-    border-color: #34d399;
-}
-
-.badge-next {
-    background-color: rgba(79, 70, 229, 0.08);
-    color: var(--primary-color);
-    border: 1px dashed var(--primary-color);
-    padding: 0.35rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.78rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    cursor: help;
-}
-
-[data-theme="dark"] .badge-next {
-    background-color: rgba(129, 140, 248, 0.1);
-    color: #a5b4fc;
-    border-color: #6366f1;
-}
-
-.badge-disabled {
-    background-color: rgba(107, 114, 128, 0.05);
+.hero .korpus-title { margin-bottom: 0.75rem; }
+.hero .lead {
     color: var(--secondary-color);
+    font-size: 1.05rem;
+    max-width: 660px;
+    margin: 0 auto 1.75rem;
+}
+
+/* --- Dashboard Statistik --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 760px;
+    margin: 0 auto 2.75rem;
+}
+@media (min-width: 720px) {
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat-card {
+    background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 0.35rem 0.6rem;
-    border-radius: 6px;
+    border-radius: var(--radius);
+    padding: 1.3rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: riseIn 0.5s ease both;
+}
+.stat-card:nth-child(2) { animation-delay: 0.06s; }
+.stat-card:nth-child(3) { animation-delay: 0.12s; }
+.stat-card:nth-child(4) { animation-delay: 0.18s; }
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+.stat-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0 auto 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    background: var(--accent-soft);
+    color: var(--primary-color);
+}
+.stat-card:nth-child(2) .stat-icon { background: var(--gold-soft); color: var(--gold); }
+.stat-card:nth-child(4) .stat-icon { background: var(--success-soft); color: var(--success-color); }
+
+.stat-number {
+    font-family: var(--font-head);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1;
+}
+.stat-label {
     font-size: 0.78rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-top: 0.35rem;
+    font-weight: 600;
+}
+
+/* --- Quick links di bawah hero --- */
+.quick-links {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.quick-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.45rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
+.quick-link:hover { border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-2px); }
+.quick-link i { color: var(--primary-color); }

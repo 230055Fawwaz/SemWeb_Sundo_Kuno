@@ -1,0 +1,201 @@
+/* ==========================================
+   Nama File: kamus.css
+   Deskripsi: Gaya halaman Indeks Kamus (glossary per-kata Sunda Kuno)
+   Penulis:   Stan Fredheric, Miftah Rijallul Aziz, Fawwaz Areefa Yaqzhan
+   NPM:        140810230046 ,     140810230053    ,     140810230055
+   Tanggal:   01-06-2026
+   ========================================== */
+
+/* --- Toolbar pencarian & filter --- */
+.kamus-toolbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+@media (min-width: 720px) {
+    .kamus-toolbar { grid-template-columns: 2fr 1fr auto; align-items: end; }
+}
+
+.kamus-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    white-space: nowrap;
+    padding-bottom: 0.85rem;
+}
+.kamus-count strong { color: var(--primary-color); font-size: 1.05rem; }
+
+/* --- Navigasi alfabet --- */
+.alphabet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    max-width: 860px;
+}
+.alphabet-nav a {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    transition: all 0.15s ease;
+}
+.alphabet-nav a:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); transform: translateY(-2px); }
+.alphabet-nav a.disabled { opacity: 0.32; pointer-events: none; }
+
+/* --- Grup huruf --- */
+.letter-group { margin-bottom: 2.5rem; scroll-margin-top: 1rem; }
+.letter-heading {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.letter-heading .count {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    background: var(--bg-soft);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+/* --- Grid kartu kata --- */
+.word-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media (min-width: 640px) { .word-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .word-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.word-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+.word-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent-ring);
+}
+
+.word-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+.word-sunda {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+.word-pos {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    background: var(--gold-soft);
+    padding: 0.22rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.word-aksara {
+    font-family: var(--font-aksara);
+    font-size: 1.9rem;
+    line-height: 1.7;
+    color: var(--ink);
+    word-break: break-word;
+    padding: 0.2rem 0.65rem;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-color);
+    align-self: flex-start;
+    max-width: 100%;
+}
+
+.word-arti {
+    font-size: 0.96rem;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+.word-arti .arrow { color: var(--primary-color); margin-right: 0.35rem; font-weight: 700; }
+
+.word-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--border-color);
+}
+.word-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    color: var(--secondary-color);
+    background: var(--bg-soft);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+}
+.word-source i { color: var(--gold); }
+
+.word-synonyms { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+.syn-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-ring);
+    padding: 0.22rem 0.55rem;
+    border-radius: 999px;
+}
+.syn-label { font-size: 0.7rem; color: var(--secondary-color); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* --- Empty state pencarian --- */
+.kamus-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--secondary-color);
+    display: none;
+}
+.kamus-empty i { font-size: 2.4rem; color: var(--border-color); display: block; margin-bottom: 0.75rem; }
+
+/* --- Catatan metode --- */
+.method-note {
+    margin-top: 2rem;
+    font-size: 0.82rem;
+    color: var(--secondary-color);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.method-note code { color: var(--primary-color); background: var(--accent-soft); padding: 0.1rem 0.35rem; border-radius: 5px; }

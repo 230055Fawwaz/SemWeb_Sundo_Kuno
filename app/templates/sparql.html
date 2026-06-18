@@ -18,7 +18,7 @@
                     <i class="bi bi-card-list"></i> Pilih Query Preset (Evaluasi Proposal)
                 </label>
                 <select id="preset-select" class="search-select-field">
-                    <option value="" disabled selected>-- Pilih dari 10 Query Preset --</option>
+                    <option value="" disabled selected>-- Pilih dari {{ preset_queries|length }} Query Preset --</option>
                     {% for pq in preset_queries %}
                         <option value="{{ pq.id }}">{{ pq.id }}. {{ pq.name }}</option>
                     {% endfor %}
@@ -38,7 +38,7 @@
                     <button class="search-button-premium" type="submit">
                         <i class="bi bi-play-fill"></i> Jalankan Query (HTML)
                     </button>
-                    <button class="search-button-premium" type="button" id="btn-run-json" style="background: linear-gradient(135deg, #10B981, #059669);">
+                    <button class="search-button-premium" type="button" id="btn-run-json" style="background: linear-gradient(135deg, #C99A2E, #A87C1B);">
                         <i class="bi bi-filetype-json"></i> Ambil Respon (JSON API)
                     </button>
                 </div>

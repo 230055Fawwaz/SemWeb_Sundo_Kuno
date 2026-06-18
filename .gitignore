@@ -1,3 +1,10 @@
+# Laporan UAS (tidak di-push ke GitHub)
+laporan/
+
+# File kunci/temporer Microsoft Office (Word/Excel)
+~$*
+*.tmp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

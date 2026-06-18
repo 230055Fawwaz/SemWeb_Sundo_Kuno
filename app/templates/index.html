@@ -17,10 +17,43 @@
 
 {% block content %}
 <div class="korpus-container">
-    <header class="korpus-header">
+    <header class="korpus-header hero">
+        <span class="eyebrow"><i class="bi bi-diagram-3"></i> RDF · OWL · SPARQL</span>
         <h2 class="korpus-title">📜 Korpus Semantik Naskah Sunda Kuno</h2>
-        <p class="korpus-subtitle">Studi Kasus: Fragmen Naskah Lempir Siksa Kandang Karesian</p>
+        <p class="lead">
+            Penjelajahan semantik fragmen naskah <em>Siksa Kandang Karesian</em> &amp; <em>Amanat Galunggung</em> —
+            pencarian sinonim, navigasi relasi antar-baris, dan kamus kata Sunda Kuno yang terhubung dalam satu graf pengetahuan.
+        </p>
+
+        <div class="quick-links">
+            <a href="{{ url_for('main.kamus') }}" class="quick-link"><i class="bi bi-journal-bookmark-fill"></i> Buka Indeks Kamus</a>
+            <a href="{{ url_for('main.sparql_endpoint') }}" class="quick-link"><i class="bi bi-terminal"></i> Coba SPARQL</a>
+        </div>
     </header>
+
+    <!-- Dashboard Statistik Korpus (dihitung via SPARQL) -->
+    <section class="stats-grid" aria-label="Statistik korpus">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-journals"></i></div>
+            <div class="stat-number">{{ stats.manuskrip }}</div>
+            <div class="stat-label">Manuskrip</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-list-ol"></i></div>
+            <div class="stat-number">{{ stats.baris }}</div>
+            <div class="stat-label">Baris Naskah</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-translate"></i></div>
+            <div class="stat-number">{{ stats.kata }}</div>
+            <div class="stat-label">Entri Kamus</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-diagram-2-fill"></i></div>
+            <div class="stat-number">{{ stats.konsep }}</div>
+            <div class="stat-label">Konsep Semantik</div>
+        </div>
+    </section>
 
     <section class="search-section">
         <div class="search-card">
